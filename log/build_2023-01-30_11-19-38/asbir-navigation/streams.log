@@ -1,0 +1,109 @@
+[0.042s] Invoking command in '/home/aralab/ASBIR-ROS2/build/asbir-navigation': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aralab/ASBIR-ROS2/install/rclpy_message_converter:/home/aralab/ros2_foxy/install/ros2bag:/home/aralab/ros2_foxy/install/tracetools_launch:/home/aralab/ros2_foxy/install/topic_monitor:/home/aralab/ros2_foxy/install/examples_tf2_py:/home/aralab/ros2_foxy/install/sros2:/home/aralab/ros2_foxy/install/rqt_topic:/home/aralab/ros2_foxy/install/rqt_top:/home/aralab/ros2_foxy/install/rqt_srv:/home/aralab/ros2_foxy/install/rqt_shell:/home/aralab/ros2_foxy/install/rqt_service_caller:/home/aralab/ros2_foxy/install/rqt_reconfigure:/home/aralab/ros2_foxy/install/rqt_py_console:/home/aralab/ros2_foxy/install/rqt_publisher:/home/aralab/ros2_foxy/install/rqt_plot:/home/aralab/ros2_foxy/install/rqt_action:/home/aralab/ros2_foxy/install/rqt_msg:/home/aralab/ros2_foxy/install/rqt_console:/home/aralab/ros2_foxy/install/rqt:/home/aralab/ros2_foxy/install/rqt_graph:/home/aralab/ros2_foxy/install/rqt_gui_py:/home/aralab/ros2_foxy/install/rqt_gui:/home/aralab/ros2_foxy/install/ros2trace:/home/aralab/ros2_foxy/install/ros2topic:/home/aralab/ros2_foxy/install/ros2test:/home/aralab/ros2_foxy/install/ros2component:/home/aralab/ros2_foxy/install/ros2param:/home/aralab/ros2_foxy/install/ros2lifecycle:/home/aralab/ros2_foxy/install/ros2service:/home/aralab/ros2_foxy/install/ros2run:/home/aralab/ros2_foxy/install/ros2launch:/home/aralab/ros2_foxy/install/ros2pkg:/home/aralab/ros2_foxy/install/ros2node:/home/aralab/ros2_foxy/install/ros2multicast:/home/aralab/ros2_foxy/install/ros2interface:/home/aralab/ros2_foxy/install/ros2doctor:/home/aralab/ros2_foxy/install/ros2action:/home/aralab/ros2_foxy/install/ros2cli:/home/aralab/ros2_foxy/install/quality_of_service_demo_py:/home/aralab/ros2_foxy/install/launch_testing_ros:/home/aralab/ros2_foxy/install/launch_ros:/home/aralab/ros2_foxy/install/examples_rclpy_minimal_subscriber:/home/aralab/ros2_foxy/install/examples_rclpy_minimal_service:/home/aralab/ros2_foxy/install/examples_rclpy_minimal_publisher:/home/aralab/ros2_foxy/install/examples_rclpy_minimal_client:/home/aralab/ros2_foxy/install/examples_rclpy_minimal_action_server:/home/aralab/ros2_foxy/install/examples_rclpy_minimal_action_client:/home/aralab/ros2_foxy/install/examples_rclpy_executors:/home/aralab/ros2_foxy/install/demo_nodes_py:/home/aralab/ros2_foxy/install/action_tutorials_py:/home/aralab/ros2_foxy/install/ament_uncrustify:/home/aralab/ros2_foxy/install/tracetools_trace:/home/aralab/ros2_foxy/install/tracetools_read:/home/aralab/ros2_foxy/install/test_launch_ros:/home/aralab/ros2_foxy/install/sensor_msgs_py:/home/aralab/ros2_foxy/install/rpyutils:/home/aralab/ros2_foxy/install/rosidl_runtime_py:/home/aralab/ros2_foxy/install/launch_yaml:/home/aralab/ros2_foxy/install/launch_xml:/home/aralab/ros2_foxy/install/launch_testing:/home/aralab/ros2_foxy/install/launch:/home/aralab/ros2_foxy/install/osrf_pycommon:/home/aralab/ros2_foxy/install/domain_coordinator:/home/aralab/ros2_foxy/install/ament_xmllint:/home/aralab/ros2_foxy/install/ament_pyflakes:/home/aralab/ros2_foxy/install/ament_pycodestyle:/home/aralab/ros2_foxy/install/ament_pep257:/home/aralab/ros2_foxy/install/ament_pclint:/home/aralab/ros2_foxy/install/ament_package:/home/aralab/ros2_foxy/install/ament_mypy:/home/aralab/ros2_foxy/install/ament_lint_cmake:/home/aralab/ros2_foxy/install/ament_flake8:/home/aralab/ros2_foxy/install/ament_copyright:/home/aralab/ros2_foxy/install/ament_lint:/home/aralab/ros2_foxy/install/ament_index_python:/home/aralab/ros2_foxy/install/ament_cpplint:/home/aralab/ros2_foxy/install/ament_cppcheck:/home/aralab/ros2_foxy/install/ament_clang_tidy:/home/aralab/ros2_foxy/install/ament_clang_format /usr/bin/cmake --build /home/aralab/ASBIR-ROS2/build/asbir-navigation -- -j12 -l12
+[0.087s] -- Found ament_cmake: 0.9.11 (/home/aralab/ros2_foxy/install/ament_cmake/share/ament_cmake/cmake)
+[0.287s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[0.665s] -- Found rclcpp: 2.4.2 (/home/aralab/ros2_foxy/install/rclcpp/share/rclcpp/cmake)
+[0.745s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_introspection_c;rosidl_typesupport_fastrtps_c
+[0.748s] -- Found rosidl_adapter: 1.3.0 (/home/aralab/ros2_foxy/install/rosidl_adapter/share/rosidl_adapter/cmake)
+[0.998s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_introspection_cpp;rosidl_typesupport_fastrtps_cpp
+[1.044s] -- Found rmw_implementation_cmake: 1.0.3 (/home/aralab/ros2_foxy/install/rmw_implementation_cmake/share/rmw_implementation_cmake/cmake)
+[1.068s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[1.196s] -- Found rclpy: 1.0.11 (/home/aralab/ros2_foxy/install/rclpy/share/rclpy/cmake)
+[1.196s] -- Found geometry_msgs: 2.0.5 (/home/aralab/ros2_foxy/install/geometry_msgs/share/geometry_msgs/cmake)
+[1.225s] -- Found visualization_msgs: 2.0.5 (/home/aralab/ros2_foxy/install/visualization_msgs/share/visualization_msgs/cmake)
+[1.290s] -- Found tf2_ros: 0.13.13 (/home/aralab/ros2_foxy/install/tf2_ros/share/tf2_ros/cmake)
+[1.961s] -- Configuring done
+[1.984s] -- Generating done
+[1.986s] -- Build files have been written to: /home/aralab/ASBIR-ROS2/build/asbir-navigation
+[2.036s] [35m[1mScanning dependencies of target modelTest[0m
+[2.068s] [ 75%] [32mBuilding CXX object CMakeFiles/modelTest.dir/src/modelTest.cpp.o[0m
+[2.068s] [ 75%] Built target listener
+[3.408s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:62:2:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ after class definition
+[3.409s]    62 | }
+[3.409s]       |  [01;31m[K^[m[K
+[3.409s]       |  [32m[K;[m[K
+[3.409s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:[m[K In constructor ‘[01m[KModelTest::ModelTest()[m[K’:
+[3.409s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:12:43:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KModelTest[m[K’ does not have any field named ‘[01m[Kcount_[m[K’
+[3.409s]    12 |         ModelTest() : Node("ModelGraph"), [01;31m[Kcount_[m[K(0) {
+[3.410s]       |                                           [01;31m[K^~~~~~[m[K
+[3.410s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:13:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kgraph_pub[m[K’ was not declared in this scope
+[3.411s]    13 |             [01;31m[Kgraph_pub[m[K = this->create_publisher<std_msgs::msg::String>("model_graph", 10);
+[3.411s]       |             [01;31m[K^~~~~~~~~[m[K
+[3.411s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:13:63:[m[K [01;31m[Kerror: [m[K‘[01m[KString[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+[3.412s]    13 |             graph_pub = this->create_publisher<std_msgs::msg::[01;31m[KString[m[K>("model_graph", 10);
+[3.412s]       |                                                               [01;31m[K^~~~~~[m[K
+[3.412s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:13:63:[m[K [01;31m[Kerror: [m[K‘[01m[KString[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+[3.412s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:13:88:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KModelTest::create_publisher<<expression error> >(const char [12], int)[m[K’
+[3.412s]    13 |  this->create_publisher<std_msgs::msg::String>("model_graph", 10[01;31m[K)[m[K;
+[3.412s]       |                                                                 [01;31m[K^[m[K
+[3.412s] 
+[3.413s] In file included from [01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[3.413s]                  from [01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/executors.hpp:22[m[K,
+[3.413s]                  from [01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/rclcpp.hpp:146[m[K,
+[3.413s]                  from [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:1[m[K:
+[3.413s] [01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/node.hpp:184:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+[3.413s]   184 |   [01;36m[Kcreate_publisher[m[K(
+[3.414s]       |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[3.414s] [01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/node.hpp:184:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.414s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:13:88:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.414s]    13 |  this->create_publisher<std_msgs::msg::String>("model_graph", 10[01;31m[K)[m[K;
+[3.414s]       |                                                                 [01;31m[K^[m[K
+[3.414s] 
+[3.414s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:14:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kmarker_pub[m[K’ was not declared in this scope
+[3.415s]    14 |             [01;31m[Kmarker_pub[m[K = this->create_publsiher<visualization_msgs::msg::Marker>("visualization_marker", 10);
+[3.415s]       |             [01;31m[K^~~~~~~~~~[m[K
+[3.415s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:14:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ModelTest[m[K’ has no member named ‘[01m[Kcreate_publsiher[m[K’; did you mean ‘[01m[Kcreate_publisher[m[K’?
+[3.415s]    14 |             marker_pub = this->[01;31m[Kcreate_publsiher[m[K<visualization_msgs::msg::Marker>("visualization_marker", 10);
+[3.415s]       |                                [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[3.415s]       |                                [32m[Kcreate_publisher[m[K
+[3.415s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:14:80:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+[3.415s]    14 | ker_pub = this->create_publsiher<visualization_msgs::msg::Marker[01;31m[K>[m[K("visualization_marker", 10);
+[3.415s]       |                                                                 [01;31m[K^[m[K
+[3.416s] 
+[3.416s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:14:82:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K-Wunused-value[m[K]
+[3.416s]    14 | r_pub = this->create_publsiher<visualization_msgs::msg::Marker>([01;35m[K"visualization_marker"[m[K, 10);
+[3.416s]       |                                                                 [01;35m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[3.416s] 
+[3.416s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:15:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kmarker_a_pub[m[K’ was not declared in this scope
+[3.416s]    15 |             [01;31m[Kmarker_a_pub[m[K = this->create_publisher<visualization_msgs::msg::MarkerArray>("visualization_marker_array", 10);
+[3.416s]       |             [01;31m[K^~~~~~~~~~~~[m[K
+[3.416s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:15:76:[m[K [01;31m[Kerror: [m[K‘[01m[KMarkerArray[m[K’ is not a member of ‘[01m[Kvisualization_msgs::msg[m[K’
+[3.416s]    15 |  marker_a_pub = this->create_publisher<visualization_msgs::msg::[01;31m[KMarkerArray[m[K>("visualization_marker_array", 10);
+[3.416s]       |                                                                 [01;31m[K^~~~~~~~~~~[m[K
+[3.416s] 
+[3.416s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:15:76:[m[K [01;31m[Kerror: [m[K‘[01m[KMarkerArray[m[K’ is not a member of ‘[01m[Kvisualization_msgs::msg[m[K’
+[3.416s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:15:121:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KModelTest::create_publisher<<expression error> >(const char [27], int)[m[K’
+[3.416s]    15 | ization_msgs::msg::MarkerArray>("visualization_marker_array", 10[01;31m[K)[m[K;
+[3.416s]       |                                                                 [01;31m[K^[m[K
+[3.416s] 
+[3.417s] In file included from [01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+[3.417s]                  from [01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/executors.hpp:22[m[K,
+[3.417s]                  from [01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/rclcpp.hpp:146[m[K,
+[3.417s]                  from [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:1[m[K:
+[3.417s] [01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/node.hpp:184:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+[3.417s]   184 |   [01;36m[Kcreate_publisher[m[K(
+[3.417s]       |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[3.417s] [01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/node.hpp:184:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[3.417s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:15:121:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+[3.417s]    15 | ization_msgs::msg::MarkerArray>("visualization_marker_array", 10[01;31m[K)[m[K;
+[3.417s]       |                                                                 [01;31m[K^[m[K
+[3.417s] 
+[3.417s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:24:13:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K,[m[K’ or ‘[01m[K;[m[K’ before ‘[01m[Kpath_model[m[K’
+[3.417s]    24 |             [01;31m[Kpath_model[m[K();
+[3.417s]       |             [01;31m[K^~~~~~~~~~[m[K
+[3.417s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:23:17:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kid[m[K’ [[01;35m[K-Wunused-variable[m[K]
+[3.417s]    23 |             int [01;35m[Kid[m[K = 0
+[3.417s]       |                 [01;35m[K^~[m[K
+[3.418s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:[m[K In member function ‘[01m[Kvoid ModelTest::path_model()[m[K’:
+[3.418s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:34:51:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Ksurface[m[K’
+[3.418s]    34 |             surface.header.frame_id = "odom_frame"
+[3.418s]       |                                                   [01;31m[K^[m[K
+[3.418s]       |                                                   [32m[K;[m[K
+[3.418s]    35 |             [32m[Ksurface[m[K.header.stamp = rclpy.time.Time().to_msg()
+[3.418s]       |             [32m[K~~~~~~~[m[K                                
+[3.419s] [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:60:20:[m[K [01;31m[Kerror: [m[Kreturn-statement with a value, in function returning ‘[01m[Kvoid[m[K’ [[01;31m[K-fpermissive[m[K]
+[3.419s]    60 |             return [01;31m[K0[m[K;
+[3.419s]       |                    [01;31m[K^[m[K
+[3.717s] make[2]: *** [CMakeFiles/modelTest.dir/build.make:63: CMakeFiles/modelTest.dir/src/modelTest.cpp.o] Error 1
+[3.717s] make[1]: *** [CMakeFiles/Makefile2:80: CMakeFiles/modelTest.dir/all] Error 2
+[3.717s] make: *** [Makefile:141: all] Error 2
+[3.719s] Invoked command in '/home/aralab/ASBIR-ROS2/build/asbir-navigation' returned '2': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/aralab/ASBIR-ROS2/install/rclpy_message_converter:/home/aralab/ros2_foxy/install/ros2bag:/home/aralab/ros2_foxy/install/tracetools_launch:/home/aralab/ros2_foxy/install/topic_monitor:/home/aralab/ros2_foxy/install/examples_tf2_py:/home/aralab/ros2_foxy/install/sros2:/home/aralab/ros2_foxy/install/rqt_topic:/home/aralab/ros2_foxy/install/rqt_top:/home/aralab/ros2_foxy/install/rqt_srv:/home/aralab/ros2_foxy/install/rqt_shell:/home/aralab/ros2_foxy/install/rqt_service_caller:/home/aralab/ros2_foxy/install/rqt_reconfigure:/home/aralab/ros2_foxy/install/rqt_py_console:/home/aralab/ros2_foxy/install/rqt_publisher:/home/aralab/ros2_foxy/install/rqt_plot:/home/aralab/ros2_foxy/install/rqt_action:/home/aralab/ros2_foxy/install/rqt_msg:/home/aralab/ros2_foxy/install/rqt_console:/home/aralab/ros2_foxy/install/rqt:/home/aralab/ros2_foxy/install/rqt_graph:/home/aralab/ros2_foxy/install/rqt_gui_py:/home/aralab/ros2_foxy/install/rqt_gui:/home/aralab/ros2_foxy/install/ros2trace:/home/aralab/ros2_foxy/install/ros2topic:/home/aralab/ros2_foxy/install/ros2test:/home/aralab/ros2_foxy/install/ros2component:/home/aralab/ros2_foxy/install/ros2param:/home/aralab/ros2_foxy/install/ros2lifecycle:/home/aralab/ros2_foxy/install/ros2service:/home/aralab/ros2_foxy/install/ros2run:/home/aralab/ros2_foxy/install/ros2launch:/home/aralab/ros2_foxy/install/ros2pkg:/home/aralab/ros2_foxy/install/ros2node:/home/aralab/ros2_foxy/install/ros2multicast:/home/aralab/ros2_foxy/install/ros2interface:/home/aralab/ros2_foxy/install/ros2doctor:/home/aralab/ros2_foxy/install/ros2action:/home/aralab/ros2_foxy/install/ros2cli:/home/aralab/ros2_foxy/install/quality_of_service_demo_py:/home/aralab/ros2_foxy/install/launch_testing_ros:/home/aralab/ros2_foxy/install/launch_ros:/home/aralab/ros2_foxy/install/examples_rclpy_minimal_subscriber:/home/aralab/ros2_foxy/install/examples_rclpy_minimal_service:/home/aralab/ros2_foxy/install/examples_rclpy_minimal_publisher:/home/aralab/ros2_foxy/install/examples_rclpy_minimal_client:/home/aralab/ros2_foxy/install/examples_rclpy_minimal_action_server:/home/aralab/ros2_foxy/install/examples_rclpy_minimal_action_client:/home/aralab/ros2_foxy/install/examples_rclpy_executors:/home/aralab/ros2_foxy/install/demo_nodes_py:/home/aralab/ros2_foxy/install/action_tutorials_py:/home/aralab/ros2_foxy/install/ament_uncrustify:/home/aralab/ros2_foxy/install/tracetools_trace:/home/aralab/ros2_foxy/install/tracetools_read:/home/aralab/ros2_foxy/install/test_launch_ros:/home/aralab/ros2_foxy/install/sensor_msgs_py:/home/aralab/ros2_foxy/install/rpyutils:/home/aralab/ros2_foxy/install/rosidl_runtime_py:/home/aralab/ros2_foxy/install/launch_yaml:/home/aralab/ros2_foxy/install/launch_xml:/home/aralab/ros2_foxy/install/launch_testing:/home/aralab/ros2_foxy/install/launch:/home/aralab/ros2_foxy/install/osrf_pycommon:/home/aralab/ros2_foxy/install/domain_coordinator:/home/aralab/ros2_foxy/install/ament_xmllint:/home/aralab/ros2_foxy/install/ament_pyflakes:/home/aralab/ros2_foxy/install/ament_pycodestyle:/home/aralab/ros2_foxy/install/ament_pep257:/home/aralab/ros2_foxy/install/ament_pclint:/home/aralab/ros2_foxy/install/ament_package:/home/aralab/ros2_foxy/install/ament_mypy:/home/aralab/ros2_foxy/install/ament_lint_cmake:/home/aralab/ros2_foxy/install/ament_flake8:/home/aralab/ros2_foxy/install/ament_copyright:/home/aralab/ros2_foxy/install/ament_lint:/home/aralab/ros2_foxy/install/ament_index_python:/home/aralab/ros2_foxy/install/ament_cpplint:/home/aralab/ros2_foxy/install/ament_cppcheck:/home/aralab/ros2_foxy/install/ament_clang_tidy:/home/aralab/ros2_foxy/install/ament_clang_format /usr/bin/cmake --build /home/aralab/ASBIR-ROS2/build/asbir-navigation -- -j12 -l12

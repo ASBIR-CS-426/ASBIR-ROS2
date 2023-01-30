@@ -1,0 +1,25 @@
+[ 50%] Built target modelTest
+[100%] Built target listener
+-- Install configuration: ""
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/lib/asbir-navigation/listener
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/lib/asbir-navigation/modelTest
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/environment/pythonpath.sh
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/environment/pythonpath.dsv
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/lib/python3.8/site-packages/asbir-navigation
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/lib/python3.8/site-packages/asbir-navigation/__init__.py
+Listing '/home/aralab/ASBIR-ROS2/install/asbir-navigation/lib/python3.8/site-packages/asbir-navigation'...
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/lib/asbir-navigation/publisher_member_function.py
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/lib/asbir-navigation/modelTest.py
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/ament_index/resource_index/package_run_dependencies/asbir-navigation
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/ament_index/resource_index/parent_prefix_path/asbir-navigation
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/environment/path.dsv
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/local_setup.bash
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/local_setup.sh
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/local_setup.zsh
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/local_setup.dsv
+-- Installing: /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/package.dsv
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/ament_index/resource_index/packages/asbir-navigation
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/cmake/asbir-navigationConfig.cmake
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/cmake/asbir-navigationConfig-version.cmake
+-- Up-to-date: /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/package.xml

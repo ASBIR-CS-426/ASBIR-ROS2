@@ -38,26 +38,6 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation/talker" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation/talker")
-    file(RPATH_CHECK
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation/talker"
-         RPATH "")
-  endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation" TYPE EXECUTABLE FILES "/home/aralab/ASBIR-ROS2/build/asbir-navigation/talker")
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation/talker" AND
-     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation/talker")
-    file(RPATH_CHANGE
-         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation/talker"
-         OLD_RPATH "/home/aralab/ros2_foxy/install/rclcpp/lib:/home/aralab/ros2_foxy/install/libstatistics_collector/lib:/home/aralab/ros2_foxy/install/std_msgs/lib:/home/aralab/ros2_foxy/install/rcl/lib:/home/aralab/ros2_foxy/install/rcl_interfaces/lib:/home/aralab/ros2_foxy/install/rmw_implementation/lib:/home/aralab/ros2_foxy/install/rmw/lib:/home/aralab/ros2_foxy/install/rcl_logging_spdlog/lib:/home/aralab/ros2_foxy/install/rcl_yaml_param_parser/lib:/home/aralab/ros2_foxy/install/libyaml_vendor/lib:/home/aralab/ros2_foxy/install/rosgraph_msgs/lib:/home/aralab/ros2_foxy/install/statistics_msgs/lib:/home/aralab/ros2_foxy/install/builtin_interfaces/lib:/home/aralab/ros2_foxy/install/rosidl_typesupport_introspection_cpp/lib:/home/aralab/ros2_foxy/install/rosidl_typesupport_introspection_c/lib:/home/aralab/ros2_foxy/install/rosidl_typesupport_cpp/lib:/home/aralab/ros2_foxy/install/rosidl_typesupport_c/lib:/home/aralab/ros2_foxy/install/rcpputils/lib:/home/aralab/ros2_foxy/install/rosidl_runtime_c/lib:/home/aralab/ros2_foxy/install/rcutils/lib:/home/aralab/ros2_foxy/install/tracetools/lib:"
-         NEW_RPATH "")
-    if(CMAKE_INSTALL_DO_STRIP)
-      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation/talker")
-    endif()
-  endif()
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation/listener" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation/listener")
     file(RPATH_CHECK
@@ -75,6 +55,53 @@ if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_
       execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation/listener")
     endif()
   endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation/modelTest" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation/modelTest")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation/modelTest"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation" TYPE EXECUTABLE FILES "/home/aralab/ASBIR-ROS2/build/asbir-navigation/modelTest")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation/modelTest" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation/modelTest")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation/modelTest"
+         OLD_RPATH "/home/aralab/ros2_foxy/install/visualization_msgs/lib:/home/aralab/ros2_foxy/install/tf2_ros/lib:/home/aralab/ros2_foxy/install/message_filters/lib:/home/aralab/ros2_foxy/install/rclcpp_action/lib:/home/aralab/ros2_foxy/install/rcl_action/lib:/home/aralab/ros2_foxy/install/tf2/lib:/home/aralab/ros2_foxy/install/tf2_msgs/lib:/home/aralab/ros2_foxy/install/geometry_msgs/lib:/home/aralab/ros2_foxy/install/action_msgs/lib:/home/aralab/ros2_foxy/install/unique_identifier_msgs/lib:/home/aralab/ros2_foxy/install/rclcpp_components/lib:/home/aralab/ros2_foxy/install/rclcpp/lib:/home/aralab/ros2_foxy/install/libstatistics_collector/lib:/home/aralab/ros2_foxy/install/std_msgs/lib:/home/aralab/ros2_foxy/install/rcl/lib:/home/aralab/ros2_foxy/install/rmw_implementation/lib:/home/aralab/ros2_foxy/install/rmw/lib:/home/aralab/ros2_foxy/install/rcl_logging_spdlog/lib:/home/aralab/ros2_foxy/install/rcl_yaml_param_parser/lib:/home/aralab/ros2_foxy/install/libyaml_vendor/lib:/home/aralab/ros2_foxy/install/rosgraph_msgs/lib:/home/aralab/ros2_foxy/install/statistics_msgs/lib:/home/aralab/ros2_foxy/install/tracetools/lib:/home/aralab/ros2_foxy/install/ament_index_cpp/lib:/home/aralab/ros2_foxy/install/class_loader/lib:/home/aralab/ros2_foxy/install/console_bridge_vendor/lib:/home/aralab/ros2_foxy/install/composition_interfaces/lib:/home/aralab/ros2_foxy/install/rcl_interfaces/lib:/home/aralab/ros2_foxy/install/builtin_interfaces/lib:/home/aralab/ros2_foxy/install/rosidl_typesupport_introspection_cpp/lib:/home/aralab/ros2_foxy/install/rosidl_typesupport_introspection_c/lib:/home/aralab/ros2_foxy/install/rosidl_typesupport_cpp/lib:/home/aralab/ros2_foxy/install/rosidl_typesupport_c/lib:/home/aralab/ros2_foxy/install/rcpputils/lib:/home/aralab/ros2_foxy/install/rosidl_runtime_c/lib:/home/aralab/ros2_foxy/install/rcutils/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation/modelTest")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/asbir-navigation/environment" TYPE FILE FILES "/home/aralab/ASBIR-ROS2/build/asbir-navigation/ament_cmake_environment_hooks/pythonpath.sh")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/asbir-navigation/environment" TYPE FILE FILES "/home/aralab/ASBIR-ROS2/build/asbir-navigation/ament_cmake_environment_hooks/pythonpath.dsv")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python3.8/site-packages/asbir-navigation" TYPE DIRECTORY FILES "/home/aralab/ASBIR-ROS2/src/asbir-navigation/asbir-navigation/" REGEX "/[^/]*\\.pyc$" EXCLUDE REGEX "/\\_\\_pycache\\_\\_$" EXCLUDE)
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  execute_process(
+        COMMAND
+        "/usr/bin/python3" "-m" "compileall"
+        "/home/aralab/ASBIR-ROS2/install/asbir-navigation/lib/python3.8/site-packages/asbir-navigation"
+      )
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/asbir-navigation" TYPE PROGRAM FILES
+    "/home/aralab/ASBIR-ROS2/src/asbir-navigation/scripts/publisher_member_function.py"
+    "/home/aralab/ASBIR-ROS2/src/asbir-navigation/scripts/modelTest.py"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

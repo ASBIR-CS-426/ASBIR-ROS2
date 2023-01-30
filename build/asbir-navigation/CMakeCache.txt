@@ -272,7 +272,10 @@ SITE:STRING=aralab-Alienware-Aurora-R7
 TinyXML2_DIR:PATH=TinyXML2_DIR-NOTFOUND
 
 //Path to a library.
-_lib:FILEPATH=/home/aralab/ros2_foxy/install/rosgraph_msgs/lib/librosgraph_msgs__rosidl_typesupport_fastrtps_cpp.so
+_lib:FILEPATH=/home/aralab/ros2_foxy/install/composition_interfaces/lib/libcomposition_interfaces__rosidl_typesupport_fastrtps_cpp.so
+
+//The directory containing a CMake configuration file for action_msgs.
+action_msgs_DIR:PATH=/home/aralab/ros2_foxy/install/action_msgs/share/action_msgs/cmake
 
 //The directory containing a CMake configuration file for ament_cmake.
 ament_cmake_DIR:PATH=/home/aralab/ros2_foxy/install/ament_cmake/share/ament_cmake/cmake
@@ -319,6 +322,9 @@ ament_cmake_test_DIR:PATH=/home/aralab/ros2_foxy/install/ament_cmake_test/share/
 //The directory containing a CMake configuration file for ament_cmake_version.
 ament_cmake_version_DIR:PATH=/home/aralab/ros2_foxy/install/ament_cmake_version/share/ament_cmake_version/cmake
 
+//The directory containing a CMake configuration file for ament_index_cpp.
+ament_index_cpp_DIR:PATH=/home/aralab/ros2_foxy/install/ament_index_cpp/share/ament_index_cpp/cmake
+
 //Value Computed by CMake
 asbir-navigation_BINARY_DIR:STATIC=/home/aralab/ASBIR-ROS2/build/asbir-navigation
 
@@ -327,6 +333,15 @@ asbir-navigation_SOURCE_DIR:STATIC=/home/aralab/ASBIR-ROS2/src/asbir-navigation
 
 //The directory containing a CMake configuration file for builtin_interfaces.
 builtin_interfaces_DIR:PATH=/home/aralab/ros2_foxy/install/builtin_interfaces/share/builtin_interfaces/cmake
+
+//The directory containing a CMake configuration file for class_loader.
+class_loader_DIR:PATH=/home/aralab/ros2_foxy/install/class_loader/share/class_loader/cmake
+
+//The directory containing a CMake configuration file for composition_interfaces.
+composition_interfaces_DIR:PATH=/home/aralab/ros2_foxy/install/composition_interfaces/share/composition_interfaces/cmake
+
+//The directory containing a CMake configuration file for console_bridge.
+console_bridge_DIR:PATH=/home/aralab/ros2_foxy/install/console_bridge_vendor/lib/console_bridge/cmake
 
 //The directory containing a CMake configuration file for fastcdr.
 fastcdr_DIR:PATH=/home/aralab/ros2_foxy/install/fastcdr/lib/cmake/fastcdr
@@ -340,11 +355,17 @@ fastrtps_cmake_module_DIR:PATH=/home/aralab/ros2_foxy/install/fastrtps_cmake_mod
 //The directory containing a CMake configuration file for foonathan_memory.
 foonathan_memory_DIR:PATH=/home/aralab/ros2_foxy/install/foonathan_memory_vendor/lib/foonathan_memory/cmake
 
+//The directory containing a CMake configuration file for geometry_msgs.
+geometry_msgs_DIR:PATH=/home/aralab/ros2_foxy/install/geometry_msgs/share/geometry_msgs/cmake
+
 //The directory containing a CMake configuration file for libstatistics_collector.
 libstatistics_collector_DIR:PATH=/home/aralab/ros2_foxy/install/libstatistics_collector/share/libstatistics_collector/cmake
 
 //The directory containing a CMake configuration file for libyaml_vendor.
 libyaml_vendor_DIR:PATH=/home/aralab/ros2_foxy/install/libyaml_vendor/share/libyaml_vendor/cmake
+
+//The directory containing a CMake configuration file for message_filters.
+message_filters_DIR:PATH=/home/aralab/ros2_foxy/install/message_filters/share/message_filters/cmake
 
 //Path to a library.
 pkgcfg_lib__OPENSSL_crypto:FILEPATH=/usr/lib/x86_64-linux-gnu/libcrypto.so
@@ -354,6 +375,9 @@ pkgcfg_lib__OPENSSL_ssl:FILEPATH=/usr/lib/x86_64-linux-gnu/libssl.so
 
 //The directory containing a CMake configuration file for rcl.
 rcl_DIR:PATH=/home/aralab/ros2_foxy/install/rcl/share/rcl/cmake
+
+//The directory containing a CMake configuration file for rcl_action.
+rcl_action_DIR:PATH=/home/aralab/ros2_foxy/install/rcl_action/share/rcl_action/cmake
 
 //The directory containing a CMake configuration file for rcl_interfaces.
 rcl_interfaces_DIR:PATH=/home/aralab/ros2_foxy/install/rcl_interfaces/share/rcl_interfaces/cmake
@@ -366,6 +390,15 @@ rcl_yaml_param_parser_DIR:PATH=/home/aralab/ros2_foxy/install/rcl_yaml_param_par
 
 //The directory containing a CMake configuration file for rclcpp.
 rclcpp_DIR:PATH=/home/aralab/ros2_foxy/install/rclcpp/share/rclcpp/cmake
+
+//The directory containing a CMake configuration file for rclcpp_action.
+rclcpp_action_DIR:PATH=/home/aralab/ros2_foxy/install/rclcpp_action/share/rclcpp_action/cmake
+
+//The directory containing a CMake configuration file for rclcpp_components.
+rclcpp_components_DIR:PATH=/home/aralab/ros2_foxy/install/rclcpp_components/share/rclcpp_components/cmake
+
+//The directory containing a CMake configuration file for rclpy.
+rclpy_DIR:PATH=/home/aralab/ros2_foxy/install/rclpy/share/rclpy/cmake
 
 //The directory containing a CMake configuration file for rcpputils.
 rcpputils_DIR:PATH=/home/aralab/ros2_foxy/install/rcpputils/share/rcpputils/cmake
@@ -439,8 +472,26 @@ statistics_msgs_DIR:PATH=/home/aralab/ros2_foxy/install/statistics_msgs/share/st
 //The directory containing a CMake configuration file for std_msgs.
 std_msgs_DIR:PATH=/home/aralab/ros2_foxy/install/std_msgs/share/std_msgs/cmake
 
+//The directory containing a CMake configuration file for tf2.
+tf2_DIR:PATH=/home/aralab/ros2_foxy/install/tf2/share/tf2/cmake
+
+//The directory containing a CMake configuration file for tf2_msgs.
+tf2_msgs_DIR:PATH=/home/aralab/ros2_foxy/install/tf2_msgs/share/tf2_msgs/cmake
+
+//The directory containing a CMake configuration file for tf2_ros.
+tf2_ros_DIR:PATH=/home/aralab/ros2_foxy/install/tf2_ros/share/tf2_ros/cmake
+
 //The directory containing a CMake configuration file for tracetools.
 tracetools_DIR:PATH=/home/aralab/ros2_foxy/install/tracetools/share/tracetools/cmake
+
+//The directory containing a CMake configuration file for unique_identifier_msgs.
+unique_identifier_msgs_DIR:PATH=/home/aralab/ros2_foxy/install/unique_identifier_msgs/share/unique_identifier_msgs/cmake
+
+//The directory containing a CMake configuration file for visualizataion_msgs.
+visualizataion_msgs_DIR:PATH=visualizataion_msgs_DIR-NOTFOUND
+
+//The directory containing a CMake configuration file for visualization_msgs.
+visualization_msgs_DIR:PATH=/home/aralab/ros2_foxy/install/visualization_msgs/share/visualization_msgs/cmake
 
 //The directory containing a CMake configuration file for yaml.
 yaml_DIR:PATH=/home/aralab/ros2_foxy/install/libyaml_vendor/cmake
@@ -619,6 +670,9 @@ OPENSSL_SSL_LIBRARY-ADVANCED:INTERNAL=1
 PKG_CONFIG_EXECUTABLE-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: PYTHON_EXECUTABLE
 PYTHON_EXECUTABLE-ADVANCED:INTERNAL=1
+//The directory for Python library installation. This needs to
+// be in PYTHONPATH when 'setup.py install' is called.
+PYTHON_INSTALL_DIR:INTERNAL=lib/python3.8/site-packages
 _OPENSSL_CFLAGS:INTERNAL=
 _OPENSSL_CFLAGS_I:INTERNAL=
 _OPENSSL_CFLAGS_OTHER:INTERNAL=

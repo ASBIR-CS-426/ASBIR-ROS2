@@ -1,0 +1,12 @@
+CMake Error at CMakeLists.txt:18 (find_package):
+  find_package called with invalid argument "visualizataion_msgs"
+
+
+CMake Error at /home/aralab/ros2_foxy/install/ament_cmake_target_dependencies/share/ament_cmake_target_dependencies/cmake/ament_target_dependencies.cmake:77 (message):
+  ament_target_dependencies() the passed package name 'visualizataion_msgs'
+  was not found before
+Call Stack (most recent call first):
+  CMakeLists.txt:26 (ament_target_dependencies)
+
+
+make: *** [Makefile:310: cmake_check_build_system] Error 1

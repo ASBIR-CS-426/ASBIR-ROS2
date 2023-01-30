@@ -1,0 +1,5 @@
+[ 18%] Built target gtest
+[ 36%] Built target gtest_main
+[ 63%] Built target image_geometry
+[ 81%] Built target image_geometry-utest-equi
+[100%] Built target image_geometry-utest

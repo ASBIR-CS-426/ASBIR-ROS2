@@ -1,0 +1,3 @@
+[35m[1mScanning dependencies of target transform_point[0m
+[ 50%] Built target listener
+[ 75%] [32mBuilding CXX object CMakeFiles/transform_point.dir/src/transform_point.cpp.o[0m

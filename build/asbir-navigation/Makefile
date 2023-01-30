@@ -168,6 +168,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named modelTest
+
+# Build rule for target.
+modelTest: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 modelTest
+.PHONY : modelTest
+
+# fast build rule for target.
+modelTest/fast:
+	$(MAKE) -f CMakeFiles/modelTest.dir/build.make CMakeFiles/modelTest.dir/build
+.PHONY : modelTest/fast
+
+#=============================================================================
 # Target rules for targets named listener
 
 # Build rule for target.
@@ -179,19 +192,6 @@ listener: cmake_check_build_system
 listener/fast:
 	$(MAKE) -f CMakeFiles/listener.dir/build.make CMakeFiles/listener.dir/build
 .PHONY : listener/fast
-
-#=============================================================================
-# Target rules for targets named talker
-
-# Build rule for target.
-talker: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 talker
-.PHONY : talker
-
-# fast build rule for target.
-talker/fast:
-	$(MAKE) -f CMakeFiles/talker.dir/build.make CMakeFiles/talker.dir/build
-.PHONY : talker/fast
 
 #=============================================================================
 # Target rules for targets named asbir-navigation_uninstall
@@ -219,32 +219,32 @@ uninstall/fast:
 	$(MAKE) -f CMakeFiles/uninstall.dir/build.make CMakeFiles/uninstall.dir/build
 .PHONY : uninstall/fast
 
-src/publisher_member_function.o: src/publisher_member_function.cpp.o
+src/modelTest.o: src/modelTest.cpp.o
 
-.PHONY : src/publisher_member_function.o
+.PHONY : src/modelTest.o
 
 # target to build an object file
-src/publisher_member_function.cpp.o:
-	$(MAKE) -f CMakeFiles/talker.dir/build.make CMakeFiles/talker.dir/src/publisher_member_function.cpp.o
-.PHONY : src/publisher_member_function.cpp.o
+src/modelTest.cpp.o:
+	$(MAKE) -f CMakeFiles/modelTest.dir/build.make CMakeFiles/modelTest.dir/src/modelTest.cpp.o
+.PHONY : src/modelTest.cpp.o
 
-src/publisher_member_function.i: src/publisher_member_function.cpp.i
+src/modelTest.i: src/modelTest.cpp.i
 
-.PHONY : src/publisher_member_function.i
+.PHONY : src/modelTest.i
 
 # target to preprocess a source file
-src/publisher_member_function.cpp.i:
-	$(MAKE) -f CMakeFiles/talker.dir/build.make CMakeFiles/talker.dir/src/publisher_member_function.cpp.i
-.PHONY : src/publisher_member_function.cpp.i
+src/modelTest.cpp.i:
+	$(MAKE) -f CMakeFiles/modelTest.dir/build.make CMakeFiles/modelTest.dir/src/modelTest.cpp.i
+.PHONY : src/modelTest.cpp.i
 
-src/publisher_member_function.s: src/publisher_member_function.cpp.s
+src/modelTest.s: src/modelTest.cpp.s
 
-.PHONY : src/publisher_member_function.s
+.PHONY : src/modelTest.s
 
 # target to generate assembly for a file
-src/publisher_member_function.cpp.s:
-	$(MAKE) -f CMakeFiles/talker.dir/build.make CMakeFiles/talker.dir/src/publisher_member_function.cpp.s
-.PHONY : src/publisher_member_function.cpp.s
+src/modelTest.cpp.s:
+	$(MAKE) -f CMakeFiles/modelTest.dir/build.make CMakeFiles/modelTest.dir/src/modelTest.cpp.s
+.PHONY : src/modelTest.cpp.s
 
 src/subscriber_member_function.o: src/subscriber_member_function.cpp.o
 
@@ -283,16 +283,16 @@ help:
 	@echo "... install/local"
 	@echo "... edit_cache"
 	@echo "... test"
+	@echo "... modelTest"
 	@echo "... install"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
 	@echo "... listener"
-	@echo "... talker"
 	@echo "... asbir-navigation_uninstall"
 	@echo "... uninstall"
-	@echo "... src/publisher_member_function.o"
-	@echo "... src/publisher_member_function.i"
-	@echo "... src/publisher_member_function.s"
+	@echo "... src/modelTest.o"
+	@echo "... src/modelTest.i"
+	@echo "... src/modelTest.s"
 	@echo "... src/subscriber_member_function.o"
 	@echo "... src/subscriber_member_function.i"
 	@echo "... src/subscriber_member_function.s"

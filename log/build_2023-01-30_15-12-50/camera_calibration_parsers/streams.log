@@ -1,0 +1,35 @@
+[0.166s] Invoking command in '/home/aralab/ASBIR-ROS2/build/camera_calibration_parsers': /usr/bin/cmake /home/aralab/ASBIR-ROS2/src/image_common/camera_calibration_parsers -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/aralab/ASBIR-ROS2/install/camera_calibration_parsers
+[0.286s] -- The C compiler identification is GNU 9.4.0
+[0.477s] -- The CXX compiler identification is GNU 9.4.0
+[0.513s] -- Check for working C compiler: /usr/bin/cc
+[0.636s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.636s] -- Detecting C compiler ABI info
+[0.785s] -- Detecting C compiler ABI info - done
+[0.808s] -- Detecting C compile features
+[0.809s] -- Detecting C compile features - done
+[0.812s] -- Check for working CXX compiler: /usr/bin/c++
+[0.960s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.960s] -- Detecting CXX compiler ABI info
+[1.092s] -- Detecting CXX compiler ABI info - done
+[1.107s] -- Detecting CXX compile features
+[1.108s] -- Detecting CXX compile features - done
+[1.141s] -- Configuring incomplete, errors occurred!
+[1.142s] See also "/home/aralab/ASBIR-ROS2/build/camera_calibration_parsers/CMakeFiles/CMakeOutput.log".
+[1.142s] CMake Error at CMakeLists.txt:4 (find_package):
+[1.142s]   By not providing "Findcatkin.cmake" in CMAKE_MODULE_PATH this project has
+[1.142s]   asked CMake to find a package configuration file provided by "catkin", but
+[1.142s]   CMake did not find one.
+[1.142s] 
+[1.142s]   Could not find a package configuration file provided by "catkin" with any
+[1.143s]   of the following names:
+[1.143s] 
+[1.143s]     catkinConfig.cmake
+[1.143s]     catkin-config.cmake
+[1.143s] 
+[1.146s]   Add the installation prefix of "catkin" to CMAKE_PREFIX_PATH or set
+[1.147s]   "catkin_DIR" to a directory containing one of the above files.  If "catkin"
+[1.147s]   provides a separate development package or SDK, be sure it has been
+[1.148s]   installed.
+[1.148s] 
+[1.148s] 
+[1.218s] Invoked command in '/home/aralab/ASBIR-ROS2/build/camera_calibration_parsers' returned '1': /usr/bin/cmake /home/aralab/ASBIR-ROS2/src/image_common/camera_calibration_parsers -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/aralab/ASBIR-ROS2/install/camera_calibration_parsers

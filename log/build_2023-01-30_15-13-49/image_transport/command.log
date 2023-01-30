@@ -1,0 +1,2 @@
+Invoking command in '/home/aralab/ASBIR-ROS2/build/image_transport': /usr/bin/cmake /home/aralab/ASBIR-ROS2/src/image_common/image_transport -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/aralab/ASBIR-ROS2/install/image_transport
+Invoked command in '/home/aralab/ASBIR-ROS2/build/image_transport' returned '1': /usr/bin/cmake /home/aralab/ASBIR-ROS2/src/image_common/image_transport -DCATKIN_INSTALL_INTO_PREFIX_ROOT=0 -DCMAKE_INSTALL_PREFIX=/home/aralab/ASBIR-ROS2/install/image_transport

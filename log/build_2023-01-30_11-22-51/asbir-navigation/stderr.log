@@ -1,0 +1,129 @@
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:44:42:[m[K [01;31m[Kerror: [m[K‘[01m[KString[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+   44 |         rclcpp::Publisher<std_msgs::msg::[01;31m[KString[m[K>::SharedPtr graph_pub;
+      |                                          [01;31m[K^~~~~~[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:44:42:[m[K [01;31m[Kerror: [m[K‘[01m[KString[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:44:48:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   44 |         rclcpp::Publisher<std_msgs::msg::String[01;31m[K>[m[K::SharedPtr graph_pub;
+      |                                                [01;31m[K^[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:44:51:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   44 |         rclcpp::Publisher<std_msgs::msg::String>::[01;31m[KSharedPtr[m[K graph_pub;
+      |                                                   [01;31m[K^~~~~~~~~[m[K
+      |                                                            [32m[K;[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:44:61:[m[K [01;31m[Kerror: [m[K‘[01m[Kgraph_pub[m[K’ does not name a type
+   44 |         rclcpp::Publisher<std_msgs::msg::String>::SharedPtr [01;31m[Kgraph_pub[m[K;
+      |                                                             [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:45:42:[m[K [01;31m[Kerror: [m[K‘[01m[KString[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+   45 |         rclcpp::Publisher<std_msgs::msg::[01;31m[KString[m[K>::SharedPtr marker_pub;
+      |                                          [01;31m[K^~~~~~[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:45:42:[m[K [01;31m[Kerror: [m[K‘[01m[KString[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:45:48:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   45 |         rclcpp::Publisher<std_msgs::msg::String[01;31m[K>[m[K::SharedPtr marker_pub;
+      |                                                [01;31m[K^[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:45:51:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   45 |         rclcpp::Publisher<std_msgs::msg::String>::[01;31m[KSharedPtr[m[K marker_pub;
+      |                                                   [01;31m[K^~~~~~~~~[m[K
+      |                                                            [32m[K;[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:45:51:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kint ModelTest::SharedPtr[m[K’
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:44:51:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[Kint ModelTest::SharedPtr[m[K’
+   44 |         rclcpp::Publisher<std_msgs::msg::String>::[01;36m[KSharedPtr[m[K graph_pub;
+      |                                                   [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:45:61:[m[K [01;31m[Kerror: [m[K‘[01m[Kmarker_pub[m[K’ does not name a type
+   45 |         rclcpp::Publisher<std_msgs::msg::String>::SharedPtr [01;31m[Kmarker_pub[m[K;
+      |                                                             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:46:42:[m[K [01;31m[Kerror: [m[K‘[01m[KString[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+   46 |         rclcpp::Publisher<std_msgs::msg::[01;31m[KString[m[K>::SharedPtr marker_a_pub;
+      |                                          [01;31m[K^~~~~~[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:46:42:[m[K [01;31m[Kerror: [m[K‘[01m[KString[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:46:48:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   46 |         rclcpp::Publisher<std_msgs::msg::String[01;31m[K>[m[K::SharedPtr marker_a_pub;
+      |                                                [01;31m[K^[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:46:51:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ at end of member declaration
+   46 |         rclcpp::Publisher<std_msgs::msg::String>::[01;31m[KSharedPtr[m[K marker_a_pub;
+      |                                                   [01;31m[K^~~~~~~~~[m[K
+      |                                                            [32m[K;[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:46:51:[m[K [01;31m[Kerror: [m[Kredeclaration of ‘[01m[Kint ModelTest::SharedPtr[m[K’
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:44:51:[m[K [01;36m[Knote: [m[Kprevious declaration ‘[01m[Kint ModelTest::SharedPtr[m[K’
+   44 |         rclcpp::Publisher<std_msgs::msg::String>::[01;36m[KSharedPtr[m[K graph_pub;
+      |                                                   [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:46:61:[m[K [01;31m[Kerror: [m[K‘[01m[Kmarker_a_pub[m[K’ does not name a type
+   46 |         rclcpp::Publisher<std_msgs::msg::String>::SharedPtr [01;31m[Kmarker_a_pub[m[K;
+      |                                                             [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:[m[K In member function ‘[01m[Kvoid ModelTest::path_model()[m[K’:
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:16:51:[m[K [01;31m[Kerror: [m[Kexpected ‘[01m[K;[m[K’ before ‘[01m[Ksurface[m[K’
+   16 |             surface.header.frame_id = "odom_frame"
+      |                                                   [01;31m[K^[m[K
+      |                                                   [32m[K;[m[K
+   17 |             [32m[Ksurface[m[K.header.stamp = rclpy.time.Time().to_msg()
+      |             [32m[K~~~~~~~[m[K                                
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:42:20:[m[K [01;31m[Kerror: [m[Kreturn-statement with a value, in function returning ‘[01m[Kvoid[m[K’ [[01;31m[K-fpermissive[m[K]
+   42 |             return [01;31m[K0[m[K;
+      |                    [01;31m[K^[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:[m[K In constructor ‘[01m[KModelTest::ModelTest()[m[K’:
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:50:43:[m[K [01;31m[Kerror: [m[Kclass ‘[01m[KModelTest[m[K’ does not have any field named ‘[01m[Kcount_[m[K’
+   50 |         ModelTest() : Node("ModelGraph"), [01;31m[Kcount_[m[K(0) {
+      |                                           [01;31m[K^~~~~~[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:51:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kgraph_pub[m[K’ was not declared in this scope
+   51 |             [01;31m[Kgraph_pub[m[K = this->create_publisher<std_msgs::msg::String>("model_graph", 10);
+      |             [01;31m[K^~~~~~~~~[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:51:63:[m[K [01;31m[Kerror: [m[K‘[01m[KString[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+   51 |             graph_pub = this->create_publisher<std_msgs::msg::[01;31m[KString[m[K>("model_graph", 10);
+      |                                                               [01;31m[K^~~~~~[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:51:63:[m[K [01;31m[Kerror: [m[K‘[01m[KString[m[K’ is not a member of ‘[01m[Kstd_msgs::msg[m[K’
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:51:88:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KModelTest::create_publisher<<expression error> >(const char [12], int)[m[K’
+   51 |  this->create_publisher<std_msgs::msg::String>("model_graph", 10[01;31m[K)[m[K;
+      |                                                                 [01;31m[K^[m[K
+
+In file included from [01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/rclcpp.hpp:146[m[K,
+                 from [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:1[m[K:
+[01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/node.hpp:184:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  184 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/node.hpp:184:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:51:88:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   51 |  this->create_publisher<std_msgs::msg::String>("model_graph", 10[01;31m[K)[m[K;
+      |                                                                 [01;31m[K^[m[K
+
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:52:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kmarker_pub[m[K’ was not declared in this scope
+   52 |             [01;31m[Kmarker_pub[m[K = this->create_publsiher<visualization_msgs::msg::Marker>("visualization_marker", 10);
+      |             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:52:32:[m[K [01;31m[Kerror: [m[K‘[01m[Kclass ModelTest[m[K’ has no member named ‘[01m[Kcreate_publsiher[m[K’; did you mean ‘[01m[Kcreate_publisher[m[K’?
+   52 |             marker_pub = this->[01;31m[Kcreate_publsiher[m[K<visualization_msgs::msg::Marker>("visualization_marker", 10);
+      |                                [01;31m[K^~~~~~~~~~~~~~~~[m[K
+      |                                [32m[Kcreate_publisher[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:52:80:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ‘[01m[K>[m[K’ token
+   52 | ker_pub = this->create_publsiher<visualization_msgs::msg::Marker[01;31m[K>[m[K("visualization_marker", 10);
+      |                                                                 [01;31m[K^[m[K
+
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:52:82:[m[K [01;35m[Kwarning: [m[Kleft operand of comma operator has no effect [[01;35m[K-Wunused-value[m[K]
+   52 | r_pub = this->create_publsiher<visualization_msgs::msg::Marker>([01;35m[K"visualization_marker"[m[K, 10);
+      |                                                                 [01;35m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:53:13:[m[K [01;31m[Kerror: [m[K‘[01m[Kmarker_a_pub[m[K’ was not declared in this scope
+   53 |             [01;31m[Kmarker_a_pub[m[K = this->create_publisher<visualization_msgs::msg::MarkerArray>("visualization_marker_array", 10);
+      |             [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:53:76:[m[K [01;31m[Kerror: [m[K‘[01m[KMarkerArray[m[K’ is not a member of ‘[01m[Kvisualization_msgs::msg[m[K’
+   53 |  marker_a_pub = this->create_publisher<visualization_msgs::msg::[01;31m[KMarkerArray[m[K>("visualization_marker_array", 10);
+      |                                                                 [01;31m[K^~~~~~~~~~~[m[K
+
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:53:76:[m[K [01;31m[Kerror: [m[K‘[01m[KMarkerArray[m[K’ is not a member of ‘[01m[Kvisualization_msgs::msg[m[K’
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:53:121:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[KModelTest::create_publisher<<expression error> >(const char [27], int)[m[K’
+   53 | ization_msgs::msg::MarkerArray>("visualization_marker_array", 10[01;31m[K)[m[K;
+      |                                                                 [01;31m[K^[m[K
+
+In file included from [01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/executors/single_threaded_executor.hpp:28[m[K,
+                 from [01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/executors.hpp:22[m[K,
+                 from [01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/rclcpp.hpp:146[m[K,
+                 from [01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:1[m[K:
+[01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/node.hpp:184:3:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktemplate<class MessageT, class AllocatorT, class PublisherT> std::shared_ptr<PublisherT> rclcpp::Node::create_publisher(const string&, const rclcpp::QoS&, const rclcpp::PublisherOptionsWithAllocator<AllocatorT>&)[m[K’
+  184 |   [01;36m[Kcreate_publisher[m[K(
+      |   [01;36m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/home/aralab/ros2_foxy/install/rclcpp/include/rclcpp/node.hpp:184:3:[m[K [01;36m[Knote: [m[K  template argument deduction/substitution failed:
+[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:53:121:[m[K [01;31m[Kerror: [m[Ktemplate argument 1 is invalid
+   53 | ization_msgs::msg::MarkerArray>("visualization_marker_array", 10[01;31m[K)[m[K;
+      |                                                                 [01;31m[K^[m[K
+
+make[2]: *** [CMakeFiles/modelTest.dir/build.make:63: CMakeFiles/modelTest.dir/src/modelTest.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:80: CMakeFiles/modelTest.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

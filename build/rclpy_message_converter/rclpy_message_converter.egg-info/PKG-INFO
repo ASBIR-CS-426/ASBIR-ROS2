@@ -1,0 +1,10 @@
+Metadata-Version: 1.2
+Name: rclpy-message-converter
+Version: 2.0.1
+Summary: Converts between Python dictionaries and JSON to rclpy messages
+Home-page: UNKNOWN
+Maintainer: Martin Günther
+Maintainer-email: martin.guenther@dfki.de
+License: Apache License 2.0
+Description: UNKNOWN
+Platform: UNKNOWN

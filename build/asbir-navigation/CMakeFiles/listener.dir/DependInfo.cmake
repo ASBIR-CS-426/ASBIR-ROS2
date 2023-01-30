@@ -17,6 +17,7 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/home/aralab/ASBIR-ROS2/src/asbir-navigation/include"
   "/home/aralab/ros2_foxy/install/rclcpp/include"
   "/home/aralab/ros2_foxy/install/std_msgs/include"
   "/home/aralab/ros2_foxy/install/libstatistics_collector/include"

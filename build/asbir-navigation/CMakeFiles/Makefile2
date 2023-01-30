@@ -53,8 +53,8 @@ CMAKE_BINARY_DIR = /home/aralab/ASBIR-ROS2/build/asbir-navigation
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/modelTest.dir/all
 all: CMakeFiles/listener.dir/all
-all: CMakeFiles/talker.dir/all
 
 .PHONY : all
 
@@ -64,12 +64,39 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/modelTest.dir/clean
 clean: CMakeFiles/listener.dir/clean
-clean: CMakeFiles/talker.dir/clean
 clean: CMakeFiles/asbir-navigation_uninstall.dir/clean
 clean: CMakeFiles/uninstall.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/modelTest.dir
+
+# All Build rule for target.
+CMakeFiles/modelTest.dir/all:
+	$(MAKE) -f CMakeFiles/modelTest.dir/build.make CMakeFiles/modelTest.dir/depend
+	$(MAKE) -f CMakeFiles/modelTest.dir/build.make CMakeFiles/modelTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aralab/ASBIR-ROS2/build/asbir-navigation/CMakeFiles --progress-num=3,4 "Built target modelTest"
+.PHONY : CMakeFiles/modelTest.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/modelTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aralab/ASBIR-ROS2/build/asbir-navigation/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/modelTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/aralab/ASBIR-ROS2/build/asbir-navigation/CMakeFiles 0
+.PHONY : CMakeFiles/modelTest.dir/rule
+
+# Convenience name for target.
+modelTest: CMakeFiles/modelTest.dir/rule
+
+.PHONY : modelTest
+
+# clean rule for target.
+CMakeFiles/modelTest.dir/clean:
+	$(MAKE) -f CMakeFiles/modelTest.dir/build.make CMakeFiles/modelTest.dir/clean
+.PHONY : CMakeFiles/modelTest.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/listener.dir
@@ -97,33 +124,6 @@ listener: CMakeFiles/listener.dir/rule
 CMakeFiles/listener.dir/clean:
 	$(MAKE) -f CMakeFiles/listener.dir/build.make CMakeFiles/listener.dir/clean
 .PHONY : CMakeFiles/listener.dir/clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/talker.dir
-
-# All Build rule for target.
-CMakeFiles/talker.dir/all:
-	$(MAKE) -f CMakeFiles/talker.dir/build.make CMakeFiles/talker.dir/depend
-	$(MAKE) -f CMakeFiles/talker.dir/build.make CMakeFiles/talker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/aralab/ASBIR-ROS2/build/asbir-navigation/CMakeFiles --progress-num=3,4 "Built target talker"
-.PHONY : CMakeFiles/talker.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/talker.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aralab/ASBIR-ROS2/build/asbir-navigation/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/talker.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/aralab/ASBIR-ROS2/build/asbir-navigation/CMakeFiles 0
-.PHONY : CMakeFiles/talker.dir/rule
-
-# Convenience name for target.
-talker: CMakeFiles/talker.dir/rule
-
-.PHONY : talker
-
-# clean rule for target.
-CMakeFiles/talker.dir/clean:
-	$(MAKE) -f CMakeFiles/talker.dir/build.make CMakeFiles/talker.dir/clean
-.PHONY : CMakeFiles/talker.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/asbir-navigation_uninstall.dir

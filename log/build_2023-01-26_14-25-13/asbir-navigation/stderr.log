@@ -1,0 +1,10 @@
+CMake Error at /home/aralab/ros2_foxy/install/ament_cmake_python/share/ament_cmake_python/cmake/ament_python_install_package.cmake:46 (message):
+  ament_python_install_package() the Python package folder
+  '/home/aralab/ASBIR-ROS2/src/asbir-navigation/asbir-navigation' doesn't
+  contain an '__init__.py' file
+Call Stack (most recent call first):
+  /home/aralab/ros2_foxy/install/ament_cmake_python/share/ament_cmake_python/cmake/ament_python_install_package.cmake:28 (_ament_cmake_python_install_package)
+  CMakeLists.txt:28 (ament_python_install_package)
+
+
+make: *** [Makefile:310: cmake_check_build_system] Error 1

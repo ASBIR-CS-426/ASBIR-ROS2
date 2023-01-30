@@ -1,10 +1,13 @@
-/home/aralab/ASBIR-ROS2/install/asbir-navigation/lib/asbir-navigation/talker
 /home/aralab/ASBIR-ROS2/install/asbir-navigation/lib/asbir-navigation/listener
+/home/aralab/ASBIR-ROS2/install/asbir-navigation/lib/asbir-navigation/modelTest
+/home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/environment/pythonpath.sh
+/home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/environment/pythonpath.dsv
+/home/aralab/ASBIR-ROS2/install/asbir-navigation/lib/python3.8/site-packages/asbir-navigation/__init__.py
+/home/aralab/ASBIR-ROS2/install/asbir-navigation/lib/asbir-navigation/publisher_member_function.py
+/home/aralab/ASBIR-ROS2/install/asbir-navigation/lib/asbir-navigation/modelTest.py
 /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/ament_index/resource_index/package_run_dependencies/asbir-navigation
 /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/ament_index/resource_index/parent_prefix_path/asbir-navigation
-/home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/environment/ament_prefix_path.sh
 /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/environment/ament_prefix_path.dsv
-/home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/environment/path.sh
 /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/environment/path.dsv
 /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/local_setup.bash
 /home/aralab/ASBIR-ROS2/install/asbir-navigation/share/asbir-navigation/local_setup.sh
