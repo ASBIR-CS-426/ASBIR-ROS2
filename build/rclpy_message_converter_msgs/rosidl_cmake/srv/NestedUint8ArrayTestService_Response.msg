@@ -1,3 +1,0 @@
-
-
-NestedUint8ArrayTestMessage output

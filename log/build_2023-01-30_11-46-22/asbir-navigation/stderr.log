@@ -1,7 +1,0 @@
-[01m[K/home/aralab/ASBIR-ROS2/src/asbir-navigation/src/modelTest.cpp:4:10:[m[K [01;31m[Kfatal error: [m[Kvisualization_msgs/msg/Marker.msg: No such file or directory
-    4 | #include [01;31m[K<visualization_msgs/msg/Marker.msg>[m[K
-      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
-compilation terminated.
-make[2]: *** [CMakeFiles/modelTest.dir/build.make:63: CMakeFiles/modelTest.dir/src/modelTest.cpp.o] Error 1
-make[1]: *** [CMakeFiles/Makefile2:80: CMakeFiles/modelTest.dir/all] Error 2
-make: *** [Makefile:141: all] Error 2

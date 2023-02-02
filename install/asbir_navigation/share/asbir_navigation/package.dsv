@@ -1,11 +1,6 @@
-source;share/asbir_navigation/hook/cmake_prefix_path.ps1
-source;share/asbir_navigation/hook/cmake_prefix_path.dsv
-source;share/asbir_navigation/hook/cmake_prefix_path.sh
 source;share/asbir_navigation/hook/pythonpath.ps1
 source;share/asbir_navigation/hook/pythonpath.dsv
 source;share/asbir_navigation/hook/pythonpath.sh
-source;share/asbir_navigation/local_setup.bash
-source;share/asbir_navigation/local_setup.dsv
-source;share/asbir_navigation/local_setup.ps1
-source;share/asbir_navigation/local_setup.sh
-source;share/asbir_navigation/local_setup.zsh
+source;share/asbir_navigation/hook/ament_prefix_path.ps1
+source;share/asbir_navigation/hook/ament_prefix_path.dsv
+source;share/asbir_navigation/hook/ament_prefix_path.sh

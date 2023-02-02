@@ -1,0 +1,5 @@
+  File "/home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/buildBestPath.py", line 41
+    source = PointStamped(Header(frame_id = parsed[0]), Point(x=float(parsed[1]),float(y=parsed[2]),float(z=parsed[3])))
+                                                                                 ^
+SyntaxError: positional argument follows keyword argument
+

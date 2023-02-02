@@ -1,5 +1,0 @@
-[ 18%] Built target gtest
-[ 25%] Built target gtest_main
-[ 43%] Built target cv_bridge
-[ 62%] Built target cv_bridge_boost
-[100%] Built target cv_bridge-utest

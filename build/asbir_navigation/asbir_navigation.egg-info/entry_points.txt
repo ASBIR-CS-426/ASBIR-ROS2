@@ -1,0 +1,9 @@
+[console_scripts]
+buildBestPath = asbir_navigation.buildBestPath:main
+frameTest = asbir_navigation.frameTest:main
+graphTest = asbir_navigation.graphTest:main
+modelTest = asbir_navigation.modelTest:main
+odomFrame = asbir_navigation.odomFrame:main
+pointPub = asbir_navigation.pointPub:main
+potentialField = asbir_navigation.potentialField:main
+
