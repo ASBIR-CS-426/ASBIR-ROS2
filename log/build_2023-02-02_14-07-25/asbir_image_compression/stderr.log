@@ -1,0 +1,8 @@
+CMake Error at /home/aralab/ros2_foxy/install/rosidl_cmake/share/rosidl_cmake/cmake/rosidl_generate_interfaces.cmake:93 (message):
+  rosidl_generate_interfaces() the passed file 'msg/ResizedImage.msg' doesn't
+  exist relative to the CMAKE_CURRENT_SOURCE_DIR
+  '/home/aralab/ASBIR-ROS2/src/asbir_image_compression'
+Call Stack (most recent call first):
+  CMakeLists.txt:29 (rosidl_generate_interfaces)
+
+

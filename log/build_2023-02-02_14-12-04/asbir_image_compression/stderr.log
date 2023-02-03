@@ -1,0 +1,14 @@
+CMake Error at CMakeLists.txt:26 (add_executable):
+  Target "publisher_from_video" links to target "cv_bridge::cv_bridge" but
+  the target was not found.  Perhaps a find_package() call is missing for an
+  IMPORTED target, or an ALIAS target is missing?
+
+
+CMake Error at CMakeLists.txt:26 (add_executable):
+  Target "publisher_from_video" links to target
+  "image_transport::image_transport" but the target was not found.  Perhaps a
+  find_package() call is missing for an IMPORTED target, or an ALIAS target
+  is missing?
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.

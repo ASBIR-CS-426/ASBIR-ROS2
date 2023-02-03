@@ -12,6 +12,7 @@ from tf2_ros.transform_listener import TransformListener
 from tf2_ros.transform_broadcaster import TransformBroadcaster
 from parse import *
 from rclpy.duration import Duration
+from asbir_navigation import *
 
 class BestPath(Node):
     def __init__(self):
@@ -27,34 +28,51 @@ class BestPath(Node):
             self.loadGraph()
 
     def loadGraph(self):
+        S=Surfaces()
         lines = None
         edges = []
+        id=''
         with open("src/asbir_navigation/graphs/mapGraph.txt", "r") as f: 
             lines = f.readlines()
         for line in lines:
             if ':' in line:
                 try:
+                    print(edges[0].source.pos.point.x,edges[0].source.pos.point.y,edges[0].source.pos.point.z)
                     self.graph[id] = edges
                     edges=[]
-                except UnboundLocalError:
+                except (UnboundLocalError, IndexError):
                     pass
                 id = search("{}:", line).fixed[0]
+                self.graph[id]=[]
                 
             else:
-                parsed=search('-source={} geometry_msgs.msg.PointStamped(header=std_msgs.msg.Header(stamp=builtin_interfaces.msg.Time(sec=0, nanosec=0), frame_id=\'{}\'), point=geometry_msgs.msg.Point(x={}, y={}, z={})),target={} geometry_msgs.msg.PointStamped(header=std_msgs.msg.Header(stamp=builtin_interfaces.msg.Time(sec=0, nanosec=0), frame_id={}), point=geometry_msgs.msg.Point(x={}, y={}, z={})),distance={},rotation=geometry_msgs.msg.Quaternion(x={}, y={}, z={}, w={})', line).fixed
-                source=PointStamped()
-                target=PointStamped()
-                source_id=parsed[0]
-                source.header.frame_id=parsed[1]
-                source.point=Point(x=float(parsed[2]),y=float(parsed[3]),z=float(parsed[4]))
-                target_id=parsed[5]
-                target.header.frame_id=parsed[6]
+                parsed=search('-source=(id={}, frame_pos=geometry_msgs.msg.PointStamped(header=std_msgs.msg.Header(stamp=builtin_interfaces.msg.Time(sec=0, nanosec=0), frame_id=\'{}\'), point=geometry_msgs.msg.Point(x={}, y={}, z={})), surface={}, edge={}, ground={}, pos=geometry_msgs.msg.PointStamped(header=std_msgs.msg.Header(stamp=builtin_interfaces.msg.Time(sec=0, nanosec=0), frame_id=\'{}\'), point=geometry_msgs.msg.Point(x={}, y={}, z={}))) ,target=(id={}, frame_pos=geometry_msgs.msg.PointStamped(header=std_msgs.msg.Header(stamp=builtin_interfaces.msg.Time(sec=0, nanosec=0), frame_id=\'{}\'), point=geometry_msgs.msg.Point(x={}, y={}, z={})), surface={}, edge={}, ground={}, pos=geometry_msgs.msg.PointStamped(header=std_msgs.msg.Header(stamp=builtin_interfaces.msg.Time(sec=0, nanosec=0), frame_id=\'{}\'), point=geometry_msgs.msg.Point(x={}, y={}, z={}))) ,distance={},rotation=geometry_msgs.msg.Quaternion(x={}, y={}, z={}, w={})',line).fixed
+                print(parsed[9],parsed[10],parsed[11])
+                source=Vertice(id=parsed[0],surface=S.surface[parsed[5]],edge=bool(parsed[6]),ground=bool(parsed[7]))
+                source.frame_pos.header.frame_id=parsed[1]
+                source.frame_pos.point=Point(x=float(parsed[2]),y=float(parsed[3]),z=float(parsed[4]))
+                source.pos.header.frame_id=parsed[8]
+                source.pos.point=Point(x=float(parsed[9]),y=float(parsed[10]),z=float(parsed[11]))
+
+                target=Vertice(id=parsed[12],surface=S.surface[parsed[17]],edge=parsed[18],ground=parsed[19])
+                target.frame_pos.header.frame_id=parsed[6]
+                target.frame_pos.point=Point(x=float(parsed[14]),y=float(parsed[15]),z=float(parsed[16]))
+                target.pos.header.frame_id=parsed[20]
+                target.pos.point=Point(x=float(parsed[21]),y=float(parsed[22]),z=float(parsed[23]))
                 
-                target.point=Point(x=float(parsed[7]),y=float(parsed[8]),z=float(parsed[9]))
-                distance=float(parsed[10])
-                rotation=Quaternion(x=float(parsed[11]),y=float(parsed[12]),z=float(parsed[13]),w=float(parsed[14]))
-                edges.append(Edge(source, target, distance, rotation, source_id, target_id))
-        self.graph[id] = edges
+                distance=float(parsed[24])
+                rotation=Quaternion(x=float(parsed[25]),y=float(parsed[26]),z=float(parsed[27]),w=float(parsed[28]))
+
+                self.graph[id].append(Edge(source, target, distance, rotation))
+                # print(str(Edge(source, target, distance, rotation)))
+                # print(source.id,target.id)
+
+        # for key in self.graph:
+        #     try:
+        #         print(self.graph[key][0].source.pos.point.x, self.graph[key][0].source.pos.point.y, self.graph[key][0].source.pos.point.z)
+        #         # print(self.graph[key][0].target.pos.point.x, self.graph[key][0].target.pos.point.y, self.graph[key][0].target.pos.point.z)
+        #     except IndexError:
+        #         continue
 
     def findEndTransform(end, targetNode, tfBuffer, frame_id):
         # if target node is not on the ground use the frame of its surface, otherwise use base frame
@@ -121,7 +139,7 @@ class BestPath(Node):
         return st
     
     def getRobotPose(self):
-        return self.tfBuffer.lookup_transform('camera_pose_frame','odom_frame', rclpy.time.Time(), timeout = Duration(seconds=1))
+        return self.tfBuffer.lookup_transform('T265_pose_frame','odom_frame', rclpy.time.Time(), timeout = Duration(seconds=1))
 
     def buildPath(self, msg):
         if self.graph == None:
@@ -131,33 +149,37 @@ class BestPath(Node):
         findPath = AStar()
 
         # set starting vertice to current position of robot
-        start = PointStamped()
-        start.point = Point(x=currentPose.transform.translation.x, y=currentPose.transform.translation.y, z=currentPose.transform.translation.z - 0.19)
-        # start.id = 'start'
-        start.header.frame_id = 'odom_frame'
+        start = Vertice()
+        start.pos.point = Point(x=currentPose.transform.translation.x, y=currentPose.transform.translation.y, z=currentPose.transform.translation.z - 0.19)
+        start.id = 'start'
+        start.pos.header.frame_id = 'odom_frame'
 
     	# set goal vertice to Target message
-        end = PointStamped()
-        end = msg
-        end.point.z = end.point.z - 0.19
-        end.header.frame_id = 'odom_frame'
-        # end.id = 'end'
+        end = Vertice()
+        end.pos = msg
+        end.pos.point.z = end.pos.point.z - 0.19
+        end.pos.header.frame_id = 'odom_frame'
+        end.id = 'end'
 
-        startA = np.array((start.point.x, start.point.y, start.point.z))
-        endA = np.array((end.point.x, end.point.y, end.point.z))
+        startA = np.array((start.pos.point.x, start.pos.point.y, start.pos.point.z))
+        endA = np.array((end.pos.point.x, end.pos.point.y, end.pos.point.z))
         mindS = 500
         mindE = 500
-        minS = PointStamped()
-        minS.point = Point(x=500.0,y=500.0,z=500.0)
-        minE = PointStamped()
-        minE.point = Point(x=500.0,y=500.0,z=500.0)
+        minS = Vertice()
+        minS.pos.point = Point(x=500.0,y=500.0,z=500.0)
+        minE = Vertice()
+        minE.pos.point = Point(x=500.0,y=500.0,z=500.0)
     
         # find nodes closest to start and end
         for i in self.graph:
             try:
-                a = np.array((self.graph[i][0].source.point.x,self.graph[i][0].source.point.y,self.graph[i][0].source.point.z))
+                a = np.array((self.graph[i][0].source.pos.point.x,self.graph[i][0].source.pos.point.y,self.graph[i][0].source.pos.point.z))
                 distS = np.linalg.norm(startA - a)
                 distE = np.linalg.norm(endA - a)
+                # print(a)
+                # print(distS)
+                # print(distE)
+                # print('\n')
                 if distS < mindS:
                     mindS = distS
                     minS = i
@@ -169,19 +191,19 @@ class BestPath(Node):
 
         # find neighbor of node closest to goal that is closest to the starting position
         targetNode = minE
-        for node in self.graph[minE]:
-            targetNodeA = np.array((self.graph[targetNode][0].source.point.x, self.graph[targetNode][0].source.point.y, self.graph[targetNode][0].source.point.z))
+        for node in self.graph[minE.id]:
+            targetNodeA = np.array((targetNode.pos.point.x, targetNode.pos.point.y, targetNode.pos.point.z))
             targetNodeD = np.linalg.norm(startA - targetNodeA)
-            nodeA = np.array((node.target.point.x, node.target.point.y, node.target.point.z))
+            nodeA = np.array((node.target.pos.point.x, node.target.pos.point.y, node.target.pos.point.z))
             nodeD = np.linalg.norm(startA - nodeA)
             if nodeD < targetNodeD and node.target.surface == start.surface:
-                targetNode = node.target_id
+                targetNode = node.target
 
-        sEdge = Edge(start,minS,mindS,currentPose.transform.rotation, source_id='start',target_id=minS)
-        self.graph['start'] = [sEdge]
+        sEdge = Edge(start,minS,mindS,currentPose.transform.rotation)
+        self.graph[start.id] = [sEdge]
 
         # find path from start to end, return list of node ids and dictionary of path edges using node ids as keys
-        pathNodes, pathEdges = findPath.aStar(self.graph, 'start', targetNode)
+        pathNodes, pathEdges = findPath.aStar(self.graph, start.id, targetNode.id)
 
         # visualize path
         path = Marker()
@@ -205,7 +227,7 @@ class BestPath(Node):
         pathPoints = Path()
 
         # find transformation from starting pose to the first waypoint
-        st = findStartTransform(minS, start, self.tfBuffer)
+        st = self.findStartTransform(minS, start, self.tfBuffer)
         pathPoints.path.append(st)
         path.points.append(start.pos.point)
         path.points.append(minS.pos.point)
@@ -225,7 +247,7 @@ class BestPath(Node):
             end_frame_id = i+1
 
         # find transform from final node to the end goal
-        et = findEndTransform(end, targetNode, self.tfBuffer, end_frame_id)
+        et = self.findEndTransform(end, targetNode, self.tfBuffer, end_frame_id)
         pathPoints.path.append(et)
         path.points.append(targetNode.pos.point)
         path.points.append(end.pos.point)

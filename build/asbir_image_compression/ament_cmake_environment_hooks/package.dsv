@@ -1,0 +1,4 @@
+source;share/asbir_image_compression/local_setup.bash
+source;share/asbir_image_compression/local_setup.dsv
+source;share/asbir_image_compression/local_setup.sh
+source;share/asbir_image_compression/local_setup.zsh

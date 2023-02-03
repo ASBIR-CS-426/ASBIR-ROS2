@@ -1,0 +1,17 @@
+-- Found ament_cmake: 0.9.11 (/home/aralab/ros2_foxy/install/ament_cmake/share/ament_cmake/cmake)
+-- Using PYTHON_EXECUTABLE: /usr/bin/python3
+-- Found cv_bridge: 3.0.7 (/home/aralab/ros2_foxy/install/cv_bridge/share/cv_bridge/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_introspection_c;rosidl_typesupport_fastrtps_c
+-- Found rosidl_adapter: 1.3.0 (/home/aralab/ros2_foxy/install/rosidl_adapter/share/rosidl_adapter/cmake)
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_introspection_cpp;rosidl_typesupport_fastrtps_cpp
+-- Found image_transport: 2.4.0 (/home/aralab/ros2_foxy/install/image_transport/share/image_transport/cmake)
+-- Found rmw_implementation_cmake: 1.0.3 (/home/aralab/ros2_foxy/install/rmw_implementation_cmake/share/rmw_implementation_cmake/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found rosidl_default_generators: 1.0.1 (/home/aralab/ros2_foxy/install/rosidl_default_generators/share/rosidl_default_generators/cmake)
+CMake Error at CMakeLists.txt:25 (rosidl_get_typesupport_target):
+  Unknown CMake command "rosidl_get_typesupport_target".
+
+
+-- Configuring incomplete, errors occurred!
+See also "/home/aralab/ASBIR-ROS2/build/asbir_image_compression/CMakeFiles/CMakeOutput.log".
+See also "/home/aralab/ASBIR-ROS2/build/asbir_image_compression/CMakeFiles/CMakeError.log".

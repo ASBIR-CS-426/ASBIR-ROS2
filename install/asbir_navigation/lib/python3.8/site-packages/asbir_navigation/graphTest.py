@@ -8,7 +8,6 @@ from geometry_msgs.msg import PointStamped
 from std_msgs.msg import String
 from rclpy.duration import Duration
 
-import tf2_ros
 import tf2_geometry_msgs.tf2_geometry_msgs
 from tf2_ros.buffer import Buffer
 from tf2_ros.transform_listener import TransformListener
@@ -43,7 +42,7 @@ class GraphTest(Node):
         
         for i in range(row+1):
             for j in range(col):
-                p = Vertice(PointStamped(),S.surfaceA)
+                p = Vertice(frame_pos=PointStamped(),surface=S.surfaceA)
                 p.frame_pos.header.frame_id = 'surfaceA'
                 p.frame_pos.header.stamp = rclpy.time.Time().to_msg()
                 p.id = "%s_%d_%d" %('surfaceA', i, j)
@@ -61,7 +60,7 @@ class GraphTest(Node):
         row,col = (6, 3)
         for i in range(row):
             for j in range(1,col):
-                p = Vertice(PointStamped(),S.surfaceB)
+                p = Vertice(frame_pos=PointStamped(),surface=S.surfaceB)
                 p.frame_pos.header.frame_id = 'surfaceB'
                 p.frame_pos.header.stamp = rclpy.time.Time().to_msg()
                 p.id = "%s_%d_%d" %('surfaceB', i, j)
@@ -75,7 +74,7 @@ class GraphTest(Node):
                     self.points.append(p)
 
                 if i == 0 and not (j == 0 or j == col):
-                    gp = Vertice(PointStamped(),S.surfaceB)
+                    gp = Vertice(PointStamped(),surface=S.surfaceB)
                     gp.frame_pos.header.frame_id = 'surfaceB'
                     gp.frame_pos.header.stamp = rclpy.time.Time().to_msg()
                     gp.id = "%s_%d_%d" %('surfaceBF', i, j)
@@ -88,7 +87,7 @@ class GraphTest(Node):
 
         for i in range(row):
             for j in range(1,col):
-                p = Vertice(PointStamped(),S.surfaceC)
+                p = Vertice(frame_pos=PointStamped(),surface=S.surfaceC)
                 
                 p.frame_pos.header.frame_id = 'surfaceC'
                 p.frame_pos.header.stamp = rclpy.time.Time().to_msg()
@@ -103,7 +102,7 @@ class GraphTest(Node):
                     self.points.append(p)
 
                 if i == 0 and not (j == 0 or j == col):
-                    gp = Vertice(PointStamped(),S.surfaceC)
+                    gp = Vertice(frame_pos=PointStamped(),surface=S.surfaceC)
                     gp.frame_pos.header.frame_id = 'surfaceC'
                     gp.frame_pos.header.stamp = rclpy.time.Time().to_msg()
                     gp.id = "%s_%d_%d" %('surfaceCF', i, j)
@@ -117,7 +116,7 @@ class GraphTest(Node):
         row,col = (6, 2)
         for i in range(row+1):
             for j in range(col+1):
-                p = Vertice(PointStamped(),S.surfaceD)
+                p = Vertice(frame_pos=PointStamped(),surface=S.surfaceD)
                 p.frame_pos.header.frame_id = 'surfaceD'
                 p.frame_pos.header.stamp = rclpy.time.Time().to_msg()
                 p.id = "%s_%d_%d" %('surfaceD', i, j)
@@ -131,7 +130,7 @@ class GraphTest(Node):
                     self.points.append(p)
 
                 if i == 0 and not (j == 0 or j == col):
-                    gp = Vertice(PointStamped(),S.surfaceD)
+                    gp = Vertice(frame_pos=PointStamped(),surface=S.surfaceD)
                     gp.frame_pos.header.frame_id = 'surfaceD'
                     gp.frame_pos.header.stamp = rclpy.time.Time().to_msg()
                     gp.id = "%s_%d_%d" %('surfaceDF', i, j)
@@ -142,9 +141,11 @@ class GraphTest(Node):
                     # gp.frame_pos.child_frame_id = p.frame_pos.header.frame_id+str(p.frame_pos.point)
                     self.points.append(gp)
 
+        for j in self.points:
+            j.pos = tf2_geometry_msgs.tf2_geometry_msgs.do_transform_point(j.frame_pos, j.surface.frame)
+
         #create graph	
         for j in self.points:     
-            j.pos = tf2_geometry_msgs.tf2_geometry_msgs.do_transform_point(j.frame_pos, j.surface.frame)
             vert=j.id
             edges = []
             for k in self.points:
@@ -164,7 +165,7 @@ class GraphTest(Node):
         # Transform point from surface frame to base frame and create marker
         for p in self.points:
             vertice = Marker()
-            vertice.header.frame_id = p.frame_pos.header.frame_id
+            vertice.header.frame_id = p.pos.header.frame_id
             vertice.header.stamp = rclpy.time.Time().to_msg()
             vertice.type = vertice.SPHERE
             vertice.action = vertice.ADD
@@ -173,9 +174,9 @@ class GraphTest(Node):
             vertice.scale.x = 0.01
             vertice.scale.y = 0.01
             vertice.scale.z = 0.01
-            vertice.pose.position.x = p.frame_pos.point.x
-            vertice.pose.position.y = p.frame_pos.point.y
-            vertice.pose.position.z = p.frame_pos.point.z
+            vertice.pose.position.x = p.pos.point.x
+            vertice.pose.position.y = p.pos.point.y
+            vertice.pose.position.z = p.pos.point.z
             vertice.pose.orientation.x = 0.0
             vertice.pose.orientation.y = 0.0
             vertice.pose.orientation.z = 0.0
@@ -218,9 +219,10 @@ class GraphTest(Node):
         with open("src/asbir_navigation/graphs/mapGraph.txt", "w") as f:
             for key, value in self.graph.items():
                 f.write('%s:\n' % key)
+                # print(key,len(value))
                 for edge in value:
-                    f.write('-source=%s %s,target=%s %s,distance=%s,rotation=%s\n' 
-                    % (edge.source.id,edge.source.pos,edge.target.id,edge.target.pos,edge.distance,edge.rotation))
+                    f.write('-source=%s ,target=%s ,distance=%s,rotation=%s\n' 
+                    % (edge.source,edge.target,edge.distance,edge.rotation))
         # publish markers
         self.markerAPub.publish(self.verticeArray)
         self.markerPub.publish(self.line)

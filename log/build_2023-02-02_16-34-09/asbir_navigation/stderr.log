@@ -1,0 +1,5 @@
+  File "/home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/buildBestPath.py", line 47
+    source=Vertice(id=parsed[0],surface=S.surface[parsed[5]]edge=bool(parsed[6]),ground=bool(parsed[7]))
+                                                            ^
+SyntaxError: invalid syntax
+

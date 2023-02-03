@@ -4,7 +4,6 @@ from geometry_msgs.msg import Point
 class AStar:
 
     def hValue(self, cell, goalNode):
-        print(cell)
         p1 = cell[0]
         p2 = goalNode[0]
     
