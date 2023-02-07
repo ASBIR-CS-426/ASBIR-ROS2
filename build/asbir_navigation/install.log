@@ -2,6 +2,7 @@
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/buildBestPath.py
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/transformations.py
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/__init__.py
+/home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/imageCompression.py
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/classes.py
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/graphTest.py
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/pointPub.py
@@ -13,6 +14,7 @@
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/__pycache__/buildBestPath.cpython-38.pyc
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/__pycache__/transformations.cpython-38.pyc
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/__pycache__/__init__.cpython-38.pyc
+/home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/__pycache__/imageCompression.cpython-38.pyc
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/__pycache__/classes.cpython-38.pyc
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/__pycache__/graphTest.cpython-38.pyc
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/__pycache__/pointPub.cpython-38.pyc
@@ -30,6 +32,7 @@
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation-0.0.0-py3.8.egg-info/top_level.txt
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation-0.0.0-py3.8.egg-info/requires.txt
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation/buildBestPath
+/home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation/compressImage
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation/frameTest
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation/graphTest
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation/modelTest

@@ -15,7 +15,7 @@ class PointPub(Node):
             self.timer = self.create_timer(1, self.broadcast_timer_callback)     
 
     def broadcast_timer_callback(self):
-        point = PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id='odom_frame'), point=Point(x=0.0, y=0.0, z=0.0))
+        point = PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id='odom_frame'), point=Point(x=1.317, y=0.1905, z=0.0))
         self.pointPub.publish(point)
 
 
@@ -23,7 +23,7 @@ class PointPub(Node):
 def main(args=None):
     rclpy.init(args=args)
     node = PointPub()
-    rclpy.spin(node)
+    rclpy.spin_once(node)
 
     node.destroy_node()
     rclpy.shutdown()

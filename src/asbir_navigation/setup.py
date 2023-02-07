@@ -26,7 +26,8 @@ setup(
             'graphTest = asbir_navigation.graphTest:main',
             'buildBestPath = asbir_navigation.buildBestPath:main',
             'pointPub = asbir_navigation.pointPub:main',
-            'odomFrame = asbir_navigation.odomFrame:main'
+            'odomFrame = asbir_navigation.odomFrame:main',
+            'compressImage = asbir_navigation.imageCompression:main'
         ],
     },
 )

@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 import rclpy
 from geometry_msgs.msg import Point, Quaternion, Pose, PointStamped, PoseStamped, Vector3, TransformStamped
+from std_msgs.msg import Header
+from builtin_interfaces.msg import Time
 import tf2_geometry_msgs.tf2_geometry_msgs 
 import numpy as np
 
@@ -17,6 +19,9 @@ class Surface:
         self.yDim = yDim
         if not rotation == None:
             self.frame=self.getFrame(rotation)
+        else:
+            self.frame=TransformStamped()
+            self.frame.child_frame_id = 'odom_frame'
 	
     def getFrame(self, frame_rotation):
         frame = TransformStamped()
@@ -44,7 +49,7 @@ class Surfaces:
     surfaceB = Surface('surfaceB', xOffset, xOffset, yOffset, (yOffset + yDim), zOffset, (zOffset + zDim), zDim, yDim, Quaternion(x=0.0, y=-0.707, z=0.0, w=0.707))
     surfaceC = Surface('surfaceC', (xOffset + xDim), (xOffset + xDim), (yOffset + yDim), yOffset, zOffset, (zOffset + zDim), zDim, yDim, Quaternion(x=0.707, y=0.0, z=0.707, w=0.0))
     surfaceD = Surface('surfaceD', (xOffset + xDim), xOffset, yOffset, yOffset, zOffset, (zOffset + zDim), zDim, xDim, Quaternion(x=0.5, y=-0.5, z=0.5, w=0.5))
-    surfaceF = Surface('surfaceF', 0.0, 5.0, 0.0, 5.0, 0.0, 5.0)
+    surfaceF = Surface('surfaceF', 0.0, 5.0, 0.0, 5.0, 0.0, 5.0, 10.0, 10.0, Quaternion(x=0.0,y=0.0,z=0.0,w=1.0))
     
     surface = {}
     surface[surfaceA.id] = surfaceA

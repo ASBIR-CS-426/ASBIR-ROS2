@@ -7,23 +7,26 @@ from geometry_msgs.msg import Point, Quaternion, PointStamped, Transform
 from visualization_msgs.msg import Marker
 import numpy as np
 from nav_msgs.msg import Path
+from std_msgs.msg import Header
 from tf2_ros.buffer import Buffer
 from tf2_ros.transform_listener import TransformListener
 from tf2_ros.transform_broadcaster import TransformBroadcaster
 from parse import *
 from rclpy.duration import Duration
 from asbir_navigation import *
+from builtin_interfaces.msg import Time
 
 class BestPath(Node):
     def __init__(self):
             super().__init__('BuildBestPath')
-            self.pathPub = self.create_publisher(Path, 'path', 1)
+            self.pathPub = self.create_publisher(Path, 'path', 10)
             self.visPub = self.create_publisher(Marker, "visualization_marker", 10)
             self.targetSub = self.create_subscription(PointStamped, 'targetPoint', self.buildPath, 10)
             self.tfBuffer = Buffer()
             self.tfListener = TransformListener(self.tfBuffer, self)
             self.tfBroadcaster = TransformBroadcaster(self)
             self.graph = {}
+            self.astar = AStar()
 
             self.loadGraph()
 
@@ -31,53 +34,42 @@ class BestPath(Node):
         S=Surfaces()
         lines = None
         edges = []
-        id=''
+        sourceid=''
         with open("src/asbir_navigation/graphs/mapGraph.txt", "r") as f: 
             lines = f.readlines()
         for line in lines:
             if ':' in line:
-                try:
-                    print(edges[0].source.pos.point.x,edges[0].source.pos.point.y,edges[0].source.pos.point.z)
-                    self.graph[id] = edges
-                    edges=[]
-                except (UnboundLocalError, IndexError):
-                    pass
-                id = search("{}:", line).fixed[0]
-                self.graph[id]=[]
+                sourceid = search("{}:", line).fixed[0]
+                self.graph[sourceid]=[]
                 
             else:
                 parsed=search('-source=(id={}, frame_pos=geometry_msgs.msg.PointStamped(header=std_msgs.msg.Header(stamp=builtin_interfaces.msg.Time(sec=0, nanosec=0), frame_id=\'{}\'), point=geometry_msgs.msg.Point(x={}, y={}, z={})), surface={}, edge={}, ground={}, pos=geometry_msgs.msg.PointStamped(header=std_msgs.msg.Header(stamp=builtin_interfaces.msg.Time(sec=0, nanosec=0), frame_id=\'{}\'), point=geometry_msgs.msg.Point(x={}, y={}, z={}))) ,target=(id={}, frame_pos=geometry_msgs.msg.PointStamped(header=std_msgs.msg.Header(stamp=builtin_interfaces.msg.Time(sec=0, nanosec=0), frame_id=\'{}\'), point=geometry_msgs.msg.Point(x={}, y={}, z={})), surface={}, edge={}, ground={}, pos=geometry_msgs.msg.PointStamped(header=std_msgs.msg.Header(stamp=builtin_interfaces.msg.Time(sec=0, nanosec=0), frame_id=\'{}\'), point=geometry_msgs.msg.Point(x={}, y={}, z={}))) ,distance={},rotation=geometry_msgs.msg.Quaternion(x={}, y={}, z={}, w={})',line).fixed
-                print(parsed[9],parsed[10],parsed[11])
-                source=Vertice(id=parsed[0],surface=S.surface[parsed[5]],edge=bool(parsed[6]),ground=bool(parsed[7]))
-                source.frame_pos.header.frame_id=parsed[1]
-                source.frame_pos.point=Point(x=float(parsed[2]),y=float(parsed[3]),z=float(parsed[4]))
-                source.pos.header.frame_id=parsed[8]
-                source.pos.point=Point(x=float(parsed[9]),y=float(parsed[10]),z=float(parsed[11]))
 
-                target=Vertice(id=parsed[12],surface=S.surface[parsed[17]],edge=parsed[18],ground=parsed[19])
-                target.frame_pos.header.frame_id=parsed[6]
-                target.frame_pos.point=Point(x=float(parsed[14]),y=float(parsed[15]),z=float(parsed[16]))
-                target.pos.header.frame_id=parsed[20]
-                target.pos.point=Point(x=float(parsed[21]),y=float(parsed[22]),z=float(parsed[23]))
-                
-                distance=float(parsed[24])
-                rotation=Quaternion(x=float(parsed[25]),y=float(parsed[26]),z=float(parsed[27]),w=float(parsed[28]))
+                self.graph[sourceid].append(Edge(source=Vertice(
+                        id=parsed[0], 
+                        frame_pos=PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id=parsed[1]), point=Point(x=float(parsed[2]),y=float(parsed[3]),z=float(parsed[4]))),
+                        surface=S.surface[parsed[5]],
+                        edge=bool(parsed[6]),
+                        ground=bool(parsed[7]),
+                        pos=PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id=parsed[8]), point=Point(x=float(parsed[9]),y=float(parsed[10]),z=float(parsed[11])))
+                        ),
+                    target=Vertice(
+                        id=parsed[12], 
+                        frame_pos=PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id=parsed[13]), point=Point(x=float(parsed[14]),y=float(parsed[15]),z=float(parsed[16]))),
+                        surface=S.surface[parsed[17]],
+                        edge=bool(parsed[18]),
+                        ground=bool(parsed[19]),
+                        pos=PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id=parsed[20]), point=Point(x=float(parsed[21]),y=float(parsed[22]),z=float(parsed[23])))
+                        ),
+                    distance=float(parsed[24]),
+                    rotation=Quaternion(x=float(parsed[25]),y=float(parsed[26]),z=float(parsed[27]),w=float(parsed[28]))
+                ))
 
-                self.graph[id].append(Edge(source, target, distance, rotation))
-                # print(str(Edge(source, target, distance, rotation)))
-                # print(source.id,target.id)
-
-        # for key in self.graph:
-        #     try:
-        #         print(self.graph[key][0].source.pos.point.x, self.graph[key][0].source.pos.point.y, self.graph[key][0].source.pos.point.z)
-        #         # print(self.graph[key][0].target.pos.point.x, self.graph[key][0].target.pos.point.y, self.graph[key][0].target.pos.point.z)
-        #     except IndexError:
-        #         continue
-
-    def findEndTransform(end, targetNode, tfBuffer, frame_id):
+    def findEndTransform(self,end, targetNode, frame_id):
         # if target node is not on the ground use the frame of its surface, otherwise use base frame
         if not targetNode.ground:
-            end_frame_pos = tfBuffer.transform(end.pos, targetNode.surface.id)
+            # end_frame_pos = self.tfBuffer.transform(end.pos, targetNode.surface.id)
+            tf2_geometry_msgs.tf2_geometry_msgs.do_transform_point(end.pos,targetNode.surface.frame)
             target_frame_pos = targetNode.frame_pos
         else:
             end_frame_pos = end.pos
@@ -93,23 +85,25 @@ class BestPath(Node):
         ez = np.sin(e_yaw/2)
         ew = np.cos(e_yaw/2)
         e = PoseStamped()
-        e.pose = Pose(end.pos.point, Quaternion(0,0,ez,ew))
+        e.pose = Pose(position=end.pos.point, orientation=Quaternion(x=0.0,y=0.0,z=ez,w=ew))
         e.header.frame_id = targetNode.surface.id
         # transform pose into the base frame
         # e = tfBuffer.transform(e, 'robot_odom_frame', rospy.Duration(10))
-        e = tfBuffer.transform(e, 'odom_frame', Duration(10))
-        et = TransformStamped()
-        et.transform.translation = Vector3(end.pos.point.x, end.pos.point.y, end.pos.point.z)
-        et.transform.rotation = e.pose.orientation
-        # et.header.frame_id = 'robot_odom_frame'
-        et.header.frame_id = 'odom_frame'
-        et.child_frame_id = str(frame_id)
-        return et
+        e=tf2_geometry_msgs.tf2_geometry_msgs.do_transform_pose_stamped(e,targetNode.surface.frame)
+        # e = self.tfBuffer.transform(e, 'odom_frame', Duration(10))
+        # et = TransformStamped()
+        # et.transform.translation = Vector3(x=end.pos.point.x, y=end.pos.point.y, z=end.pos.point.z)
+        # et.transform.rotation = e.pose.orientation
+        # # et.header.frame_id = 'robot_odom_frame'
+        # et.header.frame_id = 'odom_frame'
+        # et.child_frame_id = str(frame_id)
+        return e
 
-    def findStartTransform(start, minS, tfBuffer):
+    def findStartTransform(self,start, minS):
         # if starting node is not on the ground use the frame of its surface, otherwise use base frame
         if not minS.ground:
-            start_frame_pos = tfBuffer.transform(start.pos, minS.surface.id)
+            # start_frame_pos = self.tfBuffer.transform(start.pos, minS.surface.id)
+            start_frame_pos=tf2_geometry_msgs.tf2_geometry_msgs.do_transform_point(start.pos,minS.surface.frame)
             minS_frame_pos = minS.frame_pos
         else:
             start_frame_pos = start.pos
@@ -125,18 +119,20 @@ class BestPath(Node):
         sz = np.sin(s_yaw/2)
         sw = np.cos(s_yaw/2)
         s = PoseStamped()
-        s.pose = Pose(start.pos.point, Quaternion(0,0,sz,sw))
+        s.pose = Pose(position=start.pos.point, orientation=Quaternion(x=0.0,y=0.0,z=sz,w=sw))
+        
         s.header.frame_id = minS.surface.id
         # transform pose into the base frame
         # s = tfBuffer.transform(s, 'robot_odom_frame', rospy.Duration(10))
-        s = tfBuffer.transform(s, 'odom_frame', Duration(10))
-        st = TransformStamped()
-        st.transform.translation = Vector3(start.pos.point.x, start.pos.point.y, start.pos.point.z)
-        st.transform.rotation = s.pose.orientation
-        # st.header.frame_id = 'robot_odom_frame'
-        st.header.frame_id = 'odom_frame'
-        st.child_frame_id = '1'
-        return st
+        # s = self.tfBuffer.transform(s, 'odom_frame', Duration(10))
+        s=tf2_geometry_msgs.tf2_geometry_msgs.do_transform_pose_stamped(s,minS.surface.frame)
+        # st = TransformStamped()
+        # st.transform.translation = Vector3(x=start.pos.point.x, y=start.pos.point.y, z=start.pos.point.z)
+        # st.transform.rotation = s.pose.orientation
+        # # st.header.frame_id = 'robot_odom_frame'
+        # st.header.frame_id = 'odom_frame'
+        # st.child_frame_id = '1'
+        return s
     
     def getRobotPose(self):
         return self.tfBuffer.lookup_transform('T265_pose_frame','odom_frame', rclpy.time.Time(), timeout = Duration(seconds=1))
@@ -153,6 +149,7 @@ class BestPath(Node):
         start.pos.point = Point(x=currentPose.transform.translation.x, y=currentPose.transform.translation.y, z=currentPose.transform.translation.z - 0.19)
         start.id = 'start'
         start.pos.header.frame_id = 'odom_frame'
+        
 
     	# set goal vertice to Target message
         end = Vertice()
@@ -161,14 +158,13 @@ class BestPath(Node):
         end.pos.header.frame_id = 'odom_frame'
         end.id = 'end'
 
+        
         startA = np.array((start.pos.point.x, start.pos.point.y, start.pos.point.z))
         endA = np.array((end.pos.point.x, end.pos.point.y, end.pos.point.z))
         mindS = 500
         mindE = 500
-        minS = Vertice()
-        minS.pos.point = Point(x=500.0,y=500.0,z=500.0)
-        minE = Vertice()
-        minE.pos.point = Point(x=500.0,y=500.0,z=500.0)
+        minS = Vertice(pos=PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id='odom_frame'),point=Point(x=500.0,y=500.0,z=500.0)))
+        minE = Vertice(pos=PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id='odom_frame'),point=Point(x=500.0,y=500.0,z=500.0)))
     
         # find nodes closest to start and end
         for i in self.graph:
@@ -176,19 +172,15 @@ class BestPath(Node):
                 a = np.array((self.graph[i][0].source.pos.point.x,self.graph[i][0].source.pos.point.y,self.graph[i][0].source.pos.point.z))
                 distS = np.linalg.norm(startA - a)
                 distE = np.linalg.norm(endA - a)
-                # print(a)
-                # print(distS)
-                # print(distE)
-                # print('\n')
                 if distS < mindS:
                     mindS = distS
-                    minS = i
+                    minS = self.graph[i][0].source
                 if distE < mindE:
                     mindE = distE
-                    minE = i
+                    minE = self.graph[i][0].source
             except IndexError:
                 continue
-
+        
         # find neighbor of node closest to goal that is closest to the starting position
         targetNode = minE
         for node in self.graph[minE.id]:
@@ -198,12 +190,15 @@ class BestPath(Node):
             nodeD = np.linalg.norm(startA - nodeA)
             if nodeD < targetNodeD and node.target.surface == start.surface:
                 targetNode = node.target
-
-        sEdge = Edge(start,minS,mindS,currentPose.transform.rotation)
+        
+        sEdge = Edge(source=start,target=minS,distance=mindS,rotation=currentPose.transform.rotation)
         self.graph[start.id] = [sEdge]
 
         # find path from start to end, return list of node ids and dictionary of path edges using node ids as keys
-        pathNodes, pathEdges = findPath.aStar(self.graph, start.id, targetNode.id)
+        pathNodes, pathEdges = self.astar.aStar(self.graph, start.id, targetNode.id)
+        # pathNodes = astarOut[0]
+        # pathEdges = astarOut[1]
+        # print(findPath.aStar(self.graph, start.id, targetNode.id))
 
         # visualize path
         path = Marker()
@@ -212,23 +207,22 @@ class BestPath(Node):
         path.header.stamp = self.get_clock().now().to_msg()
         path.type = path.LINE_LIST
         path.action = path.ADD
-        id += 1
-        path.id = id
+        path.id = 1000
         path.scale.x = 0.01
         path.pose.orientation.x = 0.0
         path.pose.orientation.y = 0.0
         path.pose.orientation.z = 0.0
         path.pose.orientation.w = 1.0
-        path.color.r = 1
-        path.color.g = 1
-        path.color.b = 0
-        path.color.a = 1
+        path.color.r = 1.0
+        path.color.g = 1.0
+        path.color.b = 0.0
+        path.color.a = 1.0
 
         pathPoints = Path()
 
         # find transformation from starting pose to the first waypoint
-        st = self.findStartTransform(minS, start, self.tfBuffer)
-        pathPoints.path.append(st)
+        st = self.findStartTransform(minS, start)
+        pathPoints.poses.append(st)
         path.points.append(start.pos.point)
         path.points.append(minS.pos.point)
 
@@ -237,23 +231,23 @@ class BestPath(Node):
         for i in range(2,len(pathNodes)):
             path.points.append(pathEdges[pathNodes[i]].source.pos.point)
             path.points.append(pathEdges[pathNodes[i]].target.pos.point)
-            t = TransformStamped()
-            t.transform = Transform(Vector3(pathEdges[pathNodes[i]].target.pos.point.x, pathEdges[pathNodes[i]].target.pos.point.y, pathEdges[pathNodes[i]].target.pos.point.z), 
-                                            pathEdges[pathNodes[i]].rotation)
+            t = PoseStamped()
+            t.pose = Pose(position=Point(x=pathEdges[pathNodes[i]].target.pos.point.x, y=pathEdges[pathNodes[i]].target.pos.point.y, z=pathEdges[pathNodes[i]].target.pos.point.z), 
+                                            orientation=pathEdges[pathNodes[i]].rotation)
             # t.header.frame_id = 'robot_odom_frame'		
-            t.header.frame_id = 'camera_odom_frame'
-            t.child_frame_id = str(i)
-            pathPoints.path.append(t)
+            t.header.frame_id = 'odom_frame'
+            pathPoints.poses.append(t)
             end_frame_id = i+1
 
+        
         # find transform from final node to the end goal
-        et = self.findEndTransform(end, targetNode, self.tfBuffer, end_frame_id)
-        pathPoints.path.append(et)
+        et = self.findEndTransform(end, targetNode, end_frame_id)
+        pathPoints.poses.append(et)
         path.points.append(targetNode.pos.point)
         path.points.append(end.pos.point)
         
         # publish transform array and visualizations
-        self.tfBroadcaster.sendTransform(pathPoints.path)
+        # self.tfBroadcaster.sendTransform(pathPoints.poses)
         self.pathPub.publish(pathPoints)
         self.visPub.publish(path)
 

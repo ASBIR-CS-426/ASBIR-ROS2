@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 from geometry_msgs.msg import Point
+import math
 # Class for aStar
 class AStar:
 
     def hValue(self, cell, goalNode):
-        p1 = cell[0]
-        p2 = goalNode[0]
+        p1 = cell
+        p2 = goalNode
     
         # eucledian distance
-        distance = ((p2.source.point.x-p1.source.point.x)**2 + (p2.source.point.y-p1.source.point.y)**2 + (p2.source.point.z-p1.source.point.z)**2)
+        distance = math.sqrt((p2.source.pos.point.x-p1.source.pos.point.x)**2 + (p2.source.pos.point.y-p1.source.pos.point.y)**2 + (p2.source.pos.point.z-p1.source.pos.point.z)**2)
         return distance
 
     # function to trace back from goal node
@@ -17,7 +18,7 @@ class AStar:
         lastPath.insert(0,presentNode)
         while presentNode in bestPath:
         #for i in range(1,len(bestPath)):
-            presentNode = bestPath[presentNode].source_id
+            presentNode = bestPath[presentNode].source.id
             lastPath.insert(0,presentNode)
         # lastPath.insert(0,bestPath[presentNode].target.id)
         return lastPath, bestPath
@@ -50,7 +51,7 @@ class AStar:
             fScore[key] = 100
 
         # start cost is h only
-        fScore[startNode] = self.hValue(verticeGraph[startNode], verticeGraph[goalNode])
+        fScore[startNode] = self.hValue(verticeGraph[startNode][0], verticeGraph[goalNode][0])
         while openList:
             # find smallest fScore 
             minVal = 500
@@ -72,19 +73,16 @@ class AStar:
             # check neighbors of present node
             for neigh in verticeGraph[presentNode]:
                 # if neighbor exists ignore
-                if neigh.target_id in closedList:
+                if neigh.target.id in closedList:
                     continue
                 # else add it to list
-                elif neigh.target_id not in openList:
-                    openList.append(neigh.target_id)
+                elif neigh.target.id not in openList:
+                    openList.append(neigh.target.id)
 
                 # replace best path with presentNode
-                bestPath[neigh.target_id] = neigh
+                bestPath[neigh.target.id] = neigh
                 # if approximate g weight is greater replace
-                # print(type(presentNode))
-                # print(type(gWeight[presentNode]))
-                gWeight[neigh.target_id] = neigh.distance + gWeight[presentNode]
+                gWeight[neigh.target.id] = neigh.distance + gWeight[presentNode]
                 # calculate fScore f(n) = g(n) + h(n)
-                print(verticeGraph[neigh.target_id])
-                fScore[neigh.target_id] = gWeight[neigh.target_id] + self.hValue(verticeGraph[neigh.target_id], verticeGraph[goalNode])
+                fScore[neigh.target.id] = gWeight[neigh.target.id] + self.hValue(verticeGraph[neigh.target.id][0], verticeGraph[goalNode][0])
         return False
