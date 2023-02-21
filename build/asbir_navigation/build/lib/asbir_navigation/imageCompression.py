@@ -15,13 +15,11 @@ from cv_bridge.core import CvBridge
 class ImageCompression(Node):
     def __init__(self):
             super().__init__('ImageCompression')
-            self.sub = self.create_subscription(Image, '/D435i/color/image_raw', self.compressMe, 10)
-            self.pub = self.create_publisher(CompressedImage, '/CompressedImage', 10)
+            self.sub = self.create_subscription(Image, '/D435i/color/image_raw', self.compressMe, 1)
+            self.pub = self.create_publisher(CompressedImage, '/CompressedImage', 1)
             self.compressed = None
             self.cvBridge = CvBridge()
-
-            self.timer = self.create_timer(1, self.broadcast_timer_callback)   
-
+            self.timer = self.create_timer(0.1, self.broadcast_timer_callback)   
 
     def compressMe(self,msg):
         cv2=self.cvBridge.imgmsg_to_cv2(msg)
@@ -29,10 +27,7 @@ class ImageCompression(Node):
 
     def broadcast_timer_callback(self):
         if not self.compressed == None:
-            print("publish")
             self.pub.publish(self.compressed)
-
-
 
 def main(args=None):
     rclpy.init(args=args)

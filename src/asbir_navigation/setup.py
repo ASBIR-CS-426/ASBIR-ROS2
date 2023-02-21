@@ -27,7 +27,8 @@ setup(
             'buildBestPath = asbir_navigation.buildBestPath:main',
             'pointPub = asbir_navigation.pointPub:main',
             'odomFrame = asbir_navigation.odomFrame:main',
-            'compressImage = asbir_navigation.imageCompression:main'
+            'compressImage = asbir_navigation.imageCompression:main',
+            'processMesh = asbir_navigation.processMesh:main',
         ],
     },
 )

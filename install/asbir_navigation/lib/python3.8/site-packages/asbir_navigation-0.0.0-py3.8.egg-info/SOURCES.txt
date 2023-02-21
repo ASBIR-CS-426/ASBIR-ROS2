@@ -19,6 +19,7 @@ asbir_navigation/modelTest.py
 asbir_navigation/odomFrame.py
 asbir_navigation/pointPub.py
 asbir_navigation/potentialField.py
+asbir_navigation/processMesh.py
 asbir_navigation/transformations.py
 resource/asbir_navigation
 test/test_copyright.py

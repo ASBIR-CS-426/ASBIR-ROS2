@@ -7,4 +7,5 @@ modelTest = asbir_navigation.modelTest:main
 odomFrame = asbir_navigation.odomFrame:main
 pointPub = asbir_navigation.pointPub:main
 potentialField = asbir_navigation.potentialField:main
+processMesh = asbir_navigation.processMesh:main
 
