@@ -15,6 +15,7 @@ from parse import *
 from rclpy.duration import Duration
 from asbir_navigation import *
 from builtin_interfaces.msg import Time
+from tf2_ros import TransformException
 
 class BestPath(Node):
     def __init__(self):
@@ -35,7 +36,7 @@ class BestPath(Node):
         lines = None
         edges = []
         sourceid=''
-        with open("src/asbir_navigation/graphs/mapGraph.txt", "r") as f: 
+        with open("/home/aralab/ASBIR-ROS2/src/asbir_navigation/graphs/mapGraph.txt", "r") as f: 
             lines = f.readlines()
         for line in lines:
             if ':' in line:
@@ -135,7 +136,14 @@ class BestPath(Node):
         return s
     
     def getRobotPose(self):
-        return self.tfBuffer.lookup_transform('T265_pose_frame','odom_frame', rclpy.time.Time(), timeout = Duration(seconds=1))
+        connecting = True
+        while connecting:
+            try:
+                transform=self.tfBuffer.lookup_transform('T265_pose_frame','T265_odom_frame', rclpy.time.Time())
+                connecting=False
+            except TransformException:
+                continue
+        return transform
 
     def buildPath(self, msg):
         if self.graph == None:
@@ -148,14 +156,14 @@ class BestPath(Node):
         start = Vertice()
         start.pos.point = Point(x=currentPose.transform.translation.x, y=currentPose.transform.translation.y, z=currentPose.transform.translation.z - 0.19)
         start.id = 'start'
-        start.pos.header.frame_id = 'odom_frame'
+        start.pos.header.frame_id = 'T265_odom_frame'
         
 
     	# set goal vertice to Target message
         end = Vertice()
         end.pos = msg
         end.pos.point.z = end.pos.point.z - 0.19
-        end.pos.header.frame_id = 'odom_frame'
+        end.pos.header.frame_id = 'T265_odom_frame'
         end.id = 'end'
 
         
@@ -163,8 +171,8 @@ class BestPath(Node):
         endA = np.array((end.pos.point.x, end.pos.point.y, end.pos.point.z))
         mindS = 500
         mindE = 500
-        minS = Vertice(pos=PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id='odom_frame'),point=Point(x=500.0,y=500.0,z=500.0)))
-        minE = Vertice(pos=PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id='odom_frame'),point=Point(x=500.0,y=500.0,z=500.0)))
+        minS = Vertice(pos=PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id='T265_odom_frame'),point=Point(x=500.0,y=500.0,z=500.0)))
+        minE = Vertice(pos=PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id='T265_odom_frame'),point=Point(x=500.0,y=500.0,z=500.0)))
     
         # find nodes closest to start and end
         for i in self.graph:
@@ -195,6 +203,7 @@ class BestPath(Node):
         self.graph[start.id] = [sEdge]
 
         # find path from start to end, return list of node ids and dictionary of path edges using node ids as keys
+        print(start.id)
         pathNodes, pathEdges = self.astar.aStar(self.graph, start.id, targetNode.id)
         # pathNodes = astarOut[0]
         # pathEdges = astarOut[1]
@@ -203,7 +212,7 @@ class BestPath(Node):
         # visualize path
         path = Marker()
         # path.header.frame_id = "robot_odom_frame"
-        path.header.frame_id = "odom_frame"
+        path.header.frame_id = "T265_odom_frame"
         path.header.stamp = self.get_clock().now().to_msg()
         path.type = path.LINE_LIST
         path.action = path.ADD
@@ -235,7 +244,7 @@ class BestPath(Node):
             t.pose = Pose(position=Point(x=pathEdges[pathNodes[i]].target.pos.point.x, y=pathEdges[pathNodes[i]].target.pos.point.y, z=pathEdges[pathNodes[i]].target.pos.point.z), 
                                             orientation=pathEdges[pathNodes[i]].rotation)
             # t.header.frame_id = 'robot_odom_frame'		
-            t.header.frame_id = 'odom_frame'
+            t.header.frame_id = 'T265_odom_frame'
             pathPoints.poses.append(t)
             end_frame_id = i+1
 
@@ -248,6 +257,7 @@ class BestPath(Node):
         
         # publish transform array and visualizations
         # self.tfBroadcaster.sendTransform(pathPoints.poses)
+        print('publish')
         self.pathPub.publish(pathPoints)
         self.visPub.publish(path)
 

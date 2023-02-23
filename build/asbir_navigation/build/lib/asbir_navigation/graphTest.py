@@ -18,7 +18,6 @@ from asbir_navigation.classes import *
 class GraphTest(Node):
     def __init__(self):
             super().__init__('Graph')
-            self.graphPub = self.create_publisher(String, 'model_graph', 10)
             self.markerPub = self.create_publisher(Marker, "visualization_marker", 10)
             self.markerAPub = self.create_publisher(MarkerArray, "visualization_marker_array", 10)
             self.tfBuffer = Buffer()
@@ -194,7 +193,7 @@ class GraphTest(Node):
             
         # visualize connections between vertices	
         self.line = Marker()
-        self.line.header.frame_id = "odom_frame"
+        self.line.header.frame_id = "T265_odom_frame"
         self.line.header.stamp = rclpy.time.Time().to_msg()
         self.line.type = vertice.LINE_LIST
         self.line.action = vertice.ADD
@@ -216,7 +215,7 @@ class GraphTest(Node):
         
     def broadcast_timer_callback(self):
         # save graph to file
-        with open("src/asbir_navigation/graphs/mapGraph.txt", "w") as f:
+        with open("/home/aralab/ASBIR-ROS2/src/asbir_navigation/graphs/mapGraph.txt", "w") as f:
             for key, value in self.graph.items():
                 f.write('%s:\n' % key)
                 # print(key,len(value))

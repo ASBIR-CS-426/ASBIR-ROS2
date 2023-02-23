@@ -17,6 +17,7 @@ asbir_navigation/graphTest.py
 asbir_navigation/imageCompression.py
 asbir_navigation/modelTest.py
 asbir_navigation/odomFrame.py
+asbir_navigation/pathController.py
 asbir_navigation/pointPub.py
 asbir_navigation/potentialField.py
 asbir_navigation/processMesh.py

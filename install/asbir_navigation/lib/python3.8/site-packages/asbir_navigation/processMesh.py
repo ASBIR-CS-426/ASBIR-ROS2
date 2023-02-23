@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
-from stl import mesh
 import numpy as np
 import rclpy
 from rclpy.node import Node
 from visualization_msgs.msg import Marker, MarkerArray
 from geometry_msgs.msg import Point
 import pymesh
-
 
 class ProcessMesh(Node):
     def __init__(self):
@@ -28,7 +26,7 @@ class ProcessMesh(Node):
         
         for p in mesh.faces:
             face = Marker()
-            face.header.frame_id = 'odom_frame'
+            face.header.frame_id = 'T265_odom_frame'
             face.header.stamp = rclpy.time.Time().to_msg()
             face.type = face.LINE_LIST
             face.action = face.ADD
@@ -51,7 +49,7 @@ class ProcessMesh(Node):
 
             self.faceArray.markers.append(face)
 
-            self.Object.header.frame_id = 'odom_frame'
+            self.Object.header.frame_id = 'T265_odom_frame'
             self.Object.header.stamp = rclpy.time.Time().to_msg()
             self.Object.type = self.Object.MESH_RESOURCE
             self.Object.mesh_resource='file:///home/aralab/ASBIR-ROS2/src/objects/bridge-final.stl'
@@ -76,7 +74,7 @@ class ProcessMesh(Node):
 
             
             node = Marker()
-            node.header.frame_id = 'odom_frame'
+            node.header.frame_id = 'T265_odom_frame'
             node.header.stamp = rclpy.time.Time().to_msg()
             node.type = node.SPHERE
             node.action = node.ADD

@@ -5,6 +5,7 @@ frameTest = asbir_navigation.frameTest:main
 graphTest = asbir_navigation.graphTest:main
 modelTest = asbir_navigation.modelTest:main
 odomFrame = asbir_navigation.odomFrame:main
+pathController = asbir_navigation.pathController:main
 pointPub = asbir_navigation.pointPub:main
 potentialField = asbir_navigation.potentialField:main
 processMesh = asbir_navigation.processMesh:main

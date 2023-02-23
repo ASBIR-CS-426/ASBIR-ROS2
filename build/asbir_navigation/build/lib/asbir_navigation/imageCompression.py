@@ -9,6 +9,7 @@ from std_msgs.msg import Header
 from builtin_interfaces.msg import Time
 from rclpy.duration import Duration
 from sensor_msgs.msg import Image, CompressedImage
+import cv2
 from cv_bridge.core import CvBridge
 
 
@@ -19,15 +20,12 @@ class ImageCompression(Node):
             self.pub = self.create_publisher(CompressedImage, '/CompressedImage', 1)
             self.compressed = None
             self.cvBridge = CvBridge()
-            self.timer = self.create_timer(0.1, self.broadcast_timer_callback)   
 
     def compressMe(self,msg):
+        print("recieved image")
         cv2=self.cvBridge.imgmsg_to_cv2(msg)
         self.compressed = self.cvBridge.cv2_to_compressed_imgmsg(cv2)
-
-    def broadcast_timer_callback(self):
-        if not self.compressed == None:
-            self.pub.publish(self.compressed)
+        self.pub.publish(self.compressed)
 
 def main(args=None):
     rclpy.init(args=args)
