@@ -30,7 +30,8 @@ setup(
             'compressImage = asbir_navigation.imageCompression:main',
             'processMesh = asbir_navigation.processMesh:main',
             'pathController = asbir_navigation.pathController:main',
-            'serialComm = asbir_navigation.serialComm:main'
+            'serialComm = asbir_navigation.serialComm:main',
+            'setZero = asbir_navigation.servoSetZero:main'
         ],
     },
 )

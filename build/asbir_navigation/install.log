@@ -1,4 +1,5 @@
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/pathController.py
+/home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/servoSetZero.py
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/graphTest.py
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/potentialField.py
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/transformations.py
@@ -14,6 +15,7 @@
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/processMesh.py
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/__init__.py
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/__pycache__/pathController.cpython-38.pyc
+/home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/__pycache__/servoSetZero.cpython-38.pyc
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/__pycache__/graphTest.cpython-38.pyc
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/__pycache__/potentialField.cpython-38.pyc
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/__pycache__/transformations.cpython-38.pyc
@@ -48,3 +50,4 @@
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation/potentialField
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation/processMesh
 /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation/serialComm
+/home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation/setZero

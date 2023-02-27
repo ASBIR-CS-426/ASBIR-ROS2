@@ -12,7 +12,7 @@ import serial
 
 class SerialComm(Node):
     def __init__(self):
-        super().__init__('frame_listener')
+        super().__init__('serialComm')
         self.tfBuffer = Buffer()
         self.tfListener = TransformListener(self.tfBuffer, self)
         self.ser = serial.Serial(port='/dev/ttyACM0', baudrate=9600)
