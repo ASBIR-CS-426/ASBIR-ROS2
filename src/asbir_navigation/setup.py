@@ -29,7 +29,8 @@ setup(
             'odomFrame = asbir_navigation.odomFrame:main',
             'compressImage = asbir_navigation.imageCompression:main',
             'processMesh = asbir_navigation.processMesh:main',
-            'pathController = asbir_navigation.pathController:main'
+            'pathController = asbir_navigation.pathController:main',
+            'serialComm = asbir_navigation.serialComm:main'
         ],
     },
 )

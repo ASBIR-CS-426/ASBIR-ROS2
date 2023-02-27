@@ -9,4 +9,5 @@ pathController = asbir_navigation.pathController:main
 pointPub = asbir_navigation.pointPub:main
 potentialField = asbir_navigation.potentialField:main
 processMesh = asbir_navigation.processMesh:main
+serialComm = asbir_navigation.serialComm:main
 

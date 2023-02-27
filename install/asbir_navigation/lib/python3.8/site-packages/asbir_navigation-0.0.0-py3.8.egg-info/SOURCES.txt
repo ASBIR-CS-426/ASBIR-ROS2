@@ -21,6 +21,7 @@ asbir_navigation/pathController.py
 asbir_navigation/pointPub.py
 asbir_navigation/potentialField.py
 asbir_navigation/processMesh.py
+asbir_navigation/serialComm.py
 asbir_navigation/transformations.py
 resource/asbir_navigation
 test/test_copyright.py
