@@ -23,6 +23,7 @@ asbir_navigation/potentialField.py
 asbir_navigation/processMesh.py
 asbir_navigation/serialComm.py
 asbir_navigation/servoSetZero.py
+asbir_navigation/teleop.py
 asbir_navigation/transformations.py
 asbir_navigation/transformations_test.py
 resource/asbir_navigation
