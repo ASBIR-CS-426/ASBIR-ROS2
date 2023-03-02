@@ -89,15 +89,7 @@ class BestPath(Node):
         e.pose = Pose(position=end.pos.point, orientation=Quaternion(x=0.0,y=0.0,z=ez,w=ew))
         e.header.frame_id = targetNode.surface.id
         # transform pose into the base frame
-        # e = tfBuffer.transform(e, 'robot_odom_frame', rospy.Duration(10))
         e=tf2_geometry_msgs.tf2_geometry_msgs.do_transform_pose_stamped(e,targetNode.surface.frame)
-        # e = self.tfBuffer.transform(e, 'odom_frame', Duration(10))
-        # et = TransformStamped()
-        # et.transform.translation = Vector3(x=end.pos.point.x, y=end.pos.point.y, z=end.pos.point.z)
-        # et.transform.rotation = e.pose.orientation
-        # # et.header.frame_id = 'robot_odom_frame'
-        # et.header.frame_id = 'odom_frame'
-        # et.child_frame_id = str(frame_id)
         return e
 
     def findStartTransform(self,start, minS):
@@ -123,16 +115,7 @@ class BestPath(Node):
         s.pose = Pose(position=start.pos.point, orientation=Quaternion(x=0.0,y=0.0,z=sz,w=sw))
         
         s.header.frame_id = minS.surface.id
-        # transform pose into the base frame
-        # s = tfBuffer.transform(s, 'robot_odom_frame', rospy.Duration(10))
-        # s = self.tfBuffer.transform(s, 'odom_frame', Duration(10))
         s=tf2_geometry_msgs.tf2_geometry_msgs.do_transform_pose_stamped(s,minS.surface.frame)
-        # st = TransformStamped()
-        # st.transform.translation = Vector3(x=start.pos.point.x, y=start.pos.point.y, z=start.pos.point.z)
-        # st.transform.rotation = s.pose.orientation
-        # # st.header.frame_id = 'robot_odom_frame'
-        # st.header.frame_id = 'odom_frame'
-        # st.child_frame_id = '1'
         return s
     
     def getRobotPose(self):
@@ -149,6 +132,7 @@ class BestPath(Node):
         if self.graph == None:
             self.get_logger().info('Abort BuildPath: graph == None')
             return
+        graphCopy = self.graph.copy()
         currentPose = self.getRobotPose()
         findPath = AStar()
 
@@ -175,23 +159,23 @@ class BestPath(Node):
         minE = Vertice(pos=PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id='T265_odom_frame'),point=Point(x=500.0,y=500.0,z=500.0)))
     
         # find nodes closest to start and end
-        for i in self.graph:
+        for i in graphCopy:
             try:
-                a = np.array((self.graph[i][0].source.pos.point.x,self.graph[i][0].source.pos.point.y,self.graph[i][0].source.pos.point.z))
+                a = np.array((graphCopy[i][0].source.pos.point.x,graphCopy[i][0].source.pos.point.y,graphCopy[i][0].source.pos.point.z))
                 distS = np.linalg.norm(startA - a)
                 distE = np.linalg.norm(endA - a)
                 if distS < mindS:
                     mindS = distS
-                    minS = self.graph[i][0].source
+                    minS = graphCopy[i][0].source
                 if distE < mindE:
                     mindE = distE
-                    minE = self.graph[i][0].source
+                    minE = graphCopy[i][0].source
             except IndexError:
                 continue
         
         # find neighbor of node closest to goal that is closest to the starting position
         targetNode = minE
-        for node in self.graph[minE.id]:
+        for node in graphCopy[minE.id]:
             targetNodeA = np.array((targetNode.pos.point.x, targetNode.pos.point.y, targetNode.pos.point.z))
             targetNodeD = np.linalg.norm(startA - targetNodeA)
             nodeA = np.array((node.target.pos.point.x, node.target.pos.point.y, node.target.pos.point.z))
@@ -200,14 +184,11 @@ class BestPath(Node):
                 targetNode = node.target
         
         sEdge = Edge(source=start,target=minS,distance=mindS,rotation=currentPose.transform.rotation)
-        self.graph[start.id] = [sEdge]
+        graphCopy[start.id] = [sEdge]
 
         # find path from start to end, return list of node ids and dictionary of path edges using node ids as keys
         print(start.id)
-        pathNodes, pathEdges = self.astar.aStar(self.graph, start.id, targetNode.id)
-        # pathNodes = astarOut[0]
-        # pathEdges = astarOut[1]
-        # print(findPath.aStar(self.graph, start.id, targetNode.id))
+        pathNodes, pathEdges = self.astar.aStar(graphCopy, start.id, targetNode.id)
 
         # visualize path
         path = Marker()

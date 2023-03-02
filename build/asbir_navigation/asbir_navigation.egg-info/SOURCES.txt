@@ -11,12 +11,12 @@ setup.py
 asbir_navigation/__init__.py
 asbir_navigation/aStar.py
 asbir_navigation/buildBestPath.py
+asbir_navigation/cameraLinkFrame.py
 asbir_navigation/classes.py
 asbir_navigation/frameTest.py
 asbir_navigation/graphTest.py
 asbir_navigation/imageCompression.py
 asbir_navigation/modelTest.py
-asbir_navigation/odomFrame.py
 asbir_navigation/pathController.py
 asbir_navigation/pointPub.py
 asbir_navigation/potentialField.py
@@ -24,6 +24,7 @@ asbir_navigation/processMesh.py
 asbir_navigation/serialComm.py
 asbir_navigation/servoSetZero.py
 asbir_navigation/transformations.py
+asbir_navigation/transformations_test.py
 resource/asbir_navigation
 test/test_copyright.py
 test/test_flake8.py

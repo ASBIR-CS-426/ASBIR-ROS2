@@ -31,7 +31,8 @@ setup(
             'processMesh = asbir_navigation.processMesh:main',
             'pathController = asbir_navigation.pathController:main',
             'serialComm = asbir_navigation.serialComm:main',
-            'setZero = asbir_navigation.servoSetZero:main'
+            'setZero = asbir_navigation.servoSetZero:main',
+            'cameraLink = asbir_navigation.cameraLinkFrame:main'
         ],
     },
 )
