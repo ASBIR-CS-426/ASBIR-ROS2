@@ -27,12 +27,12 @@ setup(
             'buildBestPath = asbir_navigation.buildBestPath:main',
             'pointPub = asbir_navigation.pointPub:main',
             'odomFrame = asbir_navigation.odomFrame:main',
-            'compressImage = asbir_navigation.imageCompression:main',
             'processMesh = asbir_navigation.processMesh:main',
             'pathController = asbir_navigation.pathController:main',
             'serialComm = asbir_navigation.serialComm:main',
             'setZero = asbir_navigation.servoSetZero:main',
-            'cameraLink = asbir_navigation.cameraLinkFrame:main'
+            'cameraLink = asbir_navigation.cameraLinkFrame:main',
+            'teleop = asbir_navigation.teleop:main',
         ],
     },
 )

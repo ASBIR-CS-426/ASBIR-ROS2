@@ -1,0 +1,3 @@
+[console_scripts]
+teleop = asbir_rc.teleop:main
+

@@ -1,7 +1,6 @@
 [console_scripts]
 buildBestPath = asbir_navigation.buildBestPath:main
 cameraLink = asbir_navigation.cameraLinkFrame:main
-compressImage = asbir_navigation.imageCompression:main
 frameTest = asbir_navigation.frameTest:main
 graphTest = asbir_navigation.graphTest:main
 modelTest = asbir_navigation.modelTest:main
@@ -12,4 +11,5 @@ potentialField = asbir_navigation.potentialField:main
 processMesh = asbir_navigation.processMesh:main
 serialComm = asbir_navigation.serialComm:main
 setZero = asbir_navigation.servoSetZero:main
+teleop = asbir_navigation.teleop:main
 
