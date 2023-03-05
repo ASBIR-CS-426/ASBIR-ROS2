@@ -9,7 +9,8 @@ setup.py
 ../../build/asbir_rc/asbir_rc.egg-info/top_level.txt
 ../../build/asbir_rc/asbir_rc.egg-info/zip-safe
 asbir_rc/__init__.py
-asbir_rc/teleop.py
+asbir_rc/teleopGamepad.py
+asbir_rc/teleopKeyboard.py
 resource/asbir_rc
 test/test_copyright.py
 test/test_flake8.py

@@ -1,28 +1,33 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from asbir_navigation.classes import *
-from asbir_navigation.aStar import AStar
-from geometry_msgs.msg import Point, Quaternion, PointStamped, Transform
-from visualization_msgs.msg import Marker
-import numpy as np
-from nav_msgs.msg import Path
-from std_msgs.msg import Header
+from rclpy.duration import Duration
+
 from tf2_ros.buffer import Buffer
 from tf2_ros.transform_listener import TransformListener
 from tf2_ros.transform_broadcaster import TransformBroadcaster
-from parse import *
-from rclpy.duration import Duration
-from asbir_navigation import *
-from builtin_interfaces.msg import Time
 from tf2_ros import TransformException
+
+from geometry_msgs.msg import Point, Quaternion, PointStamped, Transform
+from visualization_msgs.msg import Marker
+from nav_msgs.msg import Path
+from std_msgs.msg import Header, Bool
+from builtin_interfaces.msg import Time
+
+from parse import *
+from asbir_navigation.classes import *
+from asbir_navigation.aStar import AStar
+import numpy as np
+
+
 
 class BestPath(Node):
     def __init__(self):
             super().__init__('BuildBestPath')
             self.pathPub = self.create_publisher(Path, 'path', 10)
             self.visPub = self.create_publisher(Marker, "visualization_marker", 10)
-            self.targetSub = self.create_subscription(PointStamped, 'targetPoint', self.buildPath, 10)
+            self.activePathPub = self.create_publisher(Bool, 'activePath', 10)
+
             self.tfBuffer = Buffer()
             self.tfListener = TransformListener(self.tfBuffer, self)
             self.tfBroadcaster = TransformBroadcaster(self)
@@ -30,6 +35,7 @@ class BestPath(Node):
             self.astar = AStar()
 
             self.loadGraph()
+            self.targetSub = self.create_subscription(PointStamped, 'targetPoint', self.buildPath, 10)
 
     def loadGraph(self):
         S=Surfaces()
@@ -65,6 +71,7 @@ class BestPath(Node):
                     distance=float(parsed[24]),
                     rotation=Quaternion(x=float(parsed[25]),y=float(parsed[26]),z=float(parsed[27]),w=float(parsed[28]))
                 ))
+        print('graph loaded')
 
     def findEndTransform(self,end, targetNode, frame_id):
         # if target node is not on the ground use the frame of its surface, otherwise use base frame
@@ -129,12 +136,15 @@ class BestPath(Node):
         return transform
 
     def buildPath(self, msg):
+        print('building path')
         if self.graph == None:
             self.get_logger().info('Abort BuildPath: graph == None')
             return
         graphCopy = self.graph.copy()
+        print('graph copied')
         currentPose = self.getRobotPose()
         findPath = AStar()
+        print('created astar object')
 
         # set starting vertice to current position of robot
         start = Vertice()
@@ -159,6 +169,7 @@ class BestPath(Node):
         minE = Vertice(pos=PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id='T265_odom_frame'),point=Point(x=500.0,y=500.0,z=500.0)))
     
         # find nodes closest to start and end
+        print('find nodes closest to start and end')
         for i in graphCopy:
             try:
                 a = np.array((graphCopy[i][0].source.pos.point.x,graphCopy[i][0].source.pos.point.y,graphCopy[i][0].source.pos.point.z))
@@ -187,7 +198,7 @@ class BestPath(Node):
         graphCopy[start.id] = [sEdge]
 
         # find path from start to end, return list of node ids and dictionary of path edges using node ids as keys
-        print(start.id)
+        print('running astar')
         pathNodes, pathEdges = self.astar.aStar(graphCopy, start.id, targetNode.id)
 
         # visualize path
@@ -241,6 +252,7 @@ class BestPath(Node):
         print('publish')
         self.pathPub.publish(pathPoints)
         self.visPub.publish(path)
+        # self.activePathPub.publish(Bool(data=True))
 
 def main(args=None):
     rclpy.init(args=args)

@@ -1,0 +1,21 @@
+[3.636s] Invoking command in '/home/aralab/ASBIR-ROS2/src/asbir_image_compression': PYTHONPATH=/home/aralab/ASBIR-ROS2/build/asbir_image_compression/prefix_override:/home/aralab/ASBIR-ROS2/install/asbir_image_compression/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/asbir_image_compression build --build-base /home/aralab/ASBIR-ROS2/build/asbir_image_compression/build install --record /home/aralab/ASBIR-ROS2/build/asbir_image_compression/install.log --install-scripts $base/lib/asbir_image_compression --single-version-externally-managed
+[4.295s] running egg_info
+[4.295s] writing ../../build/asbir_image_compression/asbir_image_compression.egg-info/PKG-INFO
+[4.295s] writing dependency_links to ../../build/asbir_image_compression/asbir_image_compression.egg-info/dependency_links.txt
+[4.296s] writing entry points to ../../build/asbir_image_compression/asbir_image_compression.egg-info/entry_points.txt
+[4.296s] writing requirements to ../../build/asbir_image_compression/asbir_image_compression.egg-info/requires.txt
+[4.296s] writing top-level names to ../../build/asbir_image_compression/asbir_image_compression.egg-info/top_level.txt
+[4.331s] reading manifest file '../../build/asbir_image_compression/asbir_image_compression.egg-info/SOURCES.txt'
+[4.332s] writing manifest file '../../build/asbir_image_compression/asbir_image_compression.egg-info/SOURCES.txt'
+[4.332s] running build
+[4.332s] running build_py
+[4.332s] running install
+[4.334s] running install_lib
+[4.338s] running install_data
+[4.338s] running install_egg_info
+[4.341s] removing '/home/aralab/ASBIR-ROS2/install/asbir_image_compression/lib/python3.8/site-packages/asbir_image_compression-0.0.0-py3.8.egg-info' (and everything under it)
+[4.341s] Copying ../../build/asbir_image_compression/asbir_image_compression.egg-info to /home/aralab/ASBIR-ROS2/install/asbir_image_compression/lib/python3.8/site-packages/asbir_image_compression-0.0.0-py3.8.egg-info
+[4.342s] running install_scripts
+[4.366s] Installing compressImage script to /home/aralab/ASBIR-ROS2/install/asbir_image_compression/lib/asbir_image_compression
+[4.367s] writing list of installed files to '/home/aralab/ASBIR-ROS2/build/asbir_image_compression/install.log'
+[4.389s] Invoked command in '/home/aralab/ASBIR-ROS2/src/asbir_image_compression' returned '0': PYTHONPATH=/home/aralab/ASBIR-ROS2/build/asbir_image_compression/prefix_override:/home/aralab/ASBIR-ROS2/install/asbir_image_compression/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/asbir_image_compression build --build-base /home/aralab/ASBIR-ROS2/build/asbir_image_compression/build install --record /home/aralab/ASBIR-ROS2/build/asbir_image_compression/install.log --install-scripts $base/lib/asbir_image_compression --single-version-externally-managed

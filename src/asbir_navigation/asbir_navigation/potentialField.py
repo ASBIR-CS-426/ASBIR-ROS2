@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Float32MultiArray, Bool, String
+from std_msgs.msg import Int32MultiArray, Bool, String
 from geometry_msgs.msg import Pose, TransformStamped, Transform
 import numpy as np
 from tf2_ros.static_transform_broadcaster import StaticTransformBroadcaster
@@ -13,7 +13,7 @@ from .transformations import *
 class PotentialField(Node):
     def __init__(self):
         super().__init__('PotentialField')
-        self.servoControlPub = self.create_publisher(Float32MultiArray, 'servoControl', 1)
+        self.servoControlPub = self.create_publisher(Int32MultiArray, 'servoControl', 1)
         self.waypointReachedPub = self.create_publisher(Bool, 'waypointReached', 1)
         self.transformPub = self.create_publisher(Transform, 'transformToWaypoint', 1)
 
@@ -23,8 +23,9 @@ class PotentialField(Node):
 
         self.vr_max = 0.25
         self.vr = 0
-        self.wheel_rotation_max = np.pi/2
-        self.reachDist = 0.1
+        self.wheel_rotation_max = np.pi/3
+        # self.wheel_rotation_max = 900
+        self.reachDist = 0.2
         self.reached = Bool()
         self.activePath=False
 
@@ -40,7 +41,7 @@ class PotentialField(Node):
             waypoint = TransformStamped()
             try:
                 waypoint=self.tfBuffer.lookup_transform('waypoint', 'T265_pose_frame', rclpy.time.Time())
-                print(waypoint.transform.translation.x, waypoint.transform.translation.y, waypoint.transform.translation.z)
+                # print(waypoint.transform.translation.x, waypoint.transform.translation.y, waypoint.transform.translation.z)
             except TransformException as ex:
                 print('Could not transform T265_pose_frame to waypoint', ex)
                 return
@@ -51,8 +52,8 @@ class PotentialField(Node):
             # Convert quaternion to euler
             roll, pitch, yaw = euler_from_quaternion(waypoint.transform.rotation)
 
-            print("Transform Rotation: ", roll, pitch, yaw)
-            print("Transform Translation: ", waypoint.transform.translation.x, waypoint.transform.translation.y, waypoint.transform.translation.z)
+            # print("Transform Rotation: ", roll, pitch, yaw)
+            # print("Transform Translation: ", waypoint.transform.translation.x, waypoint.transform.translation.y, waypoint.transform.translation.z)
 
             # # set velocity controller of robot
             vr = self.vr_max
@@ -73,12 +74,17 @@ class PotentialField(Node):
             # convert control values to servo value range 
                 # Steering 1500 = 0, 900 - 2100
                 # Wheel rotation 1600 = 0, 800 - 2400
-            fs = float(wheel_rotation / self.wheel_rotation_max)
-            bs = float(wheel_rotation / self.wheel_rotation_max)
-            fw = float(vr)
-            bw = float(vr)
+            fs = int(1500 + 600 * (wheel_rotation / self.wheel_rotation_max))
+            bs = int(1500 - 600 * (wheel_rotation / self.wheel_rotation_max))
+            fw = int(1600 - 400 * vr/self.vr_max)
+            bw = int(1600 + 400 * vr/self.vr_max)
+            # fw = 1600
+            # bw = 1600
 
-            servoControl = Float32MultiArray()
+            print(fs, bs, fw, bw)
+            # print(yaw)
+
+            servoControl = Int32MultiArray()
             servoControl.data = [fs,bs,fw,bw]
             self.waypointReachedPub.publish(self.reached)
             self.servoControlPub.publish(servoControl)
