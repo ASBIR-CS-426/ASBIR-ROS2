@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import os.path
 
@@ -10,8 +10,7 @@ from vtkmodules.vtkCommonColor import vtkNamedColors
 from vtkmodules.vtkCommonDataModel import vtkPolyData
 from vtkmodules.vtkFiltersCore import (
     vtkDecimatePro,
-    vtkTriangleFilter,
-    vtkSurfaceNets2D
+    vtkTriangleFilter
 )
 from vtkmodules.vtkFiltersSources import vtkSphereSource
 from vtkmodules.vtkIOGeometry import (
@@ -41,11 +40,11 @@ def get_program_parameters():
     '''
     parser = argparse.ArgumentParser(description=description, epilog=epilogue)
     parser.add_argument('filename', nargs='?', default=None, help='Optional input filename e.g Torso.vtp.')
-    parser.add_argument('reduction', nargs='?', type=float, default=0.1,
+    parser.add_argument('reduction', nargs='?', type=float, default=0.9,
                         help='Sets the decimation target reduction, (default is 0.9).')
     args = parser.parse_args()
-    return '/home/aralab/ASBIR-ROS2/src/objects/Cabinet.STL', args.reduction
-    # return '/home/aralab/ASBIR-ROS2/src/objects/bridge-final.stl', args.reduction
+    # return '/home/aralab/ASBIR-ROS2/src/objects/Cabinet.STL', args.reduction
+    return '/home/aralab/ASBIR-ROS2/src/objects/bridge-final.stl', args.reduction
     # return args.filename, args.reduction
 
 
@@ -60,17 +59,13 @@ def main():
     # colors.SetColor('leftBkg', [0.6, 0.5, 0.4, 1.0])
     # colors.SetColor('rightBkg', [0.4, 0.5, 0.6, 1.0])
 
-    if filePath and os.path.isfile(filePath):
-        readerPD = ReadPolyData(filePath)
-        if not readerPD:
-            inputPolyData = GetSpherePD()
-        else:
-            triangles = vtkSurfaceNets2D()
-            triangles.SetInputData(readerPD)
-            triangles.Update()
-            inputPolyData = triangles.GetOutput()
-    else:
-        inputPolyData = GetSpherePD()
+    readerPD = ReadPolyData(filePath)
+    triangles = vtkTriangleFilter()
+    triangles.SetInputData(readerPD)
+    triangles.Update()
+    inputPolyData = triangles.GetOutput()
+
+    print(type(inputPolyData))
 
     print('Before decimation')
     print(f'There are {inputPolyData.GetNumberOfPoints()} points.')
@@ -79,7 +74,7 @@ def main():
     decimate = vtkDecimatePro()
     decimate.SetInputData(inputPolyData)
     decimate.SetTargetReduction(reduction)
-    # decimate.PreserveTopologyOn()
+    decimate.PreserveTopologyOn()
     decimate.Update()
 
     decimated = vtkPolyData()
@@ -88,8 +83,7 @@ def main():
     print('After decimation')
     print(f'There are {decimated.GetNumberOfPoints()} points.')
     print(f'There are {decimated.GetNumberOfPolys()} polygons.')
-    print(
-        f'Reduction: {(inputPolyData.GetNumberOfPolys() - decimated.GetNumberOfPolys()) / inputPolyData.GetNumberOfPolys()}')
+    print(f'Reduction: {(inputPolyData.GetNumberOfPolys() - decimated.GetNumberOfPolys()) / inputPolyData.GetNumberOfPolys()}')
 
     inputMapper = vtkPolyDataMapper()
     inputMapper.SetInputData(inputPolyData)
@@ -115,7 +109,7 @@ def main():
     # There will be one render window
     renderWindow = vtkRenderWindow()
     renderWindow.SetSize(600, 300)
-    renderWindow.SetWindowName('Decimation');
+    renderWindow.SetWindowName('Decimation')
 
     # And one interactor
     interactor = vtkRenderWindowInteractor()

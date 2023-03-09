@@ -8,6 +8,7 @@ setup.py
 ../../build/asbir_image_compression/asbir_image_compression.egg-info/requires.txt
 ../../build/asbir_image_compression/asbir_image_compression.egg-info/top_level.txt
 ../../build/asbir_image_compression/asbir_image_compression.egg-info/zip-safe
+asbir_image_compression/PointCloudRepublisher.py
 asbir_image_compression/__init__.py
 asbir_image_compression/imageCompression.py
 resource/asbir_image_compression

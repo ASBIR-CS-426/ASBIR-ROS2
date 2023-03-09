@@ -1,84 +1,66 @@
 #!/usr/bin/env python3
+# Receives input from controller (/dev/input/event17), 
+# converts data into servo motor control range, 
+# sends to arduino serial port (/dev/ttyACM0)
 import evdev
-import rclpy
-from rclpy.node import Node
-from std_msgs.msg import Int32MultiArray
+import serial
 
-class TeleopGamePad(Node):
-    def __init__(self):
-            super().__init__('teleopGamepad')
-            self.ctrlPub = self.create_publisher(Int32MultiArray, 'servoControl', 1)
-            self.controller = Int32MultiArray()
-            self.controller.data = [1500, 1500, 1600, 1600]
-
-            
-
-            # self.timer = self.create_timer(0.1, self.broadcast_timer_callback) 
-            self.gamepadHandler()
-    
-    def gamepadHandler(self):
-        connecting = True
-        while connecting:
-            try:
-                gamepad = evdev.InputDevice('/dev/input/event260')
-                print('connected')
-                connecting = False
-            except (FileNotFoundError, PermissionError):
-                print('connecting')
+def connectBluetooth():
+    while True:
+        try:
+            gamepad = evdev.InputDevice('/dev/input/event260')
+        except (FileNotFoundError, PermissionError):
+            continue
 
         print(gamepad)
-        fs = 1500
-        bs = 1500
-        fw = 1600
-        bw = 1600
+        return gamepad
 
-        while True:
-            event = gamepad.read_one()
-            print(type(event))
-            
-            try:
-                if event.type==3:
-                    if event.code==4:
-                        if event.value > 36000:
-                            fw = 2400
-                            bw = 2400
-                        elif event.value < 28000:
-                            fw = 800
-                            bw = 800
-                        else:
-                            fw = 1600
-                            bw = 1600
-                    elif event.code==3:
-                        if event.value < 28000:
-                            fs = 1500-((32000-event.value)/32000)*(400)
-                            bs = 1500+((32000-event.value)/32000)*(400)
-                        elif event.value > 36000:
-                            fs = 1500+((event.value-32000)/32000)*(400) 
-                            bs = 1500-((event.value-32000)/32000)*(400)
-                        else:
-                            fs=1500
-                            bs=1500
-            except (AttributeError):
-                continue
+def connectSerial():
+    while True:
+        try:
+            ser = serial.Serial('/dev/ttyACM0', 9600)
+            # ser = serial.Serial('/dev/ttyACM1', 9600)
+        except FileNotFoundError:
+            continue
+        else:
+            return ser
 
-            self.controller.data[0] = fs
-            self.controller.data[1] = bs
-            self.controller.data[2] = fw
-            self.controller.data[3] = bw
+gamepad = connectBluetooth()
+# ser = connectSerial()
 
-            self.ctrlPub.publish(self.controller)
+# ser.write_timeout=10
+fs = 1500
+bs = 1500
+fw = 1600
+bw = 1600
 
-            
-
-   
-def main(args=None):
-    rclpy.init(args=args)
-    node = TeleopGamePad()
-    rclpy.spin(node)
-
-    node.destroy_node()
-    rclpy.shutdown()
-
-
-if __name__ == '__main__':
-    main()
+while True:
+    try:
+        event = gamepad.read_one()
+        if event.type==3:
+            if event.code==4:
+                if event.value > 36000:
+                    fw = 2400
+                    bw = 2400
+                elif event.value < 28000:
+                    fw = 800
+                    bw = 800
+                else:
+                    fw = 1600
+                    bw = 1600
+            elif event.code==3:
+                if event.value < 28000:
+                    fs = 1500-((32000-event.value)/32000)*(400)
+                    bs = 1500+((32000-event.value)/32000)*(400)
+                elif event.value > 36000:
+                    fs = 1500+((event.value-32000)/32000)*(400) 
+                    bs = 1500-((event.value-32000)/32000)*(400)
+                else:
+                    fs=1500
+                    bs=1500
+            # print(ser.read())
+    except (AttributeError, serial.SerialTimeoutException):
+        continue
+    control = ("%d,%d,%d,%df\n" %(fs,bs,fw,bw)) 
+    print(fs, bs, fw, bw)
+    # ser.write(control.encode('utf-8'))

@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'compressImage = asbir_image_compression.imageCompression:main',
+            'pointcloudRepublisher = asbir_image_compression.PointCloudRepublisher:main'
         ],
     },
 )
