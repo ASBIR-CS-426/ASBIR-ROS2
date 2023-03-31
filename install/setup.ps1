@@ -22,6 +22,7 @@ function _colcon_prefix_chain_powershell_source_script {
 }
 
 # source chained prefixes
+_colcon_prefix_chain_powershell_source_script "/opt/ros/foxy\local_setup.ps1"
 _colcon_prefix_chain_powershell_source_script "/home/aralab/ros2_foxy_core/install\local_setup.ps1"
 _colcon_prefix_chain_powershell_source_script "/home/aralab/ros2_foxy_pkgs/install\local_setup.ps1"
 
