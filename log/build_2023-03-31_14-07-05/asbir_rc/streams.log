@@ -1,0 +1,44 @@
+[1.909s] Invoking command in '/home/aralab/ASBIR-ROS2/src/asbir_rc': PYTHONPATH=/home/aralab/ASBIR-ROS2/build/asbir_rc/prefix_override:/home/aralab/ASBIR-ROS2/install/asbir_rc/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/asbir_rc build --build-base /home/aralab/ASBIR-ROS2/build/asbir_rc/build install --record /home/aralab/ASBIR-ROS2/build/asbir_rc/install.log --install-scripts $base/lib/asbir_rc --single-version-externally-managed
+[2.155s] running egg_info
+[2.156s] creating ../../build/asbir_rc/asbir_rc.egg-info
+[2.156s] writing ../../build/asbir_rc/asbir_rc.egg-info/PKG-INFO
+[2.156s] writing dependency_links to ../../build/asbir_rc/asbir_rc.egg-info/dependency_links.txt
+[2.157s] writing entry points to ../../build/asbir_rc/asbir_rc.egg-info/entry_points.txt
+[2.157s] writing requirements to ../../build/asbir_rc/asbir_rc.egg-info/requires.txt
+[2.157s] writing top-level names to ../../build/asbir_rc/asbir_rc.egg-info/top_level.txt
+[2.159s] writing manifest file '../../build/asbir_rc/asbir_rc.egg-info/SOURCES.txt'
+[2.201s] reading manifest file '../../build/asbir_rc/asbir_rc.egg-info/SOURCES.txt'
+[2.201s] writing manifest file '../../build/asbir_rc/asbir_rc.egg-info/SOURCES.txt'
+[2.201s] running build
+[2.201s] running build_py
+[2.202s] creating /home/aralab/ASBIR-ROS2/build/asbir_rc/build
+[2.202s] creating /home/aralab/ASBIR-ROS2/build/asbir_rc/build/lib
+[2.202s] creating /home/aralab/ASBIR-ROS2/build/asbir_rc/build/lib/asbir_rc
+[2.202s] copying asbir_rc/teleopKeyboard.py -> /home/aralab/ASBIR-ROS2/build/asbir_rc/build/lib/asbir_rc
+[2.202s] copying asbir_rc/teleopGamepad.py -> /home/aralab/ASBIR-ROS2/build/asbir_rc/build/lib/asbir_rc
+[2.202s] copying asbir_rc/teleopKeyboardXavier.py -> /home/aralab/ASBIR-ROS2/build/asbir_rc/build/lib/asbir_rc
+[2.202s] copying asbir_rc/__init__.py -> /home/aralab/ASBIR-ROS2/build/asbir_rc/build/lib/asbir_rc
+[2.203s] running install
+[2.205s] running install_lib
+[2.205s] creating /home/aralab/ASBIR-ROS2/install/asbir_rc/lib/python3.8/site-packages/asbir_rc
+[2.205s] copying /home/aralab/ASBIR-ROS2/build/asbir_rc/build/lib/asbir_rc/teleopKeyboard.py -> /home/aralab/ASBIR-ROS2/install/asbir_rc/lib/python3.8/site-packages/asbir_rc
+[2.205s] copying /home/aralab/ASBIR-ROS2/build/asbir_rc/build/lib/asbir_rc/teleopGamepad.py -> /home/aralab/ASBIR-ROS2/install/asbir_rc/lib/python3.8/site-packages/asbir_rc
+[2.205s] copying /home/aralab/ASBIR-ROS2/build/asbir_rc/build/lib/asbir_rc/teleopKeyboardXavier.py -> /home/aralab/ASBIR-ROS2/install/asbir_rc/lib/python3.8/site-packages/asbir_rc
+[2.205s] copying /home/aralab/ASBIR-ROS2/build/asbir_rc/build/lib/asbir_rc/__init__.py -> /home/aralab/ASBIR-ROS2/install/asbir_rc/lib/python3.8/site-packages/asbir_rc
+[2.206s] byte-compiling /home/aralab/ASBIR-ROS2/install/asbir_rc/lib/python3.8/site-packages/asbir_rc/teleopKeyboard.py to teleopKeyboard.cpython-38.pyc
+[2.208s] byte-compiling /home/aralab/ASBIR-ROS2/install/asbir_rc/lib/python3.8/site-packages/asbir_rc/teleopGamepad.py to teleopGamepad.cpython-38.pyc
+[2.208s] byte-compiling /home/aralab/ASBIR-ROS2/install/asbir_rc/lib/python3.8/site-packages/asbir_rc/teleopKeyboardXavier.py to teleopKeyboardXavier.cpython-38.pyc
+[2.208s] byte-compiling /home/aralab/ASBIR-ROS2/install/asbir_rc/lib/python3.8/site-packages/asbir_rc/__init__.py to __init__.cpython-38.pyc
+[2.209s] running install_data
+[2.209s] creating /home/aralab/ASBIR-ROS2/install/asbir_rc/share/ament_index
+[2.209s] creating /home/aralab/ASBIR-ROS2/install/asbir_rc/share/ament_index/resource_index
+[2.209s] creating /home/aralab/ASBIR-ROS2/install/asbir_rc/share/ament_index/resource_index/packages
+[2.209s] copying resource/asbir_rc -> /home/aralab/ASBIR-ROS2/install/asbir_rc/share/ament_index/resource_index/packages
+[2.210s] copying package.xml -> /home/aralab/ASBIR-ROS2/install/asbir_rc/share/asbir_rc
+[2.210s] running install_egg_info
+[2.212s] Copying ../../build/asbir_rc/asbir_rc.egg-info to /home/aralab/ASBIR-ROS2/install/asbir_rc/lib/python3.8/site-packages/asbir_rc-0.0.0-py3.8.egg-info
+[2.213s] running install_scripts
+[2.232s] Installing teleopGamepad script to /home/aralab/ASBIR-ROS2/install/asbir_rc/lib/asbir_rc
+[2.232s] Installing teleopKeyboard script to /home/aralab/ASBIR-ROS2/install/asbir_rc/lib/asbir_rc
+[2.232s] writing list of installed files to '/home/aralab/ASBIR-ROS2/build/asbir_rc/install.log'
+[2.294s] Invoked command in '/home/aralab/ASBIR-ROS2/src/asbir_rc' returned '0': PYTHONPATH=/home/aralab/ASBIR-ROS2/build/asbir_rc/prefix_override:/home/aralab/ASBIR-ROS2/install/asbir_rc/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/asbir_rc build --build-base /home/aralab/ASBIR-ROS2/build/asbir_rc/build install --record /home/aralab/ASBIR-ROS2/build/asbir_rc/install.log --install-scripts $base/lib/asbir_rc --single-version-externally-managed
