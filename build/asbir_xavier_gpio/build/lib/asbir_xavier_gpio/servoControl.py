@@ -10,8 +10,8 @@ from adafruit_motor import servo
 class XavierServoControl(Node):
     def __init__(self):
             super().__init__('xavierServo')
-            self.ctrlSub = self.create_suscriber(Int32MultiArray, 'servoControl', self.subCallback, 1)
-            self.controller = Int32MultiArray(data=[1500, 1500, 1600, 1600])
+            self.ctrlSub = self.create_subscription(Int32MultiArray, 'servoControl', self.subCallback, 1)
+            self.controller = Int32MultiArray(data=[90, 90, 0, 0])
 
             self.i2c = busio.I2C(board.SCL, board.SDA)
             self.pca = PCA9685(self.i2c)

@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'xavierGPIO = asbir_xavier_gpio.gpioListener:main'
+            'xavierGPIO = asbir_xavier_gpio.servoControl:main'
         ],
     },
 )
