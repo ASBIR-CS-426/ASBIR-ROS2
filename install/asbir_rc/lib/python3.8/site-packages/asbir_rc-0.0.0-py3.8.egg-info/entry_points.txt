@@ -1,4 +1,4 @@
 [console_scripts]
 teleopGamepad = asbir_rc.teleopGamepad:main
-teleopKeyboard = asbir_rc.teleopKeyboard:main
+teleopKeyboard = asbir_rc.teleopKeyboardXavier:main
 

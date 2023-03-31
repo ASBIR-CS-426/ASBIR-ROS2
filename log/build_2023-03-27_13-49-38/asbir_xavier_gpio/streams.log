@@ -1,0 +1,21 @@
+[8.653s] Invoking command in '/home/asbir/ASBIR-ROS2/src/asbir_xavier_gpio': PYTHONPATH=/home/asbir/ASBIR-ROS2/build/asbir_xavier_gpio/prefix_override:/home/asbir/ASBIR-ROS2/install/asbir_xavier_gpio/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/asbir_xavier_gpio build --build-base /home/asbir/ASBIR-ROS2/build/asbir_xavier_gpio/build install --record /home/asbir/ASBIR-ROS2/build/asbir_xavier_gpio/install.log --install-scripts $base/lib/asbir_xavier_gpio --single-version-externally-managed
+[10.919s] running egg_info
+[10.921s] writing ../../build/asbir_xavier_gpio/asbir_xavier_gpio.egg-info/PKG-INFO
+[10.924s] writing dependency_links to ../../build/asbir_xavier_gpio/asbir_xavier_gpio.egg-info/dependency_links.txt
+[10.931s] writing entry points to ../../build/asbir_xavier_gpio/asbir_xavier_gpio.egg-info/entry_points.txt
+[10.934s] writing requirements to ../../build/asbir_xavier_gpio/asbir_xavier_gpio.egg-info/requires.txt
+[10.934s] writing top-level names to ../../build/asbir_xavier_gpio/asbir_xavier_gpio.egg-info/top_level.txt
+[11.231s] reading manifest file '../../build/asbir_xavier_gpio/asbir_xavier_gpio.egg-info/SOURCES.txt'
+[11.232s] writing manifest file '../../build/asbir_xavier_gpio/asbir_xavier_gpio.egg-info/SOURCES.txt'
+[11.232s] running build
+[11.233s] running build_py
+[11.233s] running install
+[11.233s] running install_lib
+[11.246s] running install_data
+[11.252s] running install_egg_info
+[11.272s] removing '/home/asbir/ASBIR-ROS2/install/asbir_xavier_gpio/lib/python3.8/site-packages/asbir_xavier_gpio-0.0.0-py3.8.egg-info' (and everything under it)
+[11.272s] Copying ../../build/asbir_xavier_gpio/asbir_xavier_gpio.egg-info to /home/asbir/ASBIR-ROS2/install/asbir_xavier_gpio/lib/python3.8/site-packages/asbir_xavier_gpio-0.0.0-py3.8.egg-info
+[11.277s] running install_scripts
+[11.476s] Installing xavierGPIO script to /home/asbir/ASBIR-ROS2/install/asbir_xavier_gpio/lib/asbir_xavier_gpio
+[11.478s] writing list of installed files to '/home/asbir/ASBIR-ROS2/build/asbir_xavier_gpio/install.log'
+[11.600s] Invoked command in '/home/asbir/ASBIR-ROS2/src/asbir_xavier_gpio' returned '0': PYTHONPATH=/home/asbir/ASBIR-ROS2/build/asbir_xavier_gpio/prefix_override:/home/asbir/ASBIR-ROS2/install/asbir_xavier_gpio/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/asbir_xavier_gpio build --build-base /home/asbir/ASBIR-ROS2/build/asbir_xavier_gpio/build install --record /home/asbir/ASBIR-ROS2/build/asbir_xavier_gpio/install.log --install-scripts $base/lib/asbir_xavier_gpio --single-version-externally-managed

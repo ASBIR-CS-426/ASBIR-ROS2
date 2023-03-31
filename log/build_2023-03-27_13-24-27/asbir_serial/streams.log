@@ -1,0 +1,29 @@
+[19.580s] Invoking command in '/home/asbir/ASBIR-ROS2/src/asbir_serial': PYTHONPATH=/home/asbir/ASBIR-ROS2/build/asbir_serial/prefix_override:/home/asbir/ASBIR-ROS2/install/asbir_serial/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/asbir_serial build --build-base /home/asbir/ASBIR-ROS2/build/asbir_serial/build install --record /home/asbir/ASBIR-ROS2/build/asbir_serial/install.log --install-scripts $base/lib/asbir_serial --single-version-externally-managed
+[22.872s] running egg_info
+[22.876s] writing ../../build/asbir_serial/asbir_serial.egg-info/PKG-INFO
+[22.878s] writing dependency_links to ../../build/asbir_serial/asbir_serial.egg-info/dependency_links.txt
+[22.879s] writing entry points to ../../build/asbir_serial/asbir_serial.egg-info/entry_points.txt
+[22.880s] writing requirements to ../../build/asbir_serial/asbir_serial.egg-info/requires.txt
+[22.880s] writing top-level names to ../../build/asbir_serial/asbir_serial.egg-info/top_level.txt
+[23.146s] reading manifest file '../../build/asbir_serial/asbir_serial.egg-info/SOURCES.txt'
+[23.295s] writing manifest file '../../build/asbir_serial/asbir_serial.egg-info/SOURCES.txt'
+[23.299s] running build
+[23.300s] running build_py
+[23.300s] copying asbir_serial/__init__.py -> /home/asbir/ASBIR-ROS2/build/asbir_serial/build/lib/asbir_serial
+[23.305s] copying asbir_serial/serialComm.py -> /home/asbir/ASBIR-ROS2/build/asbir_serial/build/lib/asbir_serial
+[23.306s] running install
+[23.326s] running install_lib
+[23.332s] copying /home/asbir/ASBIR-ROS2/build/asbir_serial/build/lib/asbir_serial/__init__.py -> /home/asbir/ASBIR-ROS2/install/asbir_serial/lib/python3.8/site-packages/asbir_serial
+[23.336s] copying /home/asbir/ASBIR-ROS2/build/asbir_serial/build/lib/asbir_serial/serialComm.py -> /home/asbir/ASBIR-ROS2/install/asbir_serial/lib/python3.8/site-packages/asbir_serial
+[23.359s] byte-compiling /home/asbir/ASBIR-ROS2/install/asbir_serial/lib/python3.8/site-packages/asbir_serial/__init__.py to __init__.cpython-38.pyc
+[23.371s] byte-compiling /home/asbir/ASBIR-ROS2/install/asbir_serial/lib/python3.8/site-packages/asbir_serial/serialComm.py to serialComm.cpython-38.pyc
+[23.427s] running install_data
+[23.431s] copying resource/asbir_serial -> /home/asbir/ASBIR-ROS2/install/asbir_serial/share/ament_index/resource_index/packages
+[23.436s] copying package.xml -> /home/asbir/ASBIR-ROS2/install/asbir_serial/share/asbir_serial
+[23.444s] running install_egg_info
+[23.482s] removing '/home/asbir/ASBIR-ROS2/install/asbir_serial/lib/python3.8/site-packages/asbir_serial-0.0.0-py3.8.egg-info' (and everything under it)
+[23.488s] Copying ../../build/asbir_serial/asbir_serial.egg-info to /home/asbir/ASBIR-ROS2/install/asbir_serial/lib/python3.8/site-packages/asbir_serial-0.0.0-py3.8.egg-info
+[23.527s] running install_scripts
+[23.848s] Installing serialComm script to /home/asbir/ASBIR-ROS2/install/asbir_serial/lib/asbir_serial
+[23.854s] writing list of installed files to '/home/asbir/ASBIR-ROS2/build/asbir_serial/install.log'
+[24.953s] Invoked command in '/home/asbir/ASBIR-ROS2/src/asbir_serial' returned '0': PYTHONPATH=/home/asbir/ASBIR-ROS2/build/asbir_serial/prefix_override:/home/asbir/ASBIR-ROS2/install/asbir_serial/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/asbir_serial build --build-base /home/asbir/ASBIR-ROS2/build/asbir_serial/build install --record /home/asbir/ASBIR-ROS2/build/asbir_serial/install.log --install-scripts $base/lib/asbir_serial --single-version-externally-managed

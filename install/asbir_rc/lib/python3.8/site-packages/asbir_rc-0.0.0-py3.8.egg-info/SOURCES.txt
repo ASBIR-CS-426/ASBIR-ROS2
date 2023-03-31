@@ -11,6 +11,7 @@ setup.py
 asbir_rc/__init__.py
 asbir_rc/teleopGamepad.py
 asbir_rc/teleopKeyboard.py
+asbir_rc/teleopKeyboardXavier.py
 resource/asbir_rc
 test/test_copyright.py
 test/test_flake8.py

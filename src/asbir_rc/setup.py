@@ -20,7 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'teleopKeyboard = asbir_rc.teleopKeyboard:main',
+            'teleopKeyboard = asbir_rc.teleopKeyboardXavier:main',
             'teleopGamepad = asbir_rc.teleopGamepad:main'
         ],
     },

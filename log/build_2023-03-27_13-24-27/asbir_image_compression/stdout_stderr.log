@@ -1,0 +1,31 @@
+running egg_info
+writing ../../build/asbir_image_compression/asbir_image_compression.egg-info/PKG-INFO
+writing dependency_links to ../../build/asbir_image_compression/asbir_image_compression.egg-info/dependency_links.txt
+writing entry points to ../../build/asbir_image_compression/asbir_image_compression.egg-info/entry_points.txt
+writing requirements to ../../build/asbir_image_compression/asbir_image_compression.egg-info/requires.txt
+writing top-level names to ../../build/asbir_image_compression/asbir_image_compression.egg-info/top_level.txt
+reading manifest file '../../build/asbir_image_compression/asbir_image_compression.egg-info/SOURCES.txt'
+writing manifest file '../../build/asbir_image_compression/asbir_image_compression.egg-info/SOURCES.txt'
+running build
+running build_py
+copying asbir_image_compression/PointCloudRepublisher.py -> /home/asbir/ASBIR-ROS2/build/asbir_image_compression/build/lib/asbir_image_compression
+copying asbir_image_compression/__init__.py -> /home/asbir/ASBIR-ROS2/build/asbir_image_compression/build/lib/asbir_image_compression
+copying asbir_image_compression/imageCompression.py -> /home/asbir/ASBIR-ROS2/build/asbir_image_compression/build/lib/asbir_image_compression
+running install
+running install_lib
+copying /home/asbir/ASBIR-ROS2/build/asbir_image_compression/build/lib/asbir_image_compression/PointCloudRepublisher.py -> /home/asbir/ASBIR-ROS2/install/asbir_image_compression/lib/python3.8/site-packages/asbir_image_compression
+copying /home/asbir/ASBIR-ROS2/build/asbir_image_compression/build/lib/asbir_image_compression/__init__.py -> /home/asbir/ASBIR-ROS2/install/asbir_image_compression/lib/python3.8/site-packages/asbir_image_compression
+copying /home/asbir/ASBIR-ROS2/build/asbir_image_compression/build/lib/asbir_image_compression/imageCompression.py -> /home/asbir/ASBIR-ROS2/install/asbir_image_compression/lib/python3.8/site-packages/asbir_image_compression
+byte-compiling /home/asbir/ASBIR-ROS2/install/asbir_image_compression/lib/python3.8/site-packages/asbir_image_compression/PointCloudRepublisher.py to PointCloudRepublisher.cpython-38.pyc
+byte-compiling /home/asbir/ASBIR-ROS2/install/asbir_image_compression/lib/python3.8/site-packages/asbir_image_compression/__init__.py to __init__.cpython-38.pyc
+byte-compiling /home/asbir/ASBIR-ROS2/install/asbir_image_compression/lib/python3.8/site-packages/asbir_image_compression/imageCompression.py to imageCompression.cpython-38.pyc
+running install_data
+copying resource/asbir_image_compression -> /home/asbir/ASBIR-ROS2/install/asbir_image_compression/share/ament_index/resource_index/packages
+copying package.xml -> /home/asbir/ASBIR-ROS2/install/asbir_image_compression/share/asbir_image_compression
+running install_egg_info
+removing '/home/asbir/ASBIR-ROS2/install/asbir_image_compression/lib/python3.8/site-packages/asbir_image_compression-0.0.0-py3.8.egg-info' (and everything under it)
+Copying ../../build/asbir_image_compression/asbir_image_compression.egg-info to /home/asbir/ASBIR-ROS2/install/asbir_image_compression/lib/python3.8/site-packages/asbir_image_compression-0.0.0-py3.8.egg-info
+running install_scripts
+Installing compressImage script to /home/asbir/ASBIR-ROS2/install/asbir_image_compression/lib/asbir_image_compression
+Installing pointcloudRepublisher script to /home/asbir/ASBIR-ROS2/install/asbir_image_compression/lib/asbir_image_compression
+writing list of installed files to '/home/asbir/ASBIR-ROS2/build/asbir_image_compression/install.log'
