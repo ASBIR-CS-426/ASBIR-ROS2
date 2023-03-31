@@ -1,6 +1,6 @@
 from setuptools import setup
 
-package_name = 'asbir_rc'
+package_name = 'asbir_xavier_gpio'
 
 setup(
     name=package_name,
@@ -13,15 +13,14 @@ setup(
     ],
     install_requires=['setuptools'],
     zip_safe=True,
-    maintainer='aralab',
+    maintainer='asbir',
     maintainer_email='trichnak72399@gmail.com',
     description='TODO: Package description',
     license='TODO: License declaration',
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'teleopKeyboard = asbir_rc.teleopKeyboardXavier:main',
-            'teleopGamepad = asbir_rc.teleopGamepad:main'
+            'xavierGPIO = asbir_xavier_gpio.gpioListener:main'
         ],
     },
 )

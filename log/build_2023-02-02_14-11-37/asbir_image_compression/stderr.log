@@ -1,8 +1,0 @@
-CMake Error at /home/aralab/ros2_foxy/install/pluginlib/share/pluginlib/cmake/pluginlib_export_plugin_description_file.cmake:84 (message):
-  Given plugin description file
-  '/home/aralab/ASBIR-ROS2/src/asbir_image_compression/resized_plugins.xml'
-  does not exist
-Call Stack (most recent call first):
-  CMakeLists.txt:38 (pluginlib_export_plugin_description_file)
-
-

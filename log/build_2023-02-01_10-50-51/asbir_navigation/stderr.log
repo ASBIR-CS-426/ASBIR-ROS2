@@ -1,5 +1,0 @@
-  File "/home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/buildBestPath.py", line 37
-    ('-source=(geometry_msgs.msg.PointStamped(header=std_msgs.msg.Header(stamp=builtin_interfaces.msg.Time(sec=0, nanosec=0), frame_id=%s), point=geometry_msgs.msg.Point(x=%f, y=%f, z=1.127)), surfaceA),target=(geometry_msgs.msg.PointStamped(header=std_msgs.msg.Header(stamp=builtin_interfaces.msg.Time(sec=0, nanosec=0), frame_id='odom_frame'), point=geometry_msgs.msg.Point(x=0.6905, y=-0.12033333333333332, z=1.127)), surfaceA),distance=0.1905,rotation=geometry_msgs.msg.Quaternion(x=0.0, y=0.0, z=0.0, w=1.0)')
-                                                                                                                                                                                                                                                                                                                                            ^
-SyntaxError: invalid syntax
-
