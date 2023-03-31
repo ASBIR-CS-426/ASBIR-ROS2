@@ -1,3 +1,0 @@
-[console_scripts]
-serialComm = asbir_serial.serialComm:main
-

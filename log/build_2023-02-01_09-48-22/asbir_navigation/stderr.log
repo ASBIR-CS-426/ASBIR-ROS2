@@ -1,5 +1,0 @@
-  File "/home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/graphTest.py", line 187
-    j.pos = tf2_geometry_msgs.tf2_geometry_msgs.do_transform_point(j.frame_pos, transform)
-    ^
-SyntaxError: invalid syntax
-

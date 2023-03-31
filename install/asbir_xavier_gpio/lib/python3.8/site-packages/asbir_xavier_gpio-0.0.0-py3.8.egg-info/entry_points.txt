@@ -1,3 +1,0 @@
-[console_scripts]
-xavierGPIO = asbir_xavier_gpio.gpioListener:main
-

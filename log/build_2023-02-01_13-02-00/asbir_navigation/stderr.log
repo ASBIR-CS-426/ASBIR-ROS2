@@ -1,5 +1,0 @@
-  File "/home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation/buildBestPath.py", line 37
-    id = search("{}:", line).fixed[0])
-                                     ^
-SyntaxError: unmatched ')'
-
