@@ -129,7 +129,7 @@ class BestPath(Node):
         connecting = True
         while connecting:
             try:
-                transform=self.tfBuffer.lookup_transform('T265_pose_frame','T265_odom_frame', rclpy.time.Time())
+                transform=self.tfBuffer.lookup_transform('T265_pose_frame','odom_frame', rclpy.time.Time())
                 connecting=False
             except TransformException:
                 continue
@@ -150,14 +150,14 @@ class BestPath(Node):
         start = Vertice()
         start.pos.point = Point(x=currentPose.transform.translation.x, y=currentPose.transform.translation.y, z=currentPose.transform.translation.z - 0.19)
         start.id = 'start'
-        start.pos.header.frame_id = 'T265_odom_frame'
+        start.pos.header.frame_id = 'odom_frame'
         
 
     	# set goal vertice to Target message
         end = Vertice()
         end.pos = msg
         end.pos.point.z = end.pos.point.z - 0.19
-        end.pos.header.frame_id = 'T265_odom_frame'
+        end.pos.header.frame_id = 'odom_frame'
         end.id = 'end'
 
         
@@ -165,8 +165,8 @@ class BestPath(Node):
         endA = np.array((end.pos.point.x, end.pos.point.y, end.pos.point.z))
         mindS = 500
         mindE = 500
-        minS = Vertice(pos=PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id='T265_odom_frame'),point=Point(x=500.0,y=500.0,z=500.0)))
-        minE = Vertice(pos=PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id='T265_odom_frame'),point=Point(x=500.0,y=500.0,z=500.0)))
+        minS = Vertice(pos=PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id='odom_frame'),point=Point(x=500.0,y=500.0,z=500.0)))
+        minE = Vertice(pos=PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id='odom_frame'),point=Point(x=500.0,y=500.0,z=500.0)))
     
         # find nodes closest to start and end
         print('find nodes closest to start and end')
@@ -204,12 +204,12 @@ class BestPath(Node):
         # visualize path
         path = Marker()
         # path.header.frame_id = "robot_odom_frame"
-        path.header.frame_id = "T265_odom_frame"
+        path.header.frame_id = "odom_frame"
         path.header.stamp = self.get_clock().now().to_msg()
         path.type = path.LINE_LIST
         path.action = path.ADD
         path.id = 1000
-        path.scale.x = 0.01
+        path.scale.x = 0.05
         path.pose.orientation.x = 0.0
         path.pose.orientation.y = 0.0
         path.pose.orientation.z = 0.0
@@ -236,7 +236,7 @@ class BestPath(Node):
             t.pose = Pose(position=Point(x=pathEdges[pathNodes[i]].target.pos.point.x, y=pathEdges[pathNodes[i]].target.pos.point.y, z=pathEdges[pathNodes[i]].target.pos.point.z), 
                                             orientation=pathEdges[pathNodes[i]].rotation)
             # t.header.frame_id = 'robot_odom_frame'		
-            t.header.frame_id = 'T265_odom_frame'
+            t.header.frame_id = 'odom_frame'
             pathPoints.poses.append(t)
             end_frame_id = i+1
 

@@ -7,7 +7,7 @@ import tf2_geometry_msgs.tf2_geometry_msgs
 import numpy as np
 
 class Surface:
-    def __init__(self, id='T265_odom_frame', xMin=0, xMax=0, yMin=0, yMax=0, zMin=0, zMax=0, xDim=0, yDim=0, rotation=None):
+    def __init__(self, id='odom_frame', xMin=0, xMax=0, yMin=0, yMax=0, zMin=0, zMax=0, xDim=0, yDim=0, rotation=None):
         self.id = id
         self.xMin = xMin
         self.xMax = xMax
@@ -21,12 +21,12 @@ class Surface:
             self.frame=self.getFrame(rotation)
         else:
             self.frame=TransformStamped()
-            self.frame.child_frame_id = 'T265_odom_frame'
+            self.frame.child_frame_id = 'odom_frame'
 	
     def getFrame(self, frame_rotation):
         frame = TransformStamped()
         frame.header.stamp = rclpy.time.Time().to_msg()
-        frame.header.frame_id = 'T265_odom_frame'
+        frame.header.frame_id = 'odom_frame'
         # frame.header.frame_id = 'camera_odom_frame'
         # frame.header.frame_id = 'robot_odom_frame'
         frame.child_frame_id = self.id

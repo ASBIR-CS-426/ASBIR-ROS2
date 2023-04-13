@@ -1,15 +1,11 @@
 [console_scripts]
-buildBestPath = asbir_navigation.buildBestPath:main
-cameraLink = asbir_navigation.cameraLinkFrame:main
-frameTest = asbir_navigation.frameTest:main
-graphTest = asbir_navigation.graphTest:main
-modelTest = asbir_navigation.modelTest:main
-odomFrame = asbir_navigation.odomFrame:main
-pathController = asbir_navigation.pathController:main
-pointPub = asbir_navigation.pointPub:main
-potentialField = asbir_navigation.potentialField:main
-processMesh = asbir_navigation.processMesh:main
-serialComm = asbir_navigation.serialComm:main
-setZero = asbir_navigation.servoSetZero:main
-teleop = asbir_navigation.teleop:main
+BuildBestPath = asbir_navigation.buildBestPath:main
+FrameTest = asbir_navigation.frameTest:main
+GraphTest = asbir_navigation.graphTest:main
+ModelTest = asbir_navigation.modelTest:main
+PathController = asbir_navigation.pathController:main
+PointPub = asbir_navigation.pointPub:main
+PotentialField = asbir_navigation.potentialField:main
+ProcessMesh = asbir_navigation.processMesh:main
+SetZero = asbir_navigation.servoSetZero:main
 

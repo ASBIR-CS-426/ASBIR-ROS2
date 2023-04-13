@@ -193,7 +193,7 @@ class GraphTest(Node):
             
         # visualize connections between vertices	
         self.line = Marker()
-        self.line.header.frame_id = "T265_odom_frame"
+        self.line.header.frame_id = "odom_frame"
         self.line.header.stamp = rclpy.time.Time().to_msg()
         self.line.type = vertice.LINE_LIST
         self.line.action = vertice.ADD

@@ -1,0 +1,37 @@
+[0.000000] (-) TimerEvent: {}
+[0.000309] (asbir_image_compression) JobQueued: {'identifier': 'asbir_image_compression', 'dependencies': OrderedDict()}
+[0.000344] (asbir_navigation) JobQueued: {'identifier': 'asbir_navigation', 'dependencies': OrderedDict()}
+[0.000364] (asbir_rc) JobQueued: {'identifier': 'asbir_rc', 'dependencies': OrderedDict()}
+[0.000381] (asbir_serial) JobQueued: {'identifier': 'asbir_serial', 'dependencies': OrderedDict()}
+[0.000395] (asbir_status) JobQueued: {'identifier': 'asbir_status', 'dependencies': OrderedDict()}
+[0.000410] (asbir_xavier_gpio) JobQueued: {'identifier': 'asbir_xavier_gpio', 'dependencies': OrderedDict()}
+[0.000743] (asbir_image_compression) JobStarted: {'identifier': 'asbir_image_compression'}
+[0.030157] (asbir_navigation) JobStarted: {'identifier': 'asbir_navigation'}
+[0.050902] (asbir_rc) JobStarted: {'identifier': 'asbir_rc'}
+[0.078214] (asbir_serial) JobStarted: {'identifier': 'asbir_serial'}
+[0.101880] (asbir_status) JobStarted: {'identifier': 'asbir_status'}
+[0.102177] (-) TimerEvent: {}
+[0.125146] (asbir_xavier_gpio) JobStarted: {'identifier': 'asbir_xavier_gpio'}
+[0.202359] (-) TimerEvent: {}
+[0.302748] (-) TimerEvent: {}
+[0.403032] (-) TimerEvent: {}
+[0.503441] (-) TimerEvent: {}
+[0.603795] (-) TimerEvent: {}
+[0.704050] (-) TimerEvent: {}
+[0.781060] (asbir_navigation) StderrLine: {'line': b'Traceback (most recent call last):\n  File "/usr/lib/python3/dist-packages/colcon_core/executor/__init__.py", line 91, in __call__\n    rc = await self.task(*args, **kwargs)\n  File "/usr/lib/python3/dist-packages/colcon_core/task/__init__.py", line 93, in __call__\n    return await task_method(*args, **kwargs)\n  File "/usr/lib/python3/dist-packages/colcon_ros/task/ament_python/build.py", line 51, in build\n    setup_py_data = get_setup_data(self.context.pkg, env)\n  File "/usr/lib/python3/dist-packages/colcon_core/task/python/__init__.py", line 20, in get_setup_data\n    return dict(pkg.metadata[key](env))\n  File "/usr/lib/python3/dist-packages/colcon_ros/package_augmentation/ros_ament_python.py", line 57, in getter\n    return get_setup_information(\n  File "/usr/lib/python3/dist-packages/colcon_python_setup_py/package_identification/python_setup_py.py", line 241, in get_setup_information\n    _setup_information_cache[hashable_env] = _get_setup_information(\n  File "/usr/lib/python3/dist-packages/colcon_python_setup_py/package_identification/python_setup_py.py", line 288, in _get_setup_information\n    result = subprocess.run(\n  File "/usr/lib/python3.8/subprocess.py", line 516, in run\n    raise CalledProcessError(retcode, process.args,\nsubprocess.CalledProcessError: Command \'[\'/usr/bin/python3\', \'-c\', \'import sys;from contextlib import suppress;exec("with suppress(ImportError):    from setuptools.extern.packaging.specifiers    import SpecifierSet");exec("with suppress(ImportError):    from packaging.specifiers import SpecifierSet");from distutils.core import run_setup;dist = run_setup(    \\\'setup.py\\\', script_args=(\\\'--dry-run\\\',), stop_after=\\\'config\\\');skip_keys = (\\\'cmdclass\\\', \\\'distclass\\\', \\\'ext_modules\\\', \\\'metadata\\\');data = {    key: value for key, value in dist.__dict__.items()     if (        not key.startswith(\\\'_\\\') and         not callable(value) and         key not in skip_keys and         key not in dist.display_option_names    )};data[\\\'metadata\\\'] = {    k: v for k, v in dist.metadata.__dict__.items()     if k not in (\\\'license_files\\\', \\\'provides_extras\\\')};sys.stdout.buffer.write(repr(data).encode(\\\'utf-8\\\'))\']\' returned non-zero exit status 1.\n'}
+[0.783006] (asbir_navigation) JobEnded: {'identifier': 'asbir_navigation', 'rc': 1}
+[0.804167] (-) TimerEvent: {}
+[0.904424] (-) TimerEvent: {}
+[1.004634] (-) TimerEvent: {}
+[1.104949] (-) TimerEvent: {}
+[1.205388] (-) TimerEvent: {}
+[1.306737] (-) TimerEvent: {}
+[1.407026] (-) TimerEvent: {}
+[1.507400] (-) TimerEvent: {}
+[1.598506] (asbir_image_compression) JobEnded: {'identifier': 'asbir_image_compression', 'rc': 'SIGINT'}
+[1.599211] (asbir_rc) JobEnded: {'identifier': 'asbir_rc', 'rc': 'SIGINT'}
+[1.599466] (asbir_serial) JobEnded: {'identifier': 'asbir_serial', 'rc': 'SIGINT'}
+[1.599912] (asbir_status) JobEnded: {'identifier': 'asbir_status', 'rc': 'SIGINT'}
+[1.600376] (asbir_xavier_gpio) JobEnded: {'identifier': 'asbir_xavier_gpio', 'rc': 'SIGINT'}
+[1.607501] (-) TimerEvent: {}
+[1.610662] (-) EventReactorShutdown: {}

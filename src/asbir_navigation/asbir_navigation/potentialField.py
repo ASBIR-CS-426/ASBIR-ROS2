@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Int32MultiArray, Bool, String
+from std_msgs.msg import Float32MultiArray, Bool, String
 from geometry_msgs.msg import Pose, TransformStamped, Transform
 import numpy as np
 from tf2_ros.static_transform_broadcaster import StaticTransformBroadcaster
@@ -13,7 +13,7 @@ from .transformations import *
 class PotentialField(Node):
     def __init__(self):
         super().__init__('PotentialField')
-        self.servoControlPub = self.create_publisher(Int32MultiArray, 'servoControl', 1)
+        self.servoControlPub = self.create_publisher(Float32MultiArray, 'servoControl', 1)
         self.waypointReachedPub = self.create_publisher(Bool, 'waypointReached', 1)
         self.transformPub = self.create_publisher(Transform, 'transformToWaypoint', 1)
 
@@ -81,15 +81,15 @@ class PotentialField(Node):
             # # fw = 1600
             # # bw = 1600
 
-            fs = int(50 + 25 * (wheel_rotation / self.wheel_rotation_max))
-            bs = int(50 - 25 * (wheel_rotation / self.wheel_rotation_max))
-            fw = int(50 - 25 * vr/self.vr_max)
-            bw = int(50 + 25 * vr/self.vr_max)
+            fs = 90 + 90 * (wheel_rotation / self.wheel_rotation_max)
+            bs = 90 - 90 * (wheel_rotation / self.wheel_rotation_max)
+            fw = vr/self.vr_max
+            bw = vr/self.vr_max
 
             print(fs, bs, fw, bw)
             # print(yaw)
 
-            servoControl = Int32MultiArray()
+            servoControl = Float32MultiArray()
             servoControl.data = [fs,bs,fw,bw]
             self.waypointReachedPub.publish(self.reached)
             self.servoControlPub.publish(servoControl)

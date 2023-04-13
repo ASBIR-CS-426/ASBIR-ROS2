@@ -24,7 +24,7 @@ class ModelTest(Node):
         #====Build Structure Model===
         # Create base surface model
         surface=Marker()
-        surface.header.frame_id = "T265_odom_frame"
+        surface.header.frame_id = "odom_frame"
         surface.header.stamp = self.get_clock().now().to_msg()
         surface.ns = "Namespace"
         surface.id = 0

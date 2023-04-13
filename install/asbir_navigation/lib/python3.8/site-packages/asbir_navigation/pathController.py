@@ -3,7 +3,7 @@ import rclpy
 from rclpy.node import Node
 
 from visualization_msgs.msg import Marker
-from geometry_msgs.msg import TransformStamped, Pose
+from geometry_msgs.msg import TransformStamped, Pose, Quaternion
 from std_msgs.msg import Bool
 from nav_msgs.msg import Path
 
@@ -26,7 +26,6 @@ class PathController(Node):
         self.waypointPub=self.create_publisher(Pose,'currentWaypointPose', 1)
 
         self.pathSub=self.create_subscription(Path, 'path', self.loadPath, 1)
-        self.waypointReachedSub=self.create_subscription(Bool, 'waypointReached', self.nextWaypoint, 1)
         self.timer = self.create_timer(0.1, self.broadcast_timer_callback)   
 
     def loadPath(self, msg):
@@ -47,7 +46,7 @@ class PathController(Node):
         if self.activePath.data:
             waypoint = self.path.poses[self.currentNode]
             waypointFrame = TransformStamped()
-            waypointFrame.header.frame_id='T265_odom_frame'
+            waypointFrame.header.frame_id='odom_frame'
             # waypointFrame.header.stamp=rclpy.time.Time()
             
             waypointFrame.child_frame_id='waypoint'
@@ -62,7 +61,6 @@ class PathController(Node):
 
             self.tfBroadcaster.sendTransform(waypointFrame)
             self.waypointPub.publish(waypoint.pose)
-    
             
 
 def main(args=None):

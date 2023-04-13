@@ -1,0 +1,33 @@
+[2.330s] Invoking command in '/home/aralab/ASBIR-ROS2/src/asbir_navigation': PYTHONPATH=/home/aralab/ASBIR-ROS2/build/asbir_navigation/prefix_override:/home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/asbir_navigation build --build-base /home/aralab/ASBIR-ROS2/build/asbir_navigation/build install --record /home/aralab/ASBIR-ROS2/build/asbir_navigation/install.log --install-scripts $base/lib/asbir_navigation --single-version-externally-managed
+[2.607s] running egg_info
+[2.608s] writing ../../build/asbir_navigation/asbir_navigation.egg-info/PKG-INFO
+[2.608s] writing dependency_links to ../../build/asbir_navigation/asbir_navigation.egg-info/dependency_links.txt
+[2.608s] writing entry points to ../../build/asbir_navigation/asbir_navigation.egg-info/entry_points.txt
+[2.609s] writing requirements to ../../build/asbir_navigation/asbir_navigation.egg-info/requires.txt
+[2.609s] writing top-level names to ../../build/asbir_navigation/asbir_navigation.egg-info/top_level.txt
+[2.665s] reading manifest file '../../build/asbir_navigation/asbir_navigation.egg-info/SOURCES.txt'
+[2.666s] writing manifest file '../../build/asbir_navigation/asbir_navigation.egg-info/SOURCES.txt'
+[2.667s] running build
+[2.667s] running build_py
+[2.668s] running install
+[2.670s] running install_lib
+[2.673s] running install_data
+[2.673s] running install_egg_info
+[2.676s] removing '/home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation-0.0.0-py3.8.egg-info' (and everything under it)
+[2.677s] Copying ../../build/asbir_navigation/asbir_navigation.egg-info to /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages/asbir_navigation-0.0.0-py3.8.egg-info
+[2.678s] running install_scripts
+[2.709s] Installing buildBestPath script to /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation
+[2.709s] Installing cameraLink script to /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation
+[2.710s] Installing frameTest script to /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation
+[2.710s] Installing graphTest script to /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation
+[2.710s] Installing modelTest script to /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation
+[2.710s] Installing odomFrame script to /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation
+[2.711s] Installing pathController script to /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation
+[2.711s] Installing pointPub script to /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation
+[2.711s] Installing potentialField script to /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation
+[2.716s] Installing processMesh script to /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation
+[2.716s] Installing serialComm script to /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation
+[2.717s] Installing setZero script to /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation
+[2.717s] Installing teleop script to /home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/asbir_navigation
+[2.718s] writing list of installed files to '/home/aralab/ASBIR-ROS2/build/asbir_navigation/install.log'
+[2.778s] Invoked command in '/home/aralab/ASBIR-ROS2/src/asbir_navigation' returned '0': PYTHONPATH=/home/aralab/ASBIR-ROS2/build/asbir_navigation/prefix_override:/home/aralab/ASBIR-ROS2/install/asbir_navigation/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/asbir_navigation build --build-base /home/aralab/ASBIR-ROS2/build/asbir_navigation/build install --record /home/aralab/ASBIR-ROS2/build/asbir_navigation/install.log --install-scripts $base/lib/asbir_navigation --single-version-externally-managed
