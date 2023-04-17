@@ -12,6 +12,7 @@ import tf2_geometry_msgs.tf2_geometry_msgs
 from tf2_ros.buffer import Buffer
 from tf2_ros.transform_listener import TransformListener
 from tf2_ros.transform_broadcaster import TransformBroadcaster
+import tf2_ros
 
 from asbir_navigation.classes import *
 
@@ -27,10 +28,20 @@ class GraphTest(Node):
             self.graph = {}
             self.points = []
             self.id = 0
+
+            self.waiting = True
+            self.timer = self.create_timer(1, self.wait_for_transform)  
             self.createGraph()
             self.timer = self.create_timer(1, self.broadcast_timer_callback)   
 
-
+    def wait_for_transform(self):
+        while self.waiting:
+            try:
+                transform=self.tfBuffer.lookup_transform("odom_frame", "structure", rclpy.time.Time())
+                self.waiting = False
+            except tf2_ros.LookupException:
+                continue
+            print(transform)
     
     def createGraph(self):
         F = FindEdge()
@@ -193,7 +204,7 @@ class GraphTest(Node):
             
         # visualize connections between vertices	
         self.line = Marker()
-        self.line.header.frame_id = "odom_frame"
+        self.line.header.frame_id = "structure"
         self.line.header.stamp = rclpy.time.Time().to_msg()
         self.line.type = vertice.LINE_LIST
         self.line.action = vertice.ADD

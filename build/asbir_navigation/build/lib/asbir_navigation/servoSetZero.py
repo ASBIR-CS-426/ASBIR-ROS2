@@ -15,7 +15,7 @@ class SetZero(Node):
             self.timer = self.create_timer(1, self.broadcast_timer_callback)     
 
     def broadcast_timer_callback(self):
-        ctrlarr = Float32MultiArray(data=[90,90,0,0])
+        ctrlarr = Float32MultiArray(data=[1500,1500,1600,1600])
         self.ctrlPub.publish(ctrlarr)
 
 

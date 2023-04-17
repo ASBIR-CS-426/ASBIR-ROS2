@@ -1,0 +1,40 @@
+[0.000000] (-) TimerEvent: {}
+[0.000173] (asbir_image_compression) JobQueued: {'identifier': 'asbir_image_compression', 'dependencies': OrderedDict()}
+[0.000285] (asbir_navigation) JobQueued: {'identifier': 'asbir_navigation', 'dependencies': OrderedDict()}
+[0.000338] (asbir_rc) JobQueued: {'identifier': 'asbir_rc', 'dependencies': OrderedDict()}
+[0.000368] (asbir_serial) JobQueued: {'identifier': 'asbir_serial', 'dependencies': OrderedDict()}
+[0.000386] (asbir_status) JobQueued: {'identifier': 'asbir_status', 'dependencies': OrderedDict()}
+[0.000412] (asbir_xavier_gpio) JobQueued: {'identifier': 'asbir_xavier_gpio', 'dependencies': OrderedDict()}
+[0.000906] (asbir_image_compression) JobStarted: {'identifier': 'asbir_image_compression'}
+[0.030086] (asbir_navigation) JobStarted: {'identifier': 'asbir_navigation'}
+[0.063807] (asbir_rc) JobStarted: {'identifier': 'asbir_rc'}
+[0.090538] (asbir_serial) JobStarted: {'identifier': 'asbir_serial'}
+[0.098897] (-) TimerEvent: {}
+[0.117783] (asbir_status) JobStarted: {'identifier': 'asbir_status'}
+[0.139731] (asbir_xavier_gpio) JobStarted: {'identifier': 'asbir_xavier_gpio'}
+[0.199087] (-) TimerEvent: {}
+[0.299580] (-) TimerEvent: {}
+[0.399901] (-) TimerEvent: {}
+[0.500286] (-) TimerEvent: {}
+[0.600732] (-) TimerEvent: {}
+[0.700994] (-) TimerEvent: {}
+[0.801877] (-) TimerEvent: {}
+[0.902166] (-) TimerEvent: {}
+[1.002611] (-) TimerEvent: {}
+[1.102932] (-) TimerEvent: {}
+[1.203423] (-) TimerEvent: {}
+[1.303819] (-) TimerEvent: {}
+[1.404082] (-) TimerEvent: {}
+[1.504394] (-) TimerEvent: {}
+[1.604787] (-) TimerEvent: {}
+[1.705286] (-) TimerEvent: {}
+[1.805663] (-) TimerEvent: {}
+[1.906069] (-) TimerEvent: {}
+[2.006353] (-) TimerEvent: {}
+[2.061071] (asbir_rc) JobEnded: {'identifier': 'asbir_rc', 'rc': 0}
+[2.065962] (asbir_image_compression) JobEnded: {'identifier': 'asbir_image_compression', 'rc': 'SIGINT'}
+[2.066684] (asbir_navigation) JobEnded: {'identifier': 'asbir_navigation', 'rc': 'SIGINT'}
+[2.067174] (asbir_xavier_gpio) JobEnded: {'identifier': 'asbir_xavier_gpio', 'rc': 'SIGINT'}
+[2.067389] (asbir_status) JobEnded: {'identifier': 'asbir_status', 'rc': 'SIGINT'}
+[2.067686] (asbir_serial) JobEnded: {'identifier': 'asbir_serial', 'rc': 'SIGINT'}
+[2.077645] (-) EventReactorShutdown: {}

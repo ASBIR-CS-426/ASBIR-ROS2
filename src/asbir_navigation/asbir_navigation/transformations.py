@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import math
 import numpy as np
+from geometry_msgs.msg import Quaternion
 
 def quaternion_from_euler(roll, pitch, yaw):
     cy = math.cos(yaw * 0.5)
@@ -36,3 +37,13 @@ def euler_from_quaternion(quaternion):
     yaw = np.arctan2(siny_cosp, cosy_cosp)
 
     return roll, pitch, yaw
+
+def quaternion_multiply(quaternion1, quaternion0):
+
+    (x0, y0, z0, w0) = (quaternion0.x,quaternion0.y,quaternion0.z,quaternion0.w)
+    (x1, y1, z1, w1) = (quaternion1.x,quaternion1.y,quaternion1.z,quaternion1.w)
+    return Quaternion(
+        x=(x1*w0 + y1*z0 - z1*y0 + w1*x0),
+        y=(-x1*z0 + y1*w0 + z1*x0 + w1*y0),
+        z=(x1*y0 - y1*x0 + z1*w0 + w1*z0),
+        w=(-x1*x0 - y1*y0 - z1*z0 + w1*w0))

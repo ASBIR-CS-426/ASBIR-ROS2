@@ -17,7 +17,7 @@ class NodeController(Node):
         if msg.data == True:
             os.system('ros2 launch ~/ASBIR-ROS2/src/asbir_navigation/launch/asbirLaunch.launch.py')
         else:
-            point = PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id='odom_frame'), point=Point(x=0.0, y=0.0, z=0.0))
+            point = PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id="tag16h5:2"), point=Point(x=0.0, y=0.0, z=0.0))
             self.pointPub.publish(point)
              
 def main(args=None):

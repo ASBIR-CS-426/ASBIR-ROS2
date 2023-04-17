@@ -1,0 +1,20 @@
+running egg_info
+writing ../../build/asbir_image_compression/asbir_image_compression.egg-info/PKG-INFO
+writing dependency_links to ../../build/asbir_image_compression/asbir_image_compression.egg-info/dependency_links.txt
+writing entry points to ../../build/asbir_image_compression/asbir_image_compression.egg-info/entry_points.txt
+writing requirements to ../../build/asbir_image_compression/asbir_image_compression.egg-info/requires.txt
+writing top-level names to ../../build/asbir_image_compression/asbir_image_compression.egg-info/top_level.txt
+reading manifest file '../../build/asbir_image_compression/asbir_image_compression.egg-info/SOURCES.txt'
+writing manifest file '../../build/asbir_image_compression/asbir_image_compression.egg-info/SOURCES.txt'
+running build
+running build_py
+running install
+running install_lib
+running install_data
+running install_egg_info
+removing '/home/aralab/ASBIR-ROS2/install/asbir_image_compression/lib/python3.8/site-packages/asbir_image_compression-0.0.0-py3.8.egg-info' (and everything under it)
+Copying ../../build/asbir_image_compression/asbir_image_compression.egg-info to /home/aralab/ASBIR-ROS2/install/asbir_image_compression/lib/python3.8/site-packages/asbir_image_compression-0.0.0-py3.8.egg-info
+running install_scripts
+Installing compressImage script to /home/aralab/ASBIR-ROS2/install/asbir_image_compression/lib/asbir_image_compression
+Installing pointcloudRepublisher script to /home/aralab/ASBIR-ROS2/install/asbir_image_compression/lib/asbir_image_compression
+writing list of installed files to '/home/aralab/ASBIR-ROS2/build/asbir_image_compression/install.log'

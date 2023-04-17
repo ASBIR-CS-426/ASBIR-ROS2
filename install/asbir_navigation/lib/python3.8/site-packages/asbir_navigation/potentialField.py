@@ -74,17 +74,17 @@ class PotentialField(Node):
             # # convert control values to servo value range 
             #     # Steering 1500 = 0, 900 - 2100
             #     # Wheel rotation 1600 = 0, 800 - 2400
-            # fs = int(1500 + 600 * (wheel_rotation / self.wheel_rotation_max))
-            # bs = int(1500 - 600 * (wheel_rotation / self.wheel_rotation_max))
-            # fw = int(1600 - 400 * vr/self.vr_max)
-            # bw = int(1600 + 400 * vr/self.vr_max)
+            fs = int(1500 + 600 * (wheel_rotation / self.wheel_rotation_max))
+            bs = int(1500 - 600 * (wheel_rotation / self.wheel_rotation_max))
+            fw = int(1600 - 400 * vr/self.vr_max)
+            bw = int(1600 + 400 * vr/self.vr_max)
             # # fw = 1600
             # # bw = 1600
 
-            fs = 90 + 90 * (wheel_rotation / self.wheel_rotation_max)
-            bs = 90 - 90 * (wheel_rotation / self.wheel_rotation_max)
-            fw = vr/self.vr_max
-            bw = vr/self.vr_max
+            # fs = 90 + 90 * (wheel_rotation / self.wheel_rotation_max)
+            # bs = 90 - 90 * (wheel_rotation / self.wheel_rotation_max)
+            # fw = vr/self.vr_max
+            # bw = vr/self.vr_max
 
             print(fs, bs, fw, bw)
             # print(yaw)

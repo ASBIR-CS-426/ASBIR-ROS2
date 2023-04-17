@@ -15,7 +15,7 @@ class PointPub(Node):
             self.timer = self.create_timer(1, self.broadcast_timer_callback)     
 
     def broadcast_timer_callback(self):
-        point = PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id='odom_frame'), point=Point(x=.881, y=-0.2, z=0.75))
+        point = PointStamped(header=Header(stamp=Time(sec=0, nanosec=0), frame_id="tag16h5:2"), point=Point(x=.881, y=-0.2, z=0.75))
         self.pointPub.publish(point)
 
 

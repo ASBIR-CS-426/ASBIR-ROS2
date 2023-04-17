@@ -1,0 +1,22 @@
+digraph G {
+"odom_frame" -> "T265_pose_frame"[label=" Broadcaster: default_authority\nAverage rate: 200.009\nBuffer length: 5.02\nMost recent transform: 1681672316.889892\nOldest transform: 1681672311.870125\n"];
+"T265_pose_frame" -> "D400_link"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"camera1_link" -> "camera2_link"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"T265_pose_frame" -> "T265_link"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"D400_color_optical_frame" -> "tag16h5:2"[label=" Broadcaster: default_authority\nAverage rate: 13.724\nBuffer length: 4.955\nMost recent transform: 1681672316.812205\nOldest transform: 1681672311.857549\n"];
+"D400_color_frame" -> "D400_color_optical_frame"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"D400_link" -> "D400_depth_frame"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"D400_depth_frame" -> "D400_depth_optical_frame"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"D400_link" -> "D400_color_frame"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"tag16h5:2" -> "surfaceA"[label=" Broadcaster: default_authority\nAverage rate: 50000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"tag16h5:2" -> "surfaceB"[label=" Broadcaster: default_authority\nAverage rate: 50000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"tag16h5:2" -> "surfaceC"[label=" Broadcaster: default_authority\nAverage rate: 50000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"tag16h5:2" -> "surfaceD"[label=" Broadcaster: default_authority\nAverage rate: 50000.0\nBuffer length: 0.0\nMost recent transform: 0.0\nOldest transform: 0.0\n"];
+"D400_color_optical_frame" -> "tag16h5:23"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 1681672313.598368\nOldest transform: 1681672313.598368\n"];
+"D400_color_optical_frame" -> "tag16h5:15"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 1681672314.134006\nOldest transform: 1681672314.134006\n"];
+"D400_color_optical_frame" -> "tag16h5:27"[label=" Broadcaster: default_authority\nAverage rate: 10000.0\nBuffer length: 0.0\nMost recent transform: 1681672314.937462\nOldest transform: 1681672314.937462\n"];
+edge [style=invis];
+ subgraph cluster_legend { style=bold; color=black; label ="view_frames Result";
+"Recorded at time: 1681672316.9081342"[ shape=plaintext ] ;
+}->"camera1_link";
+}
