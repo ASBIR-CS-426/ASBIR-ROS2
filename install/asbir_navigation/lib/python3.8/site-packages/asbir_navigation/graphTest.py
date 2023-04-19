@@ -91,7 +91,7 @@ class GraphTest(Node):
                     gp.ground = True
                     gp.frame_pos.point.x = 0.0
                     gp.frame_pos.point.y = (S.yDim/col) * (j)
-                    gp.frame_pos.point.z = (S.zDim/row)
+                    gp.frame_pos.point.z = -(S.zDim/row)
                     # gp.frame_pos.child_frame_id = p.frame_pos.header.frame_id+str(p.frame_pos.point)
                     self.points.append(gp)
 
@@ -119,7 +119,7 @@ class GraphTest(Node):
                     gp.ground = True
                     gp.frame_pos.point.x = 0.0
                     gp.frame_pos.point.y = (S.yDim/col) * (j)
-                    gp.frame_pos.point.z = (S.zDim/row)
+                    gp.frame_pos.point.z = -(S.zDim/row)
                     # gp.frame_pos.child_frame_id = p.frame_pos.header.frame_id+str(p.frame_pos.point)
                     self.points.append(gp)
 

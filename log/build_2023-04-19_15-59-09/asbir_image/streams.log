@@ -1,0 +1,34 @@
+[2.555s] Invoking command in '/home/aralab/ASBIR-ROS2/src/asbir_image': PYTHONPATH=/home/aralab/ASBIR-ROS2/build/asbir_image/prefix_override:/home/aralab/ASBIR-ROS2/install/asbir_image/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/asbir_image build --build-base /home/aralab/ASBIR-ROS2/build/asbir_image/build install --record /home/aralab/ASBIR-ROS2/build/asbir_image/install.log --install-scripts $base/lib/asbir_image --single-version-externally-managed
+[2.974s] running egg_info
+[2.977s] creating ../../build/asbir_image/asbir_image.egg-info
+[2.977s] writing ../../build/asbir_image/asbir_image.egg-info/PKG-INFO
+[2.979s] writing dependency_links to ../../build/asbir_image/asbir_image.egg-info/dependency_links.txt
+[2.979s] writing entry points to ../../build/asbir_image/asbir_image.egg-info/entry_points.txt
+[2.979s] writing requirements to ../../build/asbir_image/asbir_image.egg-info/requires.txt
+[2.980s] writing top-level names to ../../build/asbir_image/asbir_image.egg-info/top_level.txt
+[2.980s] writing manifest file '../../build/asbir_image/asbir_image.egg-info/SOURCES.txt'
+[3.029s] reading manifest file '../../build/asbir_image/asbir_image.egg-info/SOURCES.txt'
+[3.033s] writing manifest file '../../build/asbir_image/asbir_image.egg-info/SOURCES.txt'
+[3.033s] running build
+[3.034s] running build_py
+[3.034s] creating /home/aralab/ASBIR-ROS2/build/asbir_image/build
+[3.034s] creating /home/aralab/ASBIR-ROS2/build/asbir_image/build/lib
+[3.034s] creating /home/aralab/ASBIR-ROS2/build/asbir_image/build/lib/asbir_image
+[3.034s] copying asbir_image/imageCompression.py -> /home/aralab/ASBIR-ROS2/build/asbir_image/build/lib/asbir_image
+[3.035s] copying asbir_image/asbirCam_pub.py -> /home/aralab/ASBIR-ROS2/build/asbir_image/build/lib/asbir_image
+[3.035s] copying asbir_image/__init__.py -> /home/aralab/ASBIR-ROS2/build/asbir_image/build/lib/asbir_image
+[3.035s] running install
+[3.035s] running install_lib
+[3.035s] creating /home/aralab/ASBIR-ROS2/install/asbir_image/lib/python3.8/site-packages/asbir_image
+[3.036s] copying /home/aralab/ASBIR-ROS2/build/asbir_image/build/lib/asbir_image/imageCompression.py -> /home/aralab/ASBIR-ROS2/install/asbir_image/lib/python3.8/site-packages/asbir_image
+[3.036s] copying /home/aralab/ASBIR-ROS2/build/asbir_image/build/lib/asbir_image/asbirCam_pub.py -> /home/aralab/ASBIR-ROS2/install/asbir_image/lib/python3.8/site-packages/asbir_image
+[3.036s] copying /home/aralab/ASBIR-ROS2/build/asbir_image/build/lib/asbir_image/__init__.py -> /home/aralab/ASBIR-ROS2/install/asbir_image/lib/python3.8/site-packages/asbir_image
+[3.036s] byte-compiling /home/aralab/ASBIR-ROS2/install/asbir_image/lib/python3.8/site-packages/asbir_image/imageCompression.py to imageCompression.cpython-38.pyc
+[3.043s] byte-compiling /home/aralab/ASBIR-ROS2/install/asbir_image/lib/python3.8/site-packages/asbir_image/asbirCam_pub.py to asbirCam_pub.cpython-38.pyc
+[3.043s] error: can't copy 'resource/asbir_image': doesn't exist or not a regular file
+[3.043s] byte-compiling /home/aralab/ASBIR-ROS2/install/asbir_image/lib/python3.8/site-packages/asbir_image/__init__.py to __init__.cpython-38.pyc
+[3.043s] running install_data
+[3.044s] creating /home/aralab/ASBIR-ROS2/install/asbir_image/share/ament_index
+[3.044s] creating /home/aralab/ASBIR-ROS2/install/asbir_image/share/ament_index/resource_index
+[3.044s] creating /home/aralab/ASBIR-ROS2/install/asbir_image/share/ament_index/resource_index/packages
+[3.071s] Invoked command in '/home/aralab/ASBIR-ROS2/src/asbir_image' returned '1': PYTHONPATH=/home/aralab/ASBIR-ROS2/build/asbir_image/prefix_override:/home/aralab/ASBIR-ROS2/install/asbir_image/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/asbir_image build --build-base /home/aralab/ASBIR-ROS2/build/asbir_image/build install --record /home/aralab/ASBIR-ROS2/build/asbir_image/install.log --install-scripts $base/lib/asbir_image --single-version-externally-managed

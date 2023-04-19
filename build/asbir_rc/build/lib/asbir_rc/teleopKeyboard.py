@@ -9,7 +9,7 @@ class Teleop(Node):
             super().__init__('teleopKeyboard')
             self.ctrlPub = self.create_publisher(Int32MultiArray, 'servoControl', 1)
             self.controller = Int32MultiArray()
-            self.controller.data = [90, 90, 0, 0]
+            self.controller.data = [1500, 1500, 1600, 1600]
 
             self.listener = keyboard.Listener(on_press=self.on_press,on_release=self.on_release)
             self.listener.start()
@@ -22,17 +22,17 @@ class Teleop(Node):
     def on_press(self,key):
         try:
             if key.char == "w":
-                self.controller.data[2]=1
-                self.controller.data[3]=-1
+                self.controller.data[2]=2000
+                self.controller.data[3]=1200
             elif key.char == "s":
-                self.controller.data[2]=-1
-                self.controller.data[3]=1
+                self.controller.data[2]=1200
+                self.controller.data[3]=2000
             elif key.char == "a":
-                self.controller.data[0]=0
-                self.controller.data[1]=180
+                self.controller.data[0]=900
+                self.controller.data[1]=2100
             elif key.char == "d":
-                self.controller.data[0]=180
-                self.controller.data[1]=0
+                self.controller.data[0]=2100
+                self.controller.data[1]=900
         except AttributeError:
             # print(key)
             print(self.controller.data)
@@ -42,17 +42,17 @@ class Teleop(Node):
     def on_release(self,key):
         try:
             if key.char == "w":
-                self.controller.data[2]=0
-                self.controller.data[3]=0
+                self.controller.data[2]=1600
+                self.controller.data[3]=1600
             elif key.char == "s":
-                self.controller.data[2]=0
-                self.controller.data[3]=0
+                self.controller.data[2]=1600
+                self.controller.data[3]=1600
             elif key.char == "a":
-                self.controller.data[0]=90
-                self.controller.data[1]=90
+                self.controller.data[0]=1500
+                self.controller.data[1]=1500
             elif key.char == "d":
-                self.controller.data[0]=90
-                self.controller.data[1]=90
+                self.controller.data[0]=1500
+                self.controller.data[1]=1500
         except AttributeError:
             # print(key)
             print(self.controller.data)

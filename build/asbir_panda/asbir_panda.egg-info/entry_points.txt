@@ -1,0 +1,3 @@
+[console_scripts]
+AlignAprilTag = asbir_panda.alignApriltag:main
+

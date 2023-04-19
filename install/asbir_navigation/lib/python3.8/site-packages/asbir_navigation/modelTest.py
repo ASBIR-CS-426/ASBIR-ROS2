@@ -23,36 +23,29 @@ class ModelTest(Node):
         self.tfBroadcaster = TransformBroadcaster(self)
         self.tfBuffer = Buffer()
         self.tfListener = TransformListener(self.tfBuffer, self)
+        # self.structureFrame = TransformStamped()
+        # self.aligned = False
+
+        # self.align_apriltag_timer = self.create_timer(0.1, self.align_apriltag)
         self.timer = self.create_timer(0.4, self.broadcast_timer_callback)     
-         
+
+    # def align_apriltag(self):
+    #     if self.aligned:
+    #         return
+    #     try:
+    #         self.structureFrame = self.tfBuffer.lookup_transform("odom_frame", "tag16h5:2", time=rclpy.time.Time())
+    #         self.aligned = True
+    #     except (tf2_ros.LookupException, tf2_ros.ExtrapolationException):
+    #          i =0
+
 
     def broadcast_timer_callback(self):
+        # if not self.aligned:
+        #     return
+        # wait until april tag is detected     
         S = Surfaces()
         
-        # wait until april tag is detected
-        waiting = True
-        structureFrame = TransformStamped()
-        while waiting:
-            try:
-                structureFrame=self.tfBuffer.lookup_transform("odom_frame", "tag16h5:2",rclpy.time.Time())
-                waiting = False
-            except tf2_ros.LookupException:
-                continue
-
-        # pose = PoseStamped()
-        # pose.header.frame_id="tag16h5:2"
-        # pose.pose.orientation=Quaternion(x=0.707,y=0.707,z=0.0,w=0.0)
-        # pose.pose.position=Point(x=0.0,y=0.0,z=0.0)
-        # pose = tf2_geometry_msgs.tf2_geometry_msgs.do_transform_pose_stamped(pose,TransformStamped(header=Header(frame_id="odom_frame",stamp=rclpy.time.Time().to_msg()),transform=Transform()))
-
-
-        structureFrame.header.frame_id = "odom_frame"
-        structureFrame.child_frame_id = "structure"
-        # (roll,pitch,yaw) = euler_from_quaternion(structureFrame.transform.rotation)
-        # rotation = quaternion_from_euler(roll, pitch, yaw+ np.pi/2)
-        # structureFrame.transform.rotation = Quaternion(x=rotation[0],y=rotation[1],z=rotation[2],w=rotation[3],)
-        # structureFrame.transform.rotation=Quaternion(w=0.0,x=0.0,y=0.0,z=1.0)
-    
+        
         #====Build Structure Model===
         # Create base surface model
         structureModel=Marker()
@@ -78,7 +71,7 @@ class ModelTest(Node):
         structureModel.color.a = 1.0
 
         self.markerPub.publish(structureModel)
-        self.tfBroadcaster.sendTransform([structureFrame, 
+        self.tfBroadcaster.sendTransform([
                             S.surfaceA.frame, 
                             S.surfaceB.frame,
                             S.surfaceC.frame,

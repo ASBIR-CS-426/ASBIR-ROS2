@@ -25,7 +25,6 @@ class Surface:
 	
     def getFrame(self, frame_rotation):
         frame = TransformStamped()
-        frame.header.stamp = rclpy.time.Time().to_msg()
         frame.header.frame_id = 'structure'
         frame.child_frame_id = self.id
         frame.transform.translation = Vector3(x=self.xMin, y=self.yMin, z=self.zMin)
@@ -43,10 +42,10 @@ class Surfaces:
     yOffset = -0.361
     zOffset = -0.19
     
-    surfaceA = Surface('surfaceA', xOffset, (xOffset + xDim), yOffset, (yOffset + yDim), (zOffset + zDim), (zOffset + zDim), xDim, yDim, Quaternion(x=0.0,y=0.0,z=0.0,w=1.0))
-    surfaceB = Surface('surfaceB', xOffset, xOffset, yOffset, (yOffset + yDim), zOffset, (zOffset + zDim), zDim, yDim, Quaternion(x=0.0, y=-0.707, z=0.0, w=0.707))
-    surfaceC = Surface('surfaceC', (xOffset + xDim), (xOffset + xDim), (yOffset + yDim), yOffset, zOffset, (zOffset + zDim), zDim, yDim, Quaternion(x=0.707, y=0.0, z=0.707, w=0.0))
-    surfaceD = Surface('surfaceD', (xOffset + xDim), xOffset, yOffset, yOffset, zOffset, (zOffset + zDim), zDim, xDim, Quaternion(x=0.5, y=-0.5, z=0.5, w=0.5))
+    surfaceA = Surface('surfaceA', -xDim, 0.0, yOffset, (yOffset + yDim), zDim, zDim, xDim, yDim, Quaternion(x=0.0,y=0.0,z=0.0,w=1.0))
+    surfaceB = Surface('surfaceB', 0.0, 0.0, yOffset, (yOffset + yDim), 0.0, zDim, zDim, yDim, Quaternion(x=0.0, y=-0.707, z=0.0, w=0.707))
+    surfaceC = Surface('surfaceC', -xDim, -xDim, (yOffset + yDim), yOffset, 0.0, zDim, zDim, yDim, Quaternion(x=0.707, y=0.0, z=0.707, w=0.0))
+    surfaceD = Surface('surfaceD', 0.0, -xDim, yOffset, yOffset, 0.0, zDim, zDim, xDim, Quaternion(x=0.5, y=-0.5, z=0.5, w=0.5))
     surfaceF = Surface('surfaceF', 0.0, 5.0, 0.0, 5.0, 0.0, 5.0, 10.0, 10.0, Quaternion(x=0.0,y=0.0,z=0.0,w=1.0))
     
     surface = {}

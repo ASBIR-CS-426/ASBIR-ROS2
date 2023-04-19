@@ -1,0 +1,36 @@
+[2.784s] Invoking command in '/home/aralab/ASBIR-ROS2/src/asbir_panda': PYTHONPATH=/home/aralab/ASBIR-ROS2/build/asbir_panda/prefix_override:/home/aralab/ASBIR-ROS2/install/asbir_panda/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/asbir_panda build --build-base /home/aralab/ASBIR-ROS2/build/asbir_panda/build install --record /home/aralab/ASBIR-ROS2/build/asbir_panda/install.log --install-scripts $base/lib/asbir_panda --single-version-externally-managed
+[3.145s] running egg_info
+[3.145s] creating ../../build/asbir_panda/asbir_panda.egg-info
+[3.145s] writing ../../build/asbir_panda/asbir_panda.egg-info/PKG-INFO
+[3.146s] writing dependency_links to ../../build/asbir_panda/asbir_panda.egg-info/dependency_links.txt
+[3.146s] writing entry points to ../../build/asbir_panda/asbir_panda.egg-info/entry_points.txt
+[3.146s] writing requirements to ../../build/asbir_panda/asbir_panda.egg-info/requires.txt
+[3.146s] writing top-level names to ../../build/asbir_panda/asbir_panda.egg-info/top_level.txt
+[3.148s] writing manifest file '../../build/asbir_panda/asbir_panda.egg-info/SOURCES.txt'
+[3.177s] reading manifest file '../../build/asbir_panda/asbir_panda.egg-info/SOURCES.txt'
+[3.178s] writing manifest file '../../build/asbir_panda/asbir_panda.egg-info/SOURCES.txt'
+[3.178s] running build
+[3.178s] running build_py
+[3.178s] creating /home/aralab/ASBIR-ROS2/build/asbir_panda/build
+[3.179s] creating /home/aralab/ASBIR-ROS2/build/asbir_panda/build/lib
+[3.179s] creating /home/aralab/ASBIR-ROS2/build/asbir_panda/build/lib/asbir_panda
+[3.179s] copying asbir_panda/__init__.py -> /home/aralab/ASBIR-ROS2/build/asbir_panda/build/lib/asbir_panda
+[3.179s] copying asbir_panda/alignApriltag.py -> /home/aralab/ASBIR-ROS2/build/asbir_panda/build/lib/asbir_panda
+[3.179s] running install
+[3.180s] running install_lib
+[3.180s] creating /home/aralab/ASBIR-ROS2/install/asbir_panda/lib/python3.8/site-packages/asbir_panda
+[3.180s] copying /home/aralab/ASBIR-ROS2/build/asbir_panda/build/lib/asbir_panda/__init__.py -> /home/aralab/ASBIR-ROS2/install/asbir_panda/lib/python3.8/site-packages/asbir_panda
+[3.181s] copying /home/aralab/ASBIR-ROS2/build/asbir_panda/build/lib/asbir_panda/alignApriltag.py -> /home/aralab/ASBIR-ROS2/install/asbir_panda/lib/python3.8/site-packages/asbir_panda
+[3.181s] byte-compiling /home/aralab/ASBIR-ROS2/install/asbir_panda/lib/python3.8/site-packages/asbir_panda/__init__.py to __init__.cpython-38.pyc
+[3.183s] byte-compiling /home/aralab/ASBIR-ROS2/install/asbir_panda/lib/python3.8/site-packages/asbir_panda/alignApriltag.py to alignApriltag.cpython-38.pyc
+[3.183s] running install_data
+[3.184s] creating /home/aralab/ASBIR-ROS2/install/asbir_panda/share/ament_index
+[3.184s] creating /home/aralab/ASBIR-ROS2/install/asbir_panda/share/ament_index/resource_index
+[3.184s] creating /home/aralab/ASBIR-ROS2/install/asbir_panda/share/ament_index/resource_index/packages
+[3.185s] copying resource/asbir_panda -> /home/aralab/ASBIR-ROS2/install/asbir_panda/share/ament_index/resource_index/packages
+[3.185s] copying package.xml -> /home/aralab/ASBIR-ROS2/install/asbir_panda/share/asbir_panda
+[3.185s] running install_egg_info
+[3.187s] Copying ../../build/asbir_panda/asbir_panda.egg-info to /home/aralab/ASBIR-ROS2/install/asbir_panda/lib/python3.8/site-packages/asbir_panda-0.0.0-py3.8.egg-info
+[3.188s] running install_scripts
+[3.215s] Installing AlignAprilTag script to /home/aralab/ASBIR-ROS2/install/asbir_panda/lib/asbir_panda
+[3.215s] writing list of installed files to '/home/aralab/ASBIR-ROS2/build/asbir_panda/install.log'
