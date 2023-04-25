@@ -1,0 +1,21 @@
+[1.241s] Invoking command in '/home/aralab/ASBIR/ASBIR-ROS2/src/asbir_panda': PYTHONPATH=/home/aralab/ASBIR/ASBIR-ROS2/build/asbir_panda/prefix_override:/home/aralab/ASBIR/ASBIR-ROS2/install/asbir_panda/lib/python3.8/site-packages: /usr/bin/python3 setup.py egg_info --egg-base ../../build/asbir_panda build --build-base /home/aralab/ASBIR/ASBIR-ROS2/build/asbir_panda/build install --record /home/aralab/ASBIR/ASBIR-ROS2/build/asbir_panda/install.log --install-scripts $base/lib/asbir_panda --single-version-externally-managed
+[1.377s] running egg_info
+[1.377s] writing ../../build/asbir_panda/asbir_panda.egg-info/PKG-INFO
+[1.377s] writing dependency_links to ../../build/asbir_panda/asbir_panda.egg-info/dependency_links.txt
+[1.378s] writing entry points to ../../build/asbir_panda/asbir_panda.egg-info/entry_points.txt
+[1.378s] writing requirements to ../../build/asbir_panda/asbir_panda.egg-info/requires.txt
+[1.378s] writing top-level names to ../../build/asbir_panda/asbir_panda.egg-info/top_level.txt
+[1.414s] reading manifest file '../../build/asbir_panda/asbir_panda.egg-info/SOURCES.txt'
+[1.415s] writing manifest file '../../build/asbir_panda/asbir_panda.egg-info/SOURCES.txt'
+[1.415s] running build
+[1.415s] running build_py
+[1.415s] running install
+[1.416s] running install_lib
+[1.418s] running install_data
+[1.418s] running install_egg_info
+[1.420s] removing '/home/aralab/ASBIR/ASBIR-ROS2/install/asbir_panda/lib/python3.8/site-packages/asbir_panda-0.0.0-py3.8.egg-info' (and everything under it)
+[1.420s] Copying ../../build/asbir_panda/asbir_panda.egg-info to /home/aralab/ASBIR/ASBIR-ROS2/install/asbir_panda/lib/python3.8/site-packages/asbir_panda-0.0.0-py3.8.egg-info
+[1.421s] running install_scripts
+[1.442s] Installing AlignAprilTag script to /home/aralab/ASBIR/ASBIR-ROS2/install/asbir_panda/lib/asbir_panda
+[1.442s] writing list of installed files to '/home/aralab/ASBIR/ASBIR-ROS2/build/asbir_panda/install.log'
+[1.471s] Invoked command in '/home/aralab/ASBIR/ASBIR-ROS2/src/asbir_panda' returned '0': PYTHONPATH=/home/aralab/ASBIR/ASBIR-ROS2/build/asbir_panda/prefix_override:/home/aralab/ASBIR/ASBIR-ROS2/install/asbir_panda/lib/python3.8/site-packages: /usr/bin/python3 setup.py egg_info --egg-base ../../build/asbir_panda build --build-base /home/aralab/ASBIR/ASBIR-ROS2/build/asbir_panda/build install --record /home/aralab/ASBIR/ASBIR-ROS2/build/asbir_panda/install.log --install-scripts $base/lib/asbir_panda --single-version-externally-managed

@@ -14,6 +14,7 @@ from tensorflow.keras.models import load_model
 import math
 import six
 import numpy as np
+import tensorflow as tf
 
 IMAGE_ORDERING = "channels_last"
  
@@ -33,26 +34,31 @@ class ImagePublisher(Node):
         # Create the publisher. This publisher will publish an Image
         # to the video_frames topic. The queue size is 10 messages.
         self.publisher_ = self.create_publisher(Image, 'output', 10)
-        self.subscription = self.create_subscription(
-        Image, 
-        '/D400/color/image_raw', 
-        self.listener_callback, 
-        10)
+        self.subscription = self.create_subscription(Image, '/D400/color/image_raw', self.listener_callback, 10)
+        gpu_devices = tf.config.experimental.list_physical_devices('GPU')
+        for device in gpu_devices:
+            tf.config.experimental.set_memory_growth(device, True)
         self.current_frame = None
         # Used to convert between ROS and OpenCV images
         self.br = CvBridge()
+        print("Loading model........................")
         # load model path
-        self.model = load_model("/home/aralab/ASBIR-Deep-Learning/results/annette/checkpoints/checkpoint-211-0.9826-.hdf5")
-        
+        self.model = load_model("/home/aralab/ASBIR/ASBIR-Deep-Learning/results/annette/checkpoints/checkpoint-211-0.9826-.hdf5")
+        print("model loaded")
         # wait for message b4 moving on
-        self.seg_pub()
+        
     
     def listener_callback(self, data): 
         # Convert ROS Image message to OpenCV image
-        self.current_frame = self.br.imgmsg_to_cv2(data)
+        self.current_frame = self.br.imgmsg_to_cv2(data, "bgr8")
         self.rgb_received = True
+        #print(data.width, data.height)
         self.current_frame_header = data.header
-   
+        cv2_output = self.segmentation(self.current_frame)
+        output = self.br.cv2_to_imgmsg(cv2_output, "bgr8")
+        output.header = self.current_frame_header
+        self.publisher_.publish(output)
+
     def get_image_array(self, image_input,
                         width, height,
                         imgNorm="sub_mean", ordering='channels_first'):
@@ -88,6 +94,7 @@ class ImagePublisher(Node):
             img = np.rollaxis(img, 2, 0)
         return img
     def segmentation(self, cv2_input_img):
+        #x = cv2.resize(cv2_input_img, (512, 512))
         x = self.get_image_array(cv2_input_img, 512, 512, ordering=IMAGE_ORDERING)
         pr = self.model.predict(np.array([x]))[0]
         #(512,512)
@@ -95,20 +102,20 @@ class ImagePublisher(Node):
         seg_img = cv2.resize(cv2_input_img, (pr.shape[0], pr.shape[1]))
         idx = (pr == 1)
         seg_img[idx] = (0, 0, 255.0)
-        seg_img = cv2.resize(seg_img, (self.output_width, self.output_height))
+        seg_img = cv2.resize(seg_img, (1280, 720))
         return seg_img
         
-    def seg_pub(self):
-        while rclpy.ok():
-            if self.rgb_received:
-                try:
-                    cv2_output = self.segmentation(self.current_frame)
-                    output = self.br.cv2_to_imgmsg(cv2_output)
-                    output.header = self.current_frame_header
-                    self.publisher_.publish(output)
-                except CvBridgeError as e:
-                    print(e)
-            self.rate.sleep()
+    # def seg_pub(self):
+    #     while rclpy.ok():
+    #         if self.rgb_received:
+    #             print("received")
+    #             try:
+    #                 cv2_output = self.segmentation(self.current_frame)
+    #                 output = self.br.cv2_to_imgmsg(cv2_output)
+    #                 output.header = self.current_frame_header
+    #                 self.publisher_.publish(output)
+    #             except CvBridgeError as e:
+    #                 print(e)
 
 
   
