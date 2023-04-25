@@ -18,11 +18,22 @@ def generate_launch_description():
 
         IncludeLaunchDescription(
             PythonLaunchDescriptionSource(
-                realsense2_dir + '/launch/rs_d400_and_t265_launch.py'
+                realsense2_dir + '/launch/rs_launch.py'
             ),
             launch_arguments={
+                'camera_name': 'D400',
+                'device_type': 'd4',
                 'depth_module.profile': '848,480,15',
                 'rgb_camera.profile': '1280,720,15',
+            }.items()
+        ),     
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(
+                realsense2_dir + '/launch/rs_launch.py'
+            ),
+            launch_arguments={
+                'camera_name': 'T265',
+                'device_type': 't265',
             }.items()
         ),        
         Node(
@@ -72,6 +83,13 @@ def generate_launch_description():
         Node(
             package = "asbir_serial",
             executable = "serialComm"
+        ),
+        Node(
+            package = "image_transport",
+            executable = "republish",
+            arguments = ["raw", "compressed", "--ros-args", 
+                         "--remap", "/in:=/D400/color/image_raw",
+                         "--remap", "/out/compressed:=out/compressed"]
         ),
         
     ])

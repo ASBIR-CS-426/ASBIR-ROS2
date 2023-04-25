@@ -21,6 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             'CamPub = asbir_image.asbirCam_pub:main',
+            'CompressVideo = asbir_image.imageCompression:main',
         ],
     },
 )

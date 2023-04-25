@@ -16,7 +16,7 @@ from cv_bridge.core import CvBridge
 class ImageCompression(Node):
     def __init__(self):
             super().__init__('ImageCompression')
-            self.sub = self.create_subscription(Image, '/D400/color/image_raw', self.compressMe, 1)
+            self.sub = self.create_subscription(Image, '/camera/color/image_raw', self.compressMe, 1)
             self.pub = self.create_publisher(CompressedImage, '/CompressedImage', 1)
             self.compressed = None
             self.cvBridge = CvBridge()

@@ -46,13 +46,16 @@ def generate_launch_description():
             executable='PathController',
             name='PathController',
         ),
-        # Node(
-        #     package='asbir_navigation',
-        #     executable='PotentialField',
-        #     name='PotentialField',
-        # ),
-        # IncludeLaunchDescription(
-        #     PythonLaunchDescriptionSource(
-        #         apriltag_dir + '/launch/tag_realsense.launch.py'),
-        # ),
+        Node(
+            package='asbir_navigation',
+            executable='PotentialField',
+            name='PotentialField',
+        ),
+        Node(
+            package = "image_transport",
+            executable = "republish",
+            arguments = ["compressed", "raw", "--ros-args", 
+                         "--remap", "/in/compressed:=/out/compressed",
+                         "--remap", "/out:=/decompressed"]
+        ),
     ])

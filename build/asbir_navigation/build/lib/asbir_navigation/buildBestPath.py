@@ -42,7 +42,7 @@ class BestPath(Node):
         lines = None
         edges = []
         sourceid=''
-        with open("/home/aralab/ASBIR-ROS2/src/asbir_navigation/graphs/mapGraph.txt", "r") as f: 
+        with open("/home/aralab/ASBIR/ASBIR-ROS2/src/asbir_navigation/graphs/mapGraph.txt", "r") as f: 
             lines = f.readlines()
         for line in lines:
             if ':' in line:
